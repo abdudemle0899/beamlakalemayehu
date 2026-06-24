@@ -1,96 +1,97 @@
+The portfolio code has been refactored to reflect the details from **Beamlak Alemayehu's** CV and the specific asset links provided in your spreadsheet. 
+
+### Key Refinements Made:
+1. **Personal Identity & CV Integration**: Completely updated the name, contact details, profile picture, background, and career profile to match Beamlak's background as a Chemical Engineer by training and a specialized Piping Design Engineer with 1.5+ years of experience.
+2. **Design Theme Overhaul**: Replaced the previous blue/cyan neon cyber theme with a refined, high-end **"Slate & Warm Copper"** design. This aesthetic uses a palette inspired by industrial piping, metals, and engineering blueprints (deep charcoal `#0f1115` bases combined with soft copper/bronze `#dca163` accents and modern typography).
+3. **Structured Experience & Education**: Populated his roles at **CRTEC** and **NALF**, his Chemical Engineering degree from the **University of Gondar**, and his Nanodegree from **Udacity**.
+4. **Stress Analysis Certifications**: Created a dedicated, prominent grid showcasing the specialized structural/piping stress certificates from his mentorship with Zdravko Ivančić.
+5. **Excel-Mapped Projects Grid**: Integrated his 7 core CV projects alongside the extra industrial design projects listed in your assets spreadsheet, linking each directory to its respective Cloudinary image paths.
+
+Here is the complete, self-contained single-file HTML code containing the styles and interactivity:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdu Demle Melaku | Piping Design Engineer & Team Leader | CRTEC</title>
-<meta name="description" content="Abdu Demle Melaku - Mechanical Engineer specializing in petrochemical piping design with AVEVA PDMS, E3D, Paragon, and Navisworks. Team Leader at CRTEC with 17+ industrial projects.">
+<title>Beamlak Alemayehu | Piping Design Engineer & Team Leader</title>
+<meta name="description" content="Beamlak Alemayehu - Piping Design Engineer specializing in industrial plant design with AVEVA E3D/PDMS, Navisworks, and CAESAR II.">
 <link href="https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.0/index.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/fontsource-rajdhani@5.0.0/index.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/fontsource-syne@5.0.0/index.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/fontsource-jetbrains-mono@5.0.0/index.css" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#050810;
-  --bg-alt:#0a1020;
-  --bg-elevated:#0f1629;
-  --card:#111a2e;
-  --card-hover:#162038;
-  --cyan:#00e5ff;
-  --cyan-soft:#4dd0e1;
-  --cyan-dim:rgba(0,229,255,0.12);
-  --cyan-glow:rgba(0,229,255,0.45);
-  --amber:#ffb300;
-  --amber-dim:rgba(255,179,0,0.12);
-  --green:#00e676;
-  --red:#ff5252;
-  --purple:#b388ff;
-  --text:#dfe6f0;
-  --text-dim:#7d8ba3;
+  --bg:#0f1115;
+  --bg-alt:#16181d;
+  --bg-elevated:#1d2027;
+  --card:#181a20;
+  --card-hover:#1f222a;
+  --accent:#dca163; /* Refined Warm Copper/Bronze */
+  --accent-soft:#f4b27a;
+  --accent-dim:rgba(220,161,99,0.08);
+  --accent-glow:rgba(220,161,99,0.3);
+  --text:#e2e8f0;
+  --text-dim:#94a3b8;
   --text-bright:#ffffff;
-  --border:rgba(139,149,165,0.12);
-  --border-light:rgba(139,149,165,0.25);
-  --radius:14px;
-  --radius-sm:10px;
-  --radius-lg:20px;
-  --shadow:0 20px 60px rgba(0,0,0,0.6);
-  --shadow-lg:0 30px 80px rgba(0,0,0,0.8);
-  --transition-fast:0.2s cubic-bezier(0.4,0,0.2,1);
-  --transition:0.35s cubic-bezier(0.4,0,0.2,1);
-  --transition-slow:0.6s cubic-bezier(0.4,0,0.2,1);
+  --border:rgba(255,255,255,0.06);
+  --border-light:rgba(255,255,255,0.14);
+  --radius:12px;
+  --radius-sm:8px;
+  --radius-lg:18px;
+  --shadow:0 15px 45px rgba(0,0,0,0.5);
+  --transition:0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.65;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
 }
 h1,h2,h3,h4,h5,h6{
-  font-family:'Rajdhani',sans-serif;
+  font-family:'Syne',sans-serif;
   font-weight:700;
-  line-height:1.15;
-  letter-spacing:-0.01em;
+  line-height:1.2;
   color:var(--text-bright);
 }
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 img{max-width:100%;display:block}
 .container{max-width:1380px;margin:0 auto;padding:0 32px}
-.section{padding:120px 0;position:relative}
+.section{padding:100px 0;position:relative}
 .section-label{
   display:inline-flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
   font-family:'JetBrains Mono',monospace;
-  font-size:0.78rem;
-  color:var(--cyan);
-  letter-spacing:3px;
+  font-size:0.8rem;
+  color:var(--accent);
+  letter-spacing:2px;
   text-transform:uppercase;
-  margin-bottom:20px;
-  font-weight:500;
+  margin-bottom:16px;
+  font-weight:600;
 }
 .section-label::before{
   content:'';
-  width:50px;
+  width:40px;
   height:1px;
-  background:linear-gradient(90deg,var(--cyan),transparent);
+  background:linear-gradient(90deg,var(--accent),transparent);
 }
 .section-title{
-  font-size:clamp(2.4rem,5vw,3.6rem);
+  font-size:clamp(2.2rem,4.5vw,3.2rem);
   color:var(--text-bright);
-  margin-bottom:24px;
-  letter-spacing:-0.02em;
+  margin-bottom:20px;
+  letter-spacing:-0.01em;
 }
-.section-title span{color:var(--cyan)}
+.section-title span{color:var(--accent)}
 .section-subtitle{
   color:var(--text-dim);
-  max-width:740px;
-  font-size:1.1rem;
-  line-height:1.75;
+  max-width:720px;
+  font-size:1.05rem;
 }
 
 /* ==================== NAVIGATION ==================== */
@@ -98,14 +99,14 @@ img{max-width:100%;display:block}
   position:fixed;
   top:0;left:0;right:0;
   z-index:1000;
-  padding:24px 0;
+  padding:20px 0;
   transition:all var(--transition);
 }
 .nav.scrolled{
-  background:rgba(5,8,16,0.92);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  padding:14px 0;
+  background:rgba(15,17,21,0.94);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  padding:12px 0;
   border-bottom:1px solid var(--border);
 }
 .nav-inner{
@@ -114,60 +115,56 @@ img{max-width:100%;display:block}
   justify-content:space-between;
 }
 .nav-logo{
-  font-family:'Rajdhani',sans-serif;
+  font-family:'Syne',sans-serif;
   font-weight:700;
-  font-size:1.55rem;
+  font-size:1.4rem;
   color:var(--text-bright);
   display:flex;
   align-items:center;
-  gap:12px;
-  letter-spacing:0.5px;
+  gap:10px;
 }
 .nav-logo-mark{
-  width:42px;
-  height:42px;
-  background:linear-gradient(135deg,var(--cyan),#0091ea);
-  border-radius:11px;
+  width:38px;
+  height:38px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-soft));
+  border-radius:10px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:1.15rem;
+  font-size:1.1rem;
   color:var(--bg);
   font-weight:800;
-  box-shadow:0 8px 20px rgba(0,229,255,0.3);
 }
-.nav-logo span{color:var(--cyan)}
+.nav-logo span{color:var(--accent)}
 .nav-links{display:flex;gap:4px;align-items:center}
 .nav-links a{
   color:var(--text-dim);
-  font-size:0.9rem;
+  font-size:0.88rem;
   font-weight:500;
-  padding:10px 18px;
+  padding:8px 16px;
   border-radius:var(--radius-sm);
-  transition:all var(--transition-fast);
-  position:relative;
+  transition:all var(--transition);
 }
 .nav-links a:hover{
-  color:var(--cyan);
-  background:var(--cyan-dim);
+  color:var(--accent);
+  background:var(--accent-dim);
 }
 .nav-cta{
   background:transparent!important;
-  border:1px solid var(--cyan)!important;
-  color:var(--cyan)!important;
+  border:1px solid var(--accent)!important;
+  color:var(--accent)!important;
   font-weight:600!important;
 }
 .nav-cta:hover{
-  background:var(--cyan)!important;
+  background:var(--accent)!important;
   color:var(--bg)!important;
-  transform:translateY(-2px);
 }
 .nav-toggle{
   display:none;
   background:none;
   border:none;
   color:var(--text-bright);
-  font-size:1.7rem;
+  font-size:1.5rem;
   cursor:pointer;
   padding:8px;
 }
@@ -196,188 +193,182 @@ img{max-width:100%;display:block}
   position:absolute;
   inset:0;
   z-index:1;
-  background:linear-gradient(135deg,rgba(5,8,16,0.94) 0%,rgba(5,8,16,0.78) 40%,rgba(5,8,16,0.88) 100%);
+  background:linear-gradient(135deg,rgba(15,17,21,0.96) 0%,rgba(15,17,21,0.85) 50%,rgba(15,17,21,0.95) 100%);
 }
 .hero-grid{
   position:absolute;
   inset:0;
   z-index:2;
   background-image:
-    linear-gradient(rgba(0,229,255,0.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,229,255,0.05) 1px,transparent 1px);
-  background-size:70px 70px;
-  mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%);
-  -webkit-mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%);
+    linear-gradient(rgba(220,161,99,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(220,161,99,0.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse at center,black 20%,transparent 80%);
+  -webkit-mask-image:radial-gradient(ellipse at center,black 20%,transparent 80%);
 }
 .hero-content{
   position:relative;
   z-index:3;
   display:grid;
   grid-template-columns:1fr 1.3fr;
-  gap:80px;
+  gap:60px;
   align-items:center;
-  padding:150px 0 110px;
+  padding:140px 0 100px;
   width:100%;
 }
 .hero-img-wrap{
   position:relative;
-  max-width:430px;
+  max-width:380px;
   margin:0 auto;
 }
 .hero-img{
   position:relative;
   border-radius:var(--radius);
   overflow:hidden;
-  aspect-ratio:3/4;
+  aspect-ratio:1/1;
   background:var(--card);
-  box-shadow:0 30px 80px rgba(0,0,0,0.7);
+  box-shadow:var(--shadow);
 }
 .hero-img img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform var(--transition-slow);
+  transition:transform var(--transition);
 }
-.hero-img:hover img{transform:scale(1.05)}
+.hero-img:hover img{transform:scale(1.04)}
 .hero-img::before{
   content:'';
   position:absolute;
   inset:0;
-  border:2px solid var(--cyan);
+  border:1.5px solid var(--accent);
   border-radius:var(--radius);
   z-index:2;
   pointer-events:none;
 }
 .hero-img-accent{
   position:absolute;
-  top:24px;
-  left:24px;
-  right:-24px;
-  bottom:-24px;
-  border:1px solid var(--cyan-dim);
+  top:16px;
+  left:16px;
+  right:-16px;
+  bottom:-16px;
+  border:1px solid var(--accent-dim);
   border-radius:var(--radius);
   z-index:-1;
 }
 .hero-badge{
   position:absolute;
-  bottom:-20px;
-  right:-20px;
-  background:var(--card);
+  bottom:-14px;
+  right:-14px;
+  background:var(--bg-alt);
   border:1px solid var(--border-light);
-  padding:14px 24px;
+  padding:10px 18px;
   border-radius:var(--radius-sm);
   z-index:3;
   display:flex;
   align-items:center;
-  gap:12px;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  gap:10px;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
 }
 .hero-badge-dot{
-  width:10px;
-  height:10px;
-  background:var(--green);
+  width:8px;
+  height:8px;
+  background:#00e676;
   border-radius:50%;
   animation:pulse 2s infinite;
 }
 @keyframes pulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0.6)}
-  50%{box-shadow:0 0 0 10px rgba(0,230,118,0)}
+  0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0.5)}
+  50%{box-shadow:0 0 0 8px rgba(0,230,118,0)}
 }
 .hero-badge-text{
-  font-size:0.85rem;
+  font-size:0.8rem;
   color:var(--text-bright);
   font-weight:600;
 }
 .hero-text .greeting{
   font-family:'JetBrains Mono',monospace;
-  color:var(--cyan);
-  font-size:1rem;
-  margin-bottom:20px;
-  letter-spacing:1.5px;
-  font-weight:500;
+  color:var(--accent);
+  font-size:0.95rem;
+  margin-bottom:16px;
+  letter-spacing:1px;
 }
 .hero-text h1{
-  font-size:clamp(3rem,7vw,5.2rem);
+  font-size:clamp(2.6rem,6vw,4.4rem);
   color:var(--text-bright);
   margin-bottom:12px;
-  letter-spacing:-0.03em;
-  line-height:1.02;
+  letter-spacing:-0.02em;
 }
 .hero-text h1 span{
   display:block;
-  color:var(--cyan);
-  font-weight:600;
-  font-size:0.48em;
-  margin-top:10px;
+  color:var(--accent);
+  font-size:0.42em;
+  margin-top:8px;
   letter-spacing:0.5px;
 }
 .hero-text .tagline{
-  font-size:1.18rem;
+  font-size:1.05rem;
   color:var(--text-dim);
-  margin:26px 0 38px;
-  max-width:560px;
-  line-height:1.75;
+  margin:20px 0 32px;
+  max-width:580px;
+  line-height:1.7;
 }
 .hero-stats{
   display:flex;
-  gap:22px;
-  margin-bottom:38px;
+  gap:16px;
+  margin-bottom:32px;
   flex-wrap:wrap;
 }
 .hero-stat{
-  padding:20px 24px;
-  background:rgba(17,26,46,0.7);
+  padding:16px 20px;
+  background:rgba(22,24,29,0.8);
   border:1px solid var(--border);
   border-radius:var(--radius-sm);
-  min-width:125px;
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  min-width:115px;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
   transition:all var(--transition);
 }
 .hero-stat:hover{
-  border-color:var(--cyan);
-  transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(0,229,255,0.15);
+  border-color:var(--accent);
+  transform:translateY(-3px);
 }
 .hero-stat-num{
-  font-family:'Rajdhani',sans-serif;
-  font-size:2.3rem;
+  font-family:'Syne',sans-serif;
+  font-size:1.8rem;
   font-weight:700;
-  color:var(--cyan);
+  color:var(--accent);
   line-height:1;
 }
 .hero-stat-label{
-  font-size:0.76rem;
+  font-size:0.72rem;
   color:var(--text-dim);
-  margin-top:8px;
+  margin-top:6px;
   text-transform:uppercase;
-  letter-spacing:1.2px;
-  font-weight:500;
+  letter-spacing:1px;
 }
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .btn{
   display:inline-flex;
   align-items:center;
-  gap:10px;
-  padding:16px 32px;
+  gap:8px;
+  padding:14px 28px;
   border-radius:var(--radius-sm);
   font-weight:600;
-  font-size:0.95rem;
+  font-size:0.9rem;
   transition:all var(--transition);
   cursor:pointer;
   border:none;
   font-family:inherit;
-  letter-spacing:0.3px;
 }
 .btn-primary{
-  background:var(--cyan);
+  background:var(--accent);
   color:var(--bg);
 }
 .btn-primary:hover{
-  background:#33ebff;
-  transform:translateY(-3px);
-  box-shadow:0 14px 34px var(--cyan-glow);
+  background:var(--accent-soft);
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px var(--accent-glow);
 }
 .btn-outline{
   background:transparent;
@@ -385,16 +376,16 @@ img{max-width:100%;display:block}
   border:1px solid var(--border-light);
 }
 .btn-outline:hover{
-  border-color:var(--cyan);
-  color:var(--cyan);
-  transform:translateY(-3px);
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-2px);
 }
 
 /* ==================== ABOUT ==================== */
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1.3fr;
-  gap:100px;
+  gap:60px;
   align-items:center;
 }
 .about-img{
@@ -407,65 +398,51 @@ img{max-width:100%;display:block}
 .about-img img{
   width:100%;
   height:auto;
-  max-height:560px;
-  object-fit:contain;
   display:block;
-  background:var(--bg-alt);
 }
 .about-content h2{
-  font-size:clamp(2.4rem,4vw,3.2rem);
+  font-size:clamp(2rem,3.5vw,2.8rem);
   color:var(--text-bright);
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
-.about-content h2 span{color:var(--cyan)}
+.about-content h2 span{color:var(--accent)}
 .about-content p{
   color:var(--text-dim);
-  margin-bottom:20px;
-  font-size:1.05rem;
-  line-height:1.8;
+  margin-bottom:16px;
+  font-size:0.98rem;
+  line-height:1.75;
 }
 .about-info{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:40px;
+  gap:12px;
+  margin-top:30px;
 }
 .about-info-item{
   display:flex;
-  gap:16px;
+  gap:12px;
   align-items:center;
-  padding:16px;
-  background:var(--card);
+  padding:12px 16px;
+  background:var(--bg-alt);
   border-radius:var(--radius-sm);
   border:1px solid var(--border);
   transition:all var(--transition);
 }
 .about-info-item:hover{
-  border-color:var(--cyan);
-  transform:translateX(4px);
+  border-color:var(--accent);
 }
 .about-info-icon{
-  width:42px;
-  height:42px;
-  min-width:42px;
-  background:var(--cyan-dim);
-  border-radius:var(--radius-sm);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--cyan);
-  font-size:1.15rem;
+  font-size:1.1rem;
+  color:var(--accent);
 }
 .about-info-label{
-  font-size:0.72rem;
+  font-size:0.7rem;
   color:var(--text-dim);
   text-transform:uppercase;
-  letter-spacing:1.2px;
-  margin-bottom:3px;
-  font-weight:500;
+  letter-spacing:1px;
 }
 .about-info-value{
-  font-size:0.92rem;
+  font-size:0.88rem;
   color:var(--text-bright);
   font-weight:600;
 }
@@ -479,319 +456,225 @@ img{max-width:100%;display:block}
   left:50%;
   top:0;
   bottom:0;
-  width:2px;
-  background:linear-gradient(to bottom,var(--cyan),transparent);
+  width:1px;
+  background:linear-gradient(to bottom,var(--accent),transparent);
   transform:translateX(-50%);
 }
 .timeline-item{
   position:relative;
-  margin-bottom:50px;
+  margin-bottom:40px;
   width:50%;
-  padding:0 46px;
+  padding:0 36px;
 }
 .timeline-item:nth-child(odd){left:0;text-align:right}
 .timeline-item:nth-child(even){left:50%}
 .timeline-dot{
   position:absolute;
   top:24px;
-  width:18px;
-  height:18px;
-  background:var(--cyan);
+  width:14px;
+  height:14px;
+  background:var(--accent);
   border-radius:50%;
-  border:3px solid var(--bg);
-  box-shadow:0 0 0 5px var(--cyan-dim);
+  border:2.5px solid var(--bg-alt);
 }
-.timeline-item:nth-child(odd) .timeline-dot{right:-9px}
-.timeline-item:nth-child(even) .timeline-dot{left:-9px}
+.timeline-item:nth-child(odd) .timeline-dot{right:-7px}
+.timeline-item:nth-child(even) .timeline-dot{left:-7px}
 .timeline-card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:32px;
+  padding:26px;
   transition:all var(--transition);
 }
 .timeline-card:hover{
-  border-color:var(--cyan);
-  transform:translateY(-5px);
-  box-shadow:0 15px 40px rgba(0,229,255,0.15);
+  border-color:var(--accent);
+  transform:translateY(-3px);
 }
 .timeline-date{
   font-family:'JetBrains Mono',monospace;
-  color:var(--cyan);
-  font-size:0.85rem;
-  margin-bottom:12px;
-  letter-spacing:1px;
-  font-weight:500;
+  color:var(--accent);
+  font-size:0.8rem;
+  margin-bottom:10px;
 }
 .timeline-card h3{
-  font-size:1.35rem;
+  font-size:1.25rem;
   color:var(--text-bright);
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
 .timeline-card .company{
-  color:var(--amber);
+  color:var(--text-dim);
   font-weight:600;
   margin-bottom:16px;
-  font-size:0.98rem;
+  font-size:0.9rem;
 }
 .timeline-card ul{list-style:none}
 .timeline-card li{
   color:var(--text-dim);
-  font-size:0.92rem;
-  margin-bottom:10px;
-  padding-left:20px;
+  font-size:0.88rem;
+  margin-bottom:8px;
+  padding-left:16px;
   position:relative;
-  line-height:1.65;
+  line-height:1.6;
 }
 .timeline-card li::before{
-  content:'▸';
+  content:'▪';
   position:absolute;
   left:0;
-  color:var(--cyan);
+  color:var(--accent);
 }
 .timeline-item:nth-child(odd) .timeline-card li{
   padding-left:0;
-  padding-right:20px;
+  padding-right:16px;
 }
 .timeline-item:nth-child(odd) .timeline-card li::before{
   left:auto;
   right:0;
 }
 
-/* ==================== EDUCATION ==================== */
-.edu-card{
+/* ==================== CERTIFICATES SECTION ==================== */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  max-width:1200px;
+  margin:40px auto 0;
+}
+.cert-card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:46px;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  gap:38px;
-  align-items:center;
-  max-width:940px;
-  margin:0 auto;
+  overflow:hidden;
   transition:all var(--transition);
 }
-.edu-card:hover{border-color:var(--cyan)}
-.edu-icon{
-  width:90px;
-  height:90px;
-  background:linear-gradient(135deg,var(--cyan-dim),rgba(0,229,255,0.05));
-  border-radius:var(--radius);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:2.4rem;
+.cert-card:hover{
+  border-color:var(--accent);
+  transform:translateY(-4px);
 }
-.edu-info h3{
-  font-size:1.6rem;
-  color:var(--text-bright);
-  margin-bottom:8px;
+.cert-img-wrap{
+  aspect-ratio:1.4/1;
+  background:var(--bg-alt);
+  overflow:hidden;
+  border-bottom:1px solid var(--border);
 }
-.edu-info .school{
-  color:var(--cyan);
-  font-weight:600;
-  margin-bottom:12px;
+.cert-img-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.cert-body{
+  padding:20px;
+}
+.cert-body h4{
   font-size:1.05rem;
-}
-.edu-info p{
-  color:var(--text-dim);
-  font-size:0.94rem;
+  color:var(--text-bright);
   margin-bottom:6px;
-  line-height:1.65;
 }
-.edu-award{
-  background:var(--amber-dim);
-  border:1px solid rgba(255,179,0,0.35);
-  padding:20px 26px;
-  border-radius:var(--radius-sm);
-  text-align:center;
-  min-width:170px;
-}
-.edu-award-label{
-  font-size:0.7rem;
-  color:var(--amber);
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  margin-bottom:8px;
+.cert-body p{
+  font-size:0.82rem;
+  color:var(--accent);
   font-family:'JetBrains Mono',monospace;
-  font-weight:600;
-}
-.edu-award-value{
-  font-size:1.9rem;
-  font-family:'Rajdhani',sans-serif;
-  font-weight:700;
-  color:var(--amber);
-  line-height:1;
 }
 
-/* ==================== SKILLS ==================== */
-.skills{background:var(--bg-alt)}
+/* ==================== EDUCATION & SKILLS ==================== */
 .skills-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-  gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
 }
 .skill-category{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:36px;
+  padding:30px;
   transition:all var(--transition);
 }
 .skill-category:hover{
-  border-color:var(--cyan);
-  transform:translateY(-6px);
-  box-shadow:0 18px 45px rgba(0,229,255,0.12);
+  border-color:var(--accent);
+  transform:translateY(-4px);
 }
 .skill-category-header{
   display:flex;
   align-items:center;
-  gap:16px;
-  margin-bottom:28px;
+  gap:12px;
+  margin-bottom:24px;
 }
 .skill-category-icon{
-  width:50px;
-  height:50px;
-  background:var(--cyan-dim);
+  width:40px;
+  height:40px;
+  background:var(--accent-dim);
   border-radius:var(--radius-sm);
   display:flex;
   align-items:center;
   justify-content:center;
-  color:var(--cyan);
-  font-size:1.5rem;
+  color:var(--accent);
+  font-size:1.25rem;
 }
 .skill-category h3{
-  font-size:1.3rem;
+  font-size:1.15rem;
   color:var(--text-bright);
 }
-.skill-item{margin-bottom:20px}
+.skill-item{margin-bottom:16px}
 .skill-header{
   display:flex;
   justify-content:space-between;
-  margin-bottom:12px;
+  margin-bottom:8px;
 }
 .skill-name{
-  font-size:0.94rem;
+  font-size:0.9rem;
   color:var(--text);
   font-weight:500;
 }
 .skill-level{
   font-family:'JetBrains Mono',monospace;
-  font-size:0.84rem;
-  color:var(--cyan);
-  font-weight:600;
+  font-size:0.8rem;
+  color:var(--accent);
 }
 .skill-bar{
-  height:7px;
-  background:rgba(139,149,165,0.12);
-  border-radius:4px;
+  height:6px;
+  background:rgba(255,255,255,0.04);
+  border-radius:3px;
   overflow:hidden;
 }
 .skill-fill{
   height:100%;
-  background:linear-gradient(90deg,var(--cyan),#33ebff);
-  border-radius:4px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-soft));
+  border-radius:3px;
   width:0;
-  transition:width 1.7s cubic-bezier(0.4,0,0.2,1);
-}
-
-/* ==================== LANGUAGES ==================== */
-.lang-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
-  gap:28px;
-  max-width:940px;
-  margin:75px auto 0;
-}
-.lang-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:32px;
-  transition:all var(--transition);
-}
-.lang-card:hover{border-color:var(--cyan)}
-.lang-card h4{
-  font-size:1.25rem;
-  color:var(--text-bright);
-  margin-bottom:8px;
-}
-.lang-card .lang-type{
-  font-size:0.82rem;
-  color:var(--cyan);
-  font-family:'JetBrains Mono',monospace;
-  margin-bottom:22px;
-  letter-spacing:1px;
-  font-weight:500;
-}
-.lang-level{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:12px;
-  font-size:0.88rem;
-}
-.lang-level-label{
-  width:125px;
-  color:var(--text-dim);
-  font-size:0.85rem;
-}
-.lang-level-bar{
-  flex:1;
-  height:7px;
-  background:rgba(139,149,165,0.12);
-  border-radius:4px;
-  overflow:hidden;
-}
-.lang-level-fill{
-  height:100%;
-  background:linear-gradient(90deg,var(--cyan),#33ebff);
-  border-radius:4px;
-}
-.lang-level-val{
-  width:34px;
-  text-align:right;
-  font-family:'JetBrains Mono',monospace;
-  color:var(--cyan);
-  font-size:0.84rem;
-  font-weight:600;
+  transition:width 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* ==================== PROJECTS ==================== */
 .projects-filter{
   display:flex;
-  gap:12px;
+  gap:8px;
   flex-wrap:wrap;
-  margin-bottom:55px;
+  margin-bottom:40px;
   justify-content:center;
 }
 .filter-btn{
-  padding:11px 22px;
+  padding:8px 18px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:100px;
   color:var(--text-dim);
-  font-size:0.88rem;
+  font-size:0.82rem;
   font-weight:500;
-  cursor:pointer;
-  transition:all var(--transition-fast);
-  font-family:inherit;
+  transition:all var(--transition);
 }
 .filter-btn:hover{
-  border-color:var(--cyan);
-  color:var(--cyan);
+  border-color:var(--accent);
+  color:var(--accent);
 }
 .filter-btn.active{
-  background:var(--cyan);
+  background:var(--accent);
   color:var(--bg);
-  border-color:var(--cyan);
+  border-color:var(--accent);
   font-weight:600;
 }
 .projects-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(380px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+  gap:24px;
 }
 .project-card{
   background:var(--card);
@@ -803,13 +686,13 @@ img{max-width:100%;display:block}
   cursor:pointer;
 }
 .project-card:hover{
-  transform:translateY(-8px);
-  border-color:var(--cyan);
-  box-shadow:0 28px 55px rgba(0,0,0,0.65);
+  transform:translateY(-6px);
+  border-color:var(--accent);
+  box-shadow:var(--shadow);
 }
 .project-card.hidden{display:none}
 .project-img{
-  height:280px;
+  height:240px;
   overflow:hidden;
   position:relative;
   background:var(--bg-alt);
@@ -821,9 +704,9 @@ img{max-width:100%;display:block}
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform var(--transition-slow);
+  transition:transform var(--transition);
 }
-.project-card:hover .project-img img{transform:scale(1.08)}
+.project-card:hover .project-img img{transform:scale(1.05)}
 .project-img-placeholder{
   width:100%;
   height:100%;
@@ -832,115 +715,112 @@ img{max-width:100%;display:block}
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:10px;
   color:var(--text-dim);
 }
 .project-img-placeholder-icon{
-  width:70px;
-  height:70px;
-  background:var(--cyan-dim);
+  width:60px;
+  height:60px;
+  background:var(--accent-dim);
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:1.8rem;
-  color:var(--cyan);
+  font-size:1.5rem;
+  color:var(--accent);
 }
 .project-img-placeholder-text{
   font-family:'JetBrains Mono',monospace;
-  font-size:0.85rem;
+  font-size:0.8rem;
   letter-spacing:1px;
 }
 .project-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(to top,rgba(5,8,16,0.96) 0%,transparent 65%);
+  background:linear-gradient(to top,rgba(15,17,21,0.92) 0%,transparent 60%);
   display:flex;
   align-items:flex-end;
   justify-content:space-between;
-  padding:24px;
+  padding:20px;
 }
 .project-tag{
-  background:var(--cyan);
+  background:var(--accent);
   color:var(--bg);
-  padding:6px 16px;
+  padding:4px 12px;
   border-radius:100px;
-  font-size:0.74rem;
+  font-size:0.7rem;
   font-weight:700;
   font-family:'JetBrains Mono',monospace;
-  letter-spacing:1px;
 }
 .project-contribution{
-  background:rgba(5,8,16,0.88);
-  border:1px solid var(--cyan);
-  color:var(--cyan);
-  padding:6px 14px;
+  background:rgba(15,17,21,0.85);
+  border:1px solid var(--accent);
+  color:var(--accent);
+  padding:4px 10px;
   border-radius:100px;
-  font-size:0.74rem;
+  font-size:0.7rem;
   font-weight:700;
   font-family:'JetBrains Mono',monospace;
 }
-.project-body{padding:28px}
+.project-body{padding:24px}
 .project-body h3{
-  font-size:1.25rem;
+  font-size:1.15rem;
   color:var(--text-bright);
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 .project-client{
-  color:var(--amber);
-  font-size:0.88rem;
+  color:var(--accent-soft);
+  font-size:0.82rem;
   font-weight:600;
-  margin-bottom:16px;
+  margin-bottom:12px;
 }
 .project-meta{
   display:flex;
-  gap:20px;
-  margin-bottom:16px;
-  font-size:0.85rem;
+  gap:16px;
+  margin-bottom:12px;
+  font-size:0.78rem;
   color:var(--text-dim);
   flex-wrap:wrap;
 }
-.project-meta span{display:flex;align-items:center;gap:6px}
+.project-meta span{display:flex;align-items:center;gap:4px}
 .project-body p{
-  font-size:0.92rem;
+  font-size:0.88rem;
   color:var(--text-dim);
-  line-height:1.75;
-  margin-bottom:16px;
+  line-height:1.6;
+  margin-bottom:14px;
 }
-.project-products{display:flex;flex-wrap:wrap;gap:8px}
+.project-products{display:flex;flex-wrap:wrap;gap:6px}
 .product-tag{
-  background:var(--cyan-dim);
-  color:var(--cyan);
-  padding:5px 14px;
+  background:var(--accent-dim);
+  color:var(--accent-soft);
+  padding:4px 10px;
   border-radius:100px;
-  font-size:0.76rem;
+  font-size:0.72rem;
   font-family:'JetBrains Mono',monospace;
-  font-weight:500;
 }
 .project-view-more{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  color:var(--cyan);
-  font-size:0.88rem;
+  gap:6px;
+  color:var(--accent);
+  font-size:0.82rem;
   font-weight:600;
-  margin-top:16px;
+  margin-top:14px;
   font-family:'JetBrains Mono',monospace;
-  letter-spacing:0.5px;
 }
 .project-view-more::after{
   content:'→';
-  transition:transform var(--transition-fast);
+  transition:transform var(--transition);
 }
-.project-card:hover .project-view-more::after{transform:translateX(5px)}
+.project-card:hover .project-view-more::after{transform:translateX(4px)}
 
 /* ==================== PROJECT MODAL ==================== */
 .modal-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.88);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
   z-index:2000;
   opacity:0;
   pointer-events:none;
@@ -955,22 +835,22 @@ img{max-width:100%;display:block}
   background:var(--bg-alt);
   border:1px solid var(--border);
   border-radius:var(--radius-lg);
-  max-width:1140px;
+  max-width:1040px;
   width:100%;
-  max-height:92vh;
+  max-height:90vh;
   overflow-y:auto;
   position:relative;
-  transform:scale(0.92) translateY(40px);
+  transform:scale(0.94);
   transition:transform var(--transition);
 }
-.modal-overlay.active .modal{transform:scale(1) translateY(0)}
+.modal-overlay.active .modal{transform:scale(1)}
 .modal-close{
   position:sticky;
   top:0;
   float:right;
-  margin:22px 22px 0 0;
-  width:46px;
-  height:46px;
+  margin:16px 16px 0 0;
+  width:38px;
+  height:38px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:50%;
@@ -978,20 +858,19 @@ img{max-width:100%;display:block}
   align-items:center;
   justify-content:center;
   color:var(--text-bright);
-  font-size:1.5rem;
+  font-size:1.1rem;
   cursor:pointer;
   z-index:10;
-  transition:all var(--transition-fast);
+  transition:all var(--transition);
 }
 .modal-close:hover{
-  background:var(--cyan);
+  background:var(--accent);
   color:var(--bg);
-  border-color:var(--cyan);
   transform:rotate(90deg);
 }
 .modal-hero{
   position:relative;
-  height:440px;
+  height:340px;
   overflow:hidden;
   background:var(--bg);
 }
@@ -1008,19 +887,8 @@ img{max-width:100%;display:block}
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:16px;
+  gap:12px;
   color:var(--text-dim);
-}
-.modal-hero-placeholder-icon{
-  width:100px;
-  height:100px;
-  background:var(--cyan-dim);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:2.5rem;
-  color:var(--cyan);
 }
 .modal-hero-overlay{
   position:absolute;
@@ -1029,122 +897,113 @@ img{max-width:100%;display:block}
 }
 .modal-hero-content{
   position:absolute;
-  bottom:32px;
-  left:44px;
-  right:44px;
+  bottom:24px;
+  left:32px;
+  right:32px;
   z-index:2;
 }
 .modal-hero-tag{
   display:inline-block;
-  background:var(--cyan);
+  background:var(--accent);
   color:var(--bg);
-  padding:7px 18px;
+  padding:6px 14px;
   border-radius:100px;
-  font-size:0.8rem;
+  font-size:0.75rem;
   font-weight:700;
   font-family:'JetBrains Mono',monospace;
-  letter-spacing:1px;
-  margin-bottom:16px;
+  margin-bottom:12px;
 }
 .modal-hero-title{
-  font-size:clamp(2rem,4vw,2.8rem);
+  font-size:clamp(1.8rem,3vw,2.4rem);
   color:var(--text-bright);
-  margin-bottom:10px;
-  letter-spacing:-0.01em;
+  margin-bottom:8px;
 }
 .modal-hero-client{
-  color:var(--amber);
-  font-size:1.05rem;
+  color:var(--accent-soft);
+  font-size:0.95rem;
   font-weight:600;
 }
-.modal-body{padding:44px}
+.modal-body{padding:32px}
 .modal-meta-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:20px;
-  margin-bottom:40px;
-  padding-bottom:32px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+  margin-bottom:32px;
+  padding-bottom:24px;
   border-bottom:1px solid var(--border);
 }
 .modal-meta-item{
   background:var(--card);
-  padding:20px;
+  padding:16px;
   border-radius:var(--radius-sm);
   border:1px solid var(--border);
-  transition:all var(--transition-fast);
 }
-.modal-meta-item:hover{border-color:var(--cyan)}
 .modal-meta-label{
-  font-size:0.72rem;
+  font-size:0.68rem;
   color:var(--text-dim);
   text-transform:uppercase;
-  letter-spacing:1.5px;
+  letter-spacing:1px;
   font-family:'JetBrains Mono',monospace;
-  margin-bottom:8px;
-  font-weight:500;
+  margin-bottom:6px;
 }
 .modal-meta-value{
-  font-size:1.05rem;
+  font-size:0.95rem;
   color:var(--text-bright);
   font-weight:600;
 }
-.modal-description{margin-bottom:44px}
+.modal-description{margin-bottom:32px}
 .modal-description h4{
-  font-size:1.35rem;
+  font-size:1.2rem;
   color:var(--text-bright);
-  margin-bottom:16px;
+  margin-bottom:12px;
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 .modal-description h4::before{
   content:'';
-  width:4px;
-  height:24px;
-  background:var(--cyan);
-  border-radius:2px;
+  width:3px;
+  height:20px;
+  background:var(--accent);
 }
 .modal-description p{
   color:var(--text-dim);
-  font-size:1rem;
-  line-height:1.85;
-  margin-bottom:16px;
+  font-size:0.94rem;
+  line-height:1.75;
+  margin-bottom:12px;
 }
-.modal-description ul{list-style:none;margin-top:16px}
+.modal-description ul{list-style:none;margin-top:12px}
 .modal-description ul li{
   color:var(--text-dim);
-  font-size:0.94rem;
-  padding:9px 0 9px 24px;
+  font-size:0.88rem;
+  padding:6px 0 6px 18px;
   position:relative;
-  line-height:1.7;
 }
 .modal-description ul li::before{
-  content:'';
+  content:'▪';
   position:absolute;
   left:0;
-  color:var(--cyan);
-  font-weight:bold;
+  color:var(--accent);
 }
-.modal-gallery{margin-bottom:44px}
+.modal-gallery{margin-bottom:32px}
 .modal-gallery h4{
-  font-size:1.35rem;
+  font-size:1.2rem;
   color:var(--text-bright);
-  margin-bottom:20px;
+  margin-bottom:16px;
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 .modal-gallery h4::before{
   content:'';
-  width:4px;
-  height:24px;
-  background:var(--cyan);
-  border-radius:2px;
+  width:3px;
+  height:20px;
+  background:var(--accent);
 }
 .modal-gallery-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
 }
 .modal-gallery-item{
   border-radius:var(--radius-sm);
@@ -1153,143 +1012,72 @@ img{max-width:100%;display:block}
   background:var(--card);
   border:1px solid var(--border);
   cursor:pointer;
-  transition:all var(--transition-fast);
+  transition:all var(--transition);
 }
 .modal-gallery-item:hover{
-  border-color:var(--cyan);
-  transform:scale(1.03);
+  border-color:var(--accent);
+  transform:scale(1.02);
 }
 .modal-gallery-item img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-.modal-products{margin-bottom:44px}
+.modal-products{margin-bottom:32px}
 .modal-products h4{
-  font-size:1.35rem;
+  font-size:1.2rem;
   color:var(--text-bright);
-  margin-bottom:20px;
+  margin-bottom:16px;
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 .modal-products h4::before{
   content:'';
-  width:4px;
-  height:24px;
-  background:var(--cyan);
-  border-radius:2px;
+  width:3px;
+  height:20px;
+  background:var(--accent);
 }
-.modal-products-list{display:flex;flex-wrap:wrap;gap:12px}
+.modal-products-list{display:flex;flex-wrap:wrap;gap:10px}
 .modal-product-tag{
-  background:var(--cyan-dim);
-  color:var(--cyan);
-  padding:9px 20px;
+  background:var(--accent-dim);
+  color:var(--accent-soft);
+  padding:6px 14px;
   border-radius:100px;
-  font-size:0.88rem;
+  font-size:0.8rem;
   font-family:'JetBrains Mono',monospace;
-  font-weight:500;
-  border:1px solid rgba(0,229,255,0.2);
 }
 .modal-contribution{
-  background:linear-gradient(135deg,var(--cyan-dim),rgba(0,229,255,0.05));
-  border:1px solid rgba(0,229,255,0.3);
+  background:linear-gradient(135deg,var(--accent-dim),transparent);
+  border:1px solid rgba(220,161,99,0.15);
   border-radius:var(--radius);
-  padding:30px;
+  padding:24px;
   display:flex;
   align-items:center;
-  gap:26px;
+  gap:20px;
 }
 .modal-contribution-icon{
-  width:85px;
-  height:85px;
-  min-width:85px;
-  background:var(--cyan);
+  width:64px;
+  height:64px;
+  min-width:64px;
+  background:var(--accent);
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:1.9rem;
+  font-size:1.4rem;
   font-weight:800;
   color:var(--bg);
-  font-family:'Rajdhani',sans-serif;
-  box-shadow:0 10px 30px var(--cyan-glow);
+  font-family:'Syne',sans-serif;
 }
 .modal-contribution-text h4{
-  font-size:1.25rem;
+  font-size:1.1rem;
   color:var(--text-bright);
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
 .modal-contribution-text p{
   color:var(--text-dim);
-  font-size:0.95rem;
-  line-height:1.7;
-}
-
-/* ==================== RECOMMENDATIONS ==================== */
-.recommendations{background:var(--bg-alt)}
-.rec-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(370px,1fr));
-  gap:30px;
-}
-.rec-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:38px;
-  position:relative;
-  transition:all var(--transition);
-}
-.rec-card:hover{
-  border-color:var(--cyan);
-  transform:translateY(-6px);
-  box-shadow:0 18px 45px rgba(0,229,255,0.12);
-}
-.rec-quote{
-  font-size:3.8rem;
-  color:var(--cyan);
-  opacity:0.25;
-  line-height:1;
-  font-family:Georgia,serif;
-  position:absolute;
-  top:22px;
-  right:30px;
-}
-.rec-text{
-  color:var(--text);
-  font-size:1rem;
-  line-height:1.85;
-  margin-bottom:30px;
-  font-style:italic;
-}
-.rec-author{display:flex;gap:16px;align-items:center}
-.rec-avatar{
-  width:56px;
-  height:56px;
-  background:linear-gradient(135deg,var(--cyan),var(--purple));
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--bg);
-  font-weight:700;
-  font-size:1.25rem;
-}
-.rec-author-info h4{
-  font-size:1.08rem;
-  color:var(--text-bright);
-  margin-bottom:4px;
-}
-.rec-author-info p{
-  font-size:0.87rem;
-  color:var(--text-dim);
-}
-.rec-contact{
-  font-size:0.82rem;
-  color:var(--cyan);
-  font-family:'JetBrains Mono',monospace;
-  margin-top:6px;
+  font-size:0.88rem;
 }
 
 /* ==================== CONTACT ==================== */
@@ -1297,45 +1085,44 @@ img{max-width:100%;display:block}
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 1.3fr;
-  gap:75px;
+  gap:50px;
 }
-.contact-info{display:flex;flex-direction:column;gap:20px}
+.contact-info{display:flex;flex-direction:column;gap:16px}
 .contact-item{
   display:flex;
-  gap:20px;
-  align-items:flex-start;
-  padding:24px;
+  gap:16px;
+  align-items:center;
+  padding:20px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
   transition:all var(--transition);
 }
 .contact-item:hover{
-  border-color:var(--cyan);
-  transform:translateX(6px);
+  border-color:var(--accent);
+  transform:translateX(4px);
 }
 .contact-icon{
-  width:54px;
-  height:54px;
-  min-width:54px;
-  background:var(--cyan-dim);
+  width:46px;
+  height:46px;
+  min-width:46px;
+  background:var(--accent-dim);
   border-radius:var(--radius-sm);
   display:flex;
   align-items:center;
   justify-content:center;
-  color:var(--cyan);
-  font-size:1.35rem;
+  color:var(--accent);
+  font-size:1.2rem;
 }
 .contact-item h4{
-  font-size:0.78rem;
+  font-size:0.72rem;
   color:var(--text-dim);
   text-transform:uppercase;
-  letter-spacing:1.5px;
-  margin-bottom:6px;
-  font-weight:500;
+  letter-spacing:1px;
+  margin-bottom:4px;
 }
 .contact-item p{
-  font-size:1rem;
+  font-size:0.92rem;
   color:var(--text-bright);
   font-weight:500;
 }
@@ -1343,77 +1130,76 @@ img{max-width:100%;display:block}
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:46px;
+  padding:32px;
 }
-.form-group{margin-bottom:24px}
+.form-group{margin-bottom:20px}
 .form-group label{
   display:block;
-  font-size:0.88rem;
+  font-size:0.8rem;
   font-weight:600;
   color:var(--text-bright);
-  margin-bottom:12px;
+  margin-bottom:8px;
 }
 .form-group input,.form-group textarea{
   width:100%;
-  padding:16px 20px;
+  padding:12px 16px;
   background:var(--bg);
   border:1px solid var(--border);
   border-radius:var(--radius-sm);
   font-family:inherit;
-  font-size:1rem;
+  font-size:0.9rem;
   color:var(--text-bright);
-  transition:all var(--transition-fast);
+  transition:all var(--transition);
 }
 .form-group input:focus,.form-group textarea:focus{
   outline:none;
-  border-color:var(--cyan);
-  box-shadow:0 0 0 3px var(--cyan-dim);
+  border-color:var(--accent);
 }
-.form-group textarea{resize:vertical;min-height:140px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
 /* ==================== FOOTER ==================== */
 .footer{
   background:var(--bg);
   border-top:1px solid var(--border);
-  padding:75px 0 30px;
+  padding:60px 0 30px;
 }
 .footer-grid{
   display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:55px;
-  margin-bottom:55px;
+  grid-template-columns:1.8fr 1fr 1fr;
+  gap:40px;
+  margin-bottom:40px;
 }
 .footer-brand h3{
-  font-family:'Rajdhani',sans-serif;
-  font-size:1.65rem;
+  font-family:'Syne',sans-serif;
+  font-size:1.4rem;
   color:var(--text-bright);
-  margin-bottom:16px;
+  margin-bottom:12px;
 }
-.footer-brand h3 span{color:var(--cyan)}
+.footer-brand h3 span{color:var(--accent)}
 .footer-brand p{
   color:var(--text-dim);
-  font-size:0.94rem;
-  max-width:360px;
-  line-height:1.75;
+  font-size:0.88rem;
+  max-width:340px;
+  line-height:1.65;
 }
 .footer-col h4{
   color:var(--text-bright);
-  font-size:1.08rem;
-  margin-bottom:20px;
+  font-size:0.95rem;
+  margin-bottom:16px;
 }
 .footer-col ul{list-style:none}
-.footer-col li{margin-bottom:13px}
+.footer-col li{margin-bottom:10px}
 .footer-col a{
   color:var(--text-dim);
-  font-size:0.94rem;
-  transition:color var(--transition-fast);
+  font-size:0.88rem;
+  transition:color var(--transition);
 }
-.footer-col a:hover{color:var(--cyan)}
-.footer-social{display:flex;gap:14px;margin-top:22px}
+.footer-col a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:10px;margin-top:16px}
 .footer-social a{
-  width:46px;
-  height:46px;
+  width:38px;
+  height:38px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius-sm);
@@ -1421,44 +1207,42 @@ img{max-width:100%;display:block}
   align-items:center;
   justify-content:center;
   color:var(--text-dim);
-  transition:all var(--transition-fast);
+  transition:all var(--transition);
   font-weight:700;
 }
 .footer-social a:hover{
-  background:var(--cyan);
+  background:var(--accent);
   color:var(--bg);
-  border-color:var(--cyan);
-  transform:translateY(-4px);
+  border-color:var(--accent);
 }
 .footer-bottom{
-  padding-top:30px;
+  padding-top:24px;
   border-top:1px solid var(--border);
   text-align:center;
-  font-size:0.88rem;
+  font-size:0.8rem;
   color:var(--text-dim);
 }
 
-/* ==================== ANIMATIONS ==================== */
+/* ==================== SCROLL ANIMATIONS ==================== */
 .fade-up{
   opacity:0;
-  transform:translateY(40px);
-  transition:all 0.9s cubic-bezier(0.4,0,0.2,1);
+  transform:translateY(30px);
+  transition:all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .fade-up.visible{opacity:1;transform:translateY(0)}
 
 /* ==================== RESPONSIVE ==================== */
 @media(max-width:1080px){
-  .hero-content{grid-template-columns:1fr;gap:60px;padding:130px 0 90px}
-  .hero-img-wrap{max-width:360px}
-  .about-grid,.contact-grid{grid-template-columns:1fr;gap:60px}
-  .timeline::before{left:22px}
-  .timeline-item{width:100%;left:0!important;padding-left:58px;padding-right:0;text-align:left!important}
-  .timeline-item:nth-child(odd) .timeline-card li{padding-left:20px;padding-right:0}
+  .hero-content{grid-template-columns:1fr;gap:40px;padding:120px 0 80px}
+  .hero-img-wrap{max-width:320px}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .timeline::before{left:20px}
+  .timeline-item{width:100%;left:0!important;padding-left:46px;padding-right:0;text-align:left!important}
+  .timeline-item:nth-child(odd) .timeline-card li{padding-left:16px;padding-right:0}
   .timeline-item:nth-child(odd) .timeline-card li::before{left:0;right:auto}
   .timeline-dot{left:13px!important;right:auto!important}
-  .edu-card{grid-template-columns:1fr;text-align:center}
   .footer-grid{grid-template-columns:1fr}
-  .projects-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+  .projects-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 }
 @media(max-width:768px){
   .nav-links{
@@ -1469,39 +1253,24 @@ img{max-width:100%;display:block}
     right:0;
     background:var(--bg);
     flex-direction:column;
-    padding:20px;
+    padding:16px;
     border-bottom:1px solid var(--border);
     gap:4px;
   }
   .nav-links.open{display:flex}
   .nav-toggle{display:block}
-  .section{padding:80px 0}
-  .hero-content{padding:110px 0 70px}
-  .hero-stats{gap:14px}
-  .hero-stat{min-width:110px;padding:16px 18px}
-  .hero-stat-num{font-size:1.9rem}
+  .section{padding:60px 0}
+  .hero-content{padding:100px 0 60px}
+  .hero-stats{gap:10px}
+  .hero-stat{min-width:100px;padding:12px 14px}
+  .hero-stat-num{font-size:1.5rem}
   .about-info,.form-row{grid-template-columns:1fr}
-  .modal-body{padding:26px}
-  .modal-hero{height:300px}
-  .modal-hero-content{left:26px;right:26px;bottom:22px}
+  .modal-body{padding:20px}
+  .modal-hero{height:260px}
+  .modal-hero-content{left:20px;right:20px;bottom:16px}
   .projects-grid{grid-template-columns:1fr}
-  .modal-gallery-grid{grid-template-columns:1fr 1fr}
-  .container{padding:0 22px}
-  .modal-contribution{flex-direction:column;text-align:center}
+  .container{padding:0 20px}
 }
-@media(max-width:480px){
-  .hero-text h1{font-size:2.5rem}
-  .hero-img-wrap{max-width:290px}
-  .modal-gallery-grid{grid-template-columns:1fr}
-  .section-title{font-size:2rem}
-}
-
-/* ==================== SCROLLBAR ==================== */
-::-webkit-scrollbar{width:10px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--card);border-radius:5px}
-::-webkit-scrollbar-thumb:hover{background:var(--cyan)}
-.modal::-webkit-scrollbar{width:8px}
 </style>
 </head>
 <body>
@@ -1510,17 +1279,16 @@ img{max-width:100%;display:block}
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#home" class="nav-logo">
-      <div class="nav-logo-mark">A</div>
-      Abdu<span>.</span>
+      <div class="nav-logo-mark">B</div>
+      Beamlak<span>.</span>
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
+      <a href="#skills">Skills & Education</a>
       <a href="#projects">Projects</a>
-      <a href="#recommendations">Recommendations</a>
+      <a href="#certificates">Certificates</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
@@ -1530,7 +1298,7 @@ img{max-width:100%;display:block}
 <!-- ==================== HERO ==================== -->
 <section class="hero" id="home">
   <div class="hero-banner-wrap">
-    <img class="hero-banner" src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868693/Gemini_Generated_Image_q9bke7q9bke7q9bk_hafbep.png" alt="Industrial Piping Design Banner">
+    <img class="hero-banner" src="https://res.cloudinary.com/de5casjbu/image/upload/v1782225559/5899963404942773487_hpu6vb.jpg" alt="Piping Structural Study background">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-grid"></div>
@@ -1538,39 +1306,35 @@ img{max-width:100%;display:block}
     <div class="hero-content">
       <div class="hero-img-wrap fade-up">
         <div class="hero-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1777020284/Abdu_photo_zbhh02.jpg" alt="Abdu Demle Melaku">
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782290586/BAM_PICTURE_ocnzbs.jpg" alt="Beamlak Alemayehu">
         </div>
         <div class="hero-img-accent"></div>
         <div class="hero-badge">
           <div class="hero-badge-dot"></div>
-          <div class="hero-badge-text">Available for work</div>
+          <div class="hero-badge-text">Open to Opportunities</div>
         </div>
       </div>
       <div class="hero-text fade-up">
-        <div class="greeting">&gt; Hello, my name is</div>
-        <h1>Abdu Demle Melaku<span>Piping Design Engineer & Team Leader</span></h1>
-        <p class="tagline">Mechanical Engineer specializing in petrochemical piping design with 2+ years of hands-on experience using AVEVA PDMS, E3D, Paragon, and Navisworks. Currently leading piping design teams at CRTEC, delivering 17+ industrial projects across Ethiopia and beyond.</p>
+        <div class="greeting">&gt; Piping Design Engineer</div>
+        <h1>Beamlak Alemayehu<span>Chemical Engineer by Training</span></h1>
+        <p class="tagline">Over 1.5 years of industrial experience specializing in 3D plant design, pipe routing, equipment modeling, and isometric generation. Skilled in AVEVA E3D/PDMS, Navisworks, and CAESAR II, with a proven history of contributing to multi-sector petrochemical and utility projects.</p>
         <div class="hero-stats">
           <div class="hero-stat">
-            <div class="hero-stat-num" data-count="17">0</div>
-            <div class="hero-stat-label">Projects</div>
+            <div class="hero-stat-num" data-count="7">0</div>
+            <div class="hero-stat-label">Industrial Projects</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-num" data-count="100">0</div>
-            <div class="hero-stat-label">K+ Man-Hours</div>
+            <div class="hero-stat-num">1.5+</div>
+            <div class="hero-stat-label">Years of Experience</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-num">3.89</div>
-            <div class="hero-stat-label">CGPA</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num" data-count="2">0</div>
-            <div class="hero-stat-label">Years Exp.</div>
+            <div class="hero-stat-num">BS</div>
+            <div class="hero-stat-label">Chemical Eng.</div>
           </div>
         </div>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get In Touch →</a>
-          <a href="#projects" class="btn btn-outline">View All 17 Projects</a>
+          <a href="#contact" class="btn btn-primary">Connect →</a>
+          <a href="#projects" class="btn btn-outline">Explore Projects</a>
         </div>
       </div>
     </div>
@@ -1582,38 +1346,29 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="about-grid">
       <div class="about-img fade-up">
-        <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868693/LINKIDIN_xy3shx.png" alt="Abdu Demle Melaku - LinkedIn Profile">
+        <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782225559/5899963404942773487_hpu6vb.jpg" alt="Piping layout model">
       </div>
       <div class="about-content fade-up">
-        <div class="section-label">About Me</div>
-        <h2>Engineering the <span>Future</span> of Industrial Plants</h2>
-        <p>I'm a Mechanical Engineer specializing in petrochemical piping design with 2+ years of hands-on experience using AVEVA PDMS, E3D, Paragon, and Navisworks. I'm skilled in 3D plant modeling, piping component database development, pipe specification building (SPECON), isometric drawing preparation, and clash detection.</p>
-        <p>Currently serving as Piping Designer and Team Leader at CRTEC, I manage piping design deliverables for petrochemical projects following international engineering standards. Previously, I designed and managed two complete industrial machines from concept to fabrication at ZG Industrial Automation.</p>
-        <p>I'm an academic topper with CGPA 3.89 and Best Academic Achievement Medal from Wollo University, and I'm seeking international opportunities in oil & gas and petrochemical engineering.</p>
+        <div class="section-label">Executive Profile</div>
+        <h2>Applying <span>Technical Rigor</span> to Process Plant Design</h2>
+        <p>I am a process-focused Piping Designer and Chemical Engineer possessing a robust foundation in equipment configuration, material management (MTOs), and pipe support layouts. Through my background at CRTEC, I have coordinated designs for several complex chemical plants, ensuring alignment with global construction, anti-corrosion, and insulation standards.</p>
+        <p>Currently, I am accelerating my core specialized knowledge in mechanical stress analysis and pipe behavior through a selective 6-month structural and pipe stress mentorship under the guidance of industry expert Zdravko Ivančić.</p>
         <div class="about-info">
           <div class="about-info-item">
-            <div class="about-info-icon"></div>
-            <div><div class="about-info-label">Location</div><div class="about-info-value">Addis Ababa, Ethiopia</div></div>
-          </div>
-          <div class="about-info-item">
-            <div class="about-info-icon">🎂</div>
-            <div><div class="about-info-label">Born</div><div class="about-info-value">August 14, 2000</div></div>
+            <div class="about-info-icon">📍</div>
+            <div><div class="about-info-label">Base Location</div><div class="about-info-value">Addis Ababa, Ethiopia</div></div>
           </div>
           <div class="about-info-item">
             <div class="about-info-icon">✉</div>
-            <div><div class="about-info-label">Email</div><div class="about-info-value">abdudemle0899@gmail.com</div></div>
+            <div><div class="about-info-label">Direct Email</div><div class="about-info-value">enqopaz@gmail.com</div></div>
           </div>
           <div class="about-info-item">
             <div class="about-info-icon">📱</div>
-            <div><div class="about-info-label">Phone</div><div class="about-info-value">(+251) 910 298 713</div></div>
+            <div><div class="about-info-label">Contact Line</div><div class="about-info-value">(+251) 941920504</div></div>
           </div>
           <div class="about-info-item">
             <div class="about-info-icon">🌍</div>
             <div><div class="about-info-label">Nationality</div><div class="about-info-value">Ethiopian</div></div>
-          </div>
-          <div class="about-info-item">
-            <div class="about-info-icon">💼</div>
-            <div><div class="about-info-label">Status</div><div class="about-info-value">Open to Work</div></div>
           </div>
         </div>
       </div>
@@ -1624,43 +1379,38 @@ img{max-width:100%;display:block}
 <!-- ==================== EXPERIENCE ==================== -->
 <section class="section experience" id="experience">
   <div class="container">
-    <div class="fade-up" style="text-align:center;max-width:740px;margin:0 auto 75px">
-      <div class="section-label" style="justify-content:center">Career Path</div>
-      <h2 class="section-title">Work <span>Experience</span></h2>
-      <p class="section-subtitle" style="margin:0 auto">My professional journey in mechanical and piping engineering.</p>
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 60px">
+      <div class="section-label" style="justify-content:center">Work History</div>
+      <h2 class="section-title">Professional <span>Timeline</span></h2>
+      <p class="section-subtitle" style="margin:0 auto">Key roles held across industrial consultancy and plant operations.</p>
     </div>
     <div class="timeline">
       <div class="timeline-item fade-up">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">Jun 2024 — Present</div>
-          <h3>Piping Design Engineer & Team Leader</h3>
+          <div class="timeline-date">May 2024 — Present</div>
+          <h3>Piping Design Engineer | Team Leader & Project Coordinator</h3>
           <div class="company">China Rail Transit Engineering Consultancy (CRTEC)</div>
           <ul>
-            <li>Designed piping systems from P&IDs using AVEVA E3D, PDMS, and Navisworks</li>
-            <li>Built piping component databases using AVEVA Paragon and SPECON per ASME B16 standards</li>
-            <li>Produced isometric drawings, BOM, weld mapping, and GA drawings for piping installation</li>
-            <li>Modeled equipment structures, platforms, supports, and racks in 3D plant environment</li>
-            <li>Positioned and aligned major equipment: pumps, reactors, towers, vessels, and heat exchangers</li>
-            <li>Prepared MTO reports for procurement and construction</li>
-            <li>Performed clash detection and participated in design reviews</li>
-            <li>Led piping design team coordinating with multidisciplinary teams across 17+ completed petrochemical projects</li>
+            <li>Highly involved in modeling and designing 7+ remote industrial piping projects.</li>
+            <li>Conducted detailed 3D modeling of structures, piping, and mechanical equipment via AVEVA E3D/PDMS.</li>
+            <li>Compiled precise Material Take-offs (MTO) and developed custom pipe support layouts.</li>
+            <li>Reviewed dynamic and static layout models through Navisworks for clash mitigation.</li>
+            <li>Developed anti-corrosion, safety, and heat insulation tables.</li>
+            <li>Trained junior engineering team members on industrial standard workflows.</li>
           </ul>
         </div>
       </div>
       <div class="timeline-item fade-up">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-date">Jan 2024 — Jun 2024</div>
-          <h3>Industrial Machinery Designer & Project Manager</h3>
-          <div class="company">ZG Industrial Automation</div>
+          <div class="timeline-date">Oct 2021 — Jan 2022</div>
+          <h3>Alternative Fuel Evaluation Team Lead</h3>
+          <div class="company">National Alcohol & Liquor Factory (NALF)</div>
           <ul>
-            <li>Designed 2 complete industrial machines from concept to final fabrication using SolidWorks, AutoCAD, and CAM software</li>
-            <li>Served as Project Manager managing full project lifecycle from design approval through fabrication and commissioning</li>
-            <li>Supervised machine operators during fabrication and manufacturing process</li>
-            <li>Operated and programmed CNC laser cutting machines</li>
-            <li>Performed maintenance and troubleshooting on various industrial equipment</li>
-            <li>Coordinated between design, fabrication, and production teams to meet project deadlines</li>
+            <li>Led a dynamic project team evaluating alternative fuel mixtures for an industrial boiler system.</li>
+            <li>Conducted chemical process simulations and optimization using DWSIM tools.</li>
+            <li>Formulated technical suggestions aimed at improving boiler thermal output.</li>
           </ul>
         </div>
       </div>
@@ -1668,106 +1418,49 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- ==================== EDUCATION ==================== -->
-<section class="section" id="education">
+<!-- ==================== EDUCATION & SKILLS ==================== -->
+<section class="section" id="skills">
   <div class="container">
-    <div class="fade-up" style="text-align:center;max-width:740px;margin:0 auto 75px">
-      <div class="section-label" style="justify-content:center">Academic Background</div>
-      <h2 class="section-title">Education & <span>Training</span></h2>
-      <p class="section-subtitle" style="margin:0 auto">Building a strong foundation in mechanical engineering.</p>
-    </div>
-    <div class="edu-card fade-up">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-info">
-        <h3>BSc Mechanical Engineering (Design Engineering)</h3>
-        <div class="school">Wollo University · Kombolcha, Ethiopia</div>
-        <p>Sep 2018 — Sep 2023 · EQF Level 6</p>
-        <p style="margin-top:16px"><strong>Thesis:</strong> Design and Fabrication of a Hydraulic and Mechanical Engine Crane Machine</p>
-        <p><strong>Key subjects:</strong> Machine Design, Engineering Mechanics, Fluid Mechanics, Manufacturing Processes, Thermodynamics, CAD/CAM, Engineering Materials, Project Management</p>
-      </div>
-      <div class="edu-award">
-        <div class="edu-award-label">CGPA</div>
-        <div class="edu-award-value">3.89/4.00</div>
-        <div class="edu-award-label" style="margin-top:14px">Best Academic Achievement Medal</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== SKILLS ==================== -->
-<section class="section skills" id="skills">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;max-width:740px;margin:0 auto 75px">
-      <div class="section-label" style="justify-content:center">Technical Expertise</div>
-      <h2 class="section-title">Skills & <span>Competencies</span></h2>
-      <p class="section-subtitle" style="margin:0 auto">A comprehensive toolkit for industrial piping design and engineering.</p>
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 60px">
+      <div class="section-label" style="justify-content:center">Knowledge Base</div>
+      <h2 class="section-title">Skills & <span>Education</span></h2>
+      <p class="section-subtitle" style="margin:0 auto">Academic qualifications and core specialized applications.</p>
     </div>
     <div class="skills-grid">
       <div class="skill-category fade-up">
         <div class="skill-category-header">
-          <div class="skill-category-icon">⚙</div>
-          <h3>AVEVA Software</h3>
+          <div class="skill-category-icon">🎓</div>
+          <h3>Academic Record</h3>
         </div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">AVEVA PDMS & E3D</span><span class="skill-level">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">AVEVA Paragon</span><span class="skill-level">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Navisworks</span><span class="skill-level">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+        <div style="margin-bottom:20px">
+          <h4 style="font-size:1rem;color:var(--text-bright)">BSc in Chemical Engineering</h4>
+          <p style="font-size:0.85rem;color:var(--accent)">University of Gondar (2018 — 2023)</p>
+          <p style="font-size:0.85rem;color:var(--text-dim);margin-top:6px"><strong>Thesis:</strong> Plant Design & Extraction of Oil from Garden Cress Seeds</p>
+        </div>
+        <div>
+          <h4 style="font-size:1rem;color:var(--text-bright)">Data Analysis Nanodegree</h4>
+          <p style="font-size:0.85rem;color:var(--accent)">Udacity (2024 — 2025)</p>
+        </div>
       </div>
+
       <div class="skill-category fade-up">
         <div class="skill-category-header">
-          <div class="skill-category-icon">✏</div>
+          <div class="skill-category-icon">⚙</div>
           <h3>Design Software</h3>
         </div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">AutoCAD</span><span class="skill-level">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">SolidWorks</span><span class="skill-level">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">CAM Software</span><span class="skill-level">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">AVEVA E3D / PDMS</span><span class="skill-level">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">CAESAR II</span><span class="skill-level">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">AutoCAD & Navisworks</span><span class="skill-level">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
       </div>
-      <div class="skill-category fade-up">
-        <div class="skill-category-header">
-          <div class="skill-category-icon">🔧</div>
-          <h3>Piping Skills</h3>
-        </div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Piping Design & Routing</span><span class="skill-level">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Isometric Drawing</span><span class="skill-level">93%</span></div><div class="skill-bar"><div class="skill-fill" data-width="93"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">3D Plant Modeling</span><span class="skill-level">95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Clash Detection</span><span class="skill-level">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Material Take-Off (MTO)</span><span class="skill-level">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
-      </div>
-      <div class="skill-category fade-up">
-        <div class="skill-category-header">
-          <div class="skill-category-icon">👥</div>
-          <h3>Engineering & Leadership</h3>
-        </div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Project Management</span><span class="skill-level">88%</span></div><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Team Leadership</span><span class="skill-level">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Mechanical Engineering</span><span class="skill-level">92%</span></div><div class="skill-bar"><div class="skill-fill" data-width="92"></div></div></div>
-        <div class="skill-item"><div class="skill-header"><span class="skill-name">Microsoft Office / Excel</span><span class="skill-level">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
-      </div>
-    </div>
 
-    <div style="margin-top:95px">
-      <div class="fade-up" style="text-align:center;max-width:740px;margin:0 auto 55px">
-        <div class="section-label" style="justify-content:center">Communication</div>
-        <h2 class="section-title" style="font-size:clamp(2rem,3.4vw,2.8rem)">Language <span>Proficiency</span></h2>
-      </div>
-      <div class="lang-grid">
-        <div class="lang-card fade-up">
-          <h4>Amharic</h4>
-          <div class="lang-type">MOTHER TONGUE · NATIVE</div>
-          <div class="lang-level"><span class="lang-level-label">Listening</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:100%"></div></div><span class="lang-level-val">C2</span></div>
-          <div class="lang-level"><span class="lang-level-label">Reading</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:100%"></div></div><span class="lang-level-val">C2</span></div>
-          <div class="lang-level"><span class="lang-level-label">Writing</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:100%"></div></div><span class="lang-level-val">C2</span></div>
-          <div class="lang-level"><span class="lang-level-label">Spoken Prod.</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:100%"></div></div><span class="lang-level-val">C2</span></div>
-          <div class="lang-level"><span class="lang-level-label">Spoken Int.</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:100%"></div></div><span class="lang-level-val">C2</span></div>
+      <div class="skill-category fade-up">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">⚡</div>
+          <h3>Engineering Core</h3>
         </div>
-        <div class="lang-card fade-up">
-          <h4>English</h4>
-          <div class="lang-type">PROFESSIONAL WORKING</div>
-          <div class="lang-level"><span class="lang-level-label">Listening</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:100%"></div></div><span class="lang-level-val">C2</span></div>
-          <div class="lang-level"><span class="lang-level-label">Reading</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:100%"></div></div><span class="lang-level-val">C2</span></div>
-          <div class="lang-level"><span class="lang-level-label">Writing</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:85%"></div></div><span class="lang-level-val">C1</span></div>
-          <div class="lang-level"><span class="lang-level-label">Spoken Prod.</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:85%"></div></div><span class="lang-level-val">C1</span></div>
-          <div class="lang-level"><span class="lang-level-label">Spoken Int.</span><div class="lang-level-bar"><div class="lang-level-fill" style="width:85%"></div></div><span class="lang-level-val">C1</span></div>
-        </div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Pipe Support Design</span><span class="skill-level">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Process simulation (DWSIM)</span><span class="skill-level">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+        <div class="skill-item"><div class="skill-header"><span class="skill-name">Data Analysis & Programming</span><span class="skill-level">78%</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
       </div>
     </div>
   </div>
@@ -1776,318 +1469,197 @@ img{max-width:100%;display:block}
 <!-- ==================== PROJECTS ==================== -->
 <section class="section" id="projects">
   <div class="container">
-    <div class="fade-up" style="text-align:center;max-width:840px;margin:0 auto 55px">
-      <div class="section-label" style="justify-content:center">Complete Portfolio</div>
-      <h2 class="section-title">All <span>17 Projects</span></h2>
-      <p class="section-subtitle" style="margin:0 auto">Every industrial project I've contributed to at CRTEC — spanning fertilizer, energy, chemicals, pharmaceuticals, new materials, and construction sectors. Click any project to view the full gallery and detailed description.</p>
+    <div class="fade-up" style="text-align:center;max-width:800px;margin:0 auto 55px">
+      <div class="section-label" style="justify-content:center">Portfolio Works</div>
+      <h2 class="section-title">Industrial <span>Projects</span></h2>
+      <p class="section-subtitle" style="margin:0 auto">Key petrochemical, chemical, and utility plants designed using state-of-the-art layout platforms.</p>
     </div>
 
     <div class="projects-filter fade-up">
-      <button class="filter-btn active" data-filter="all">All (17)</button>
-      <button class="filter-btn" data-filter="fertilizer">Fertilizer</button>
-      <button class="filter-btn" data-filter="energy">Energy</button>
-      <button class="filter-btn" data-filter="chemicals">Chemicals</button>
-      <button class="filter-btn" data-filter="pharma">Pharma</button>
-      <button class="filter-btn" data-filter="materials">New Materials</button>
-      <button class="filter-btn" data-filter="pvc">PVC / Chlor-Alkali</button>
-      <button class="filter-btn" data-filter="construction">Construction</button>
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="chemical">Chemical & Polymers</button>
+      <button class="filter-btn" data-filter="fertilizer">Fertilizers & Salts</button>
+      <button class="filter-btn" data-filter="utility">Utilities & Energy</button>
+      <button class="filter-btn" data-filter="pigments">Specialty Materials</button>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
 
-      <!-- 1. YUNTH - NO IMAGE -->
-      <div class="project-card fade-up" data-sector="fertilizer" data-project="yunth">
+      <!-- Project 1: Polyurethane Prepolymer Plant -->
+      <div class="project-card fade-up" data-sector="chemical" data-project="prepolymer">
         <div class="project-img">
-          <div class="project-img-placeholder">
-            <div class="project-img-placeholder-icon">🏭</div>
-            <div class="project-img-placeholder-text">YUNTH · UREA PLANT</div>
-          </div>
-          <div class="project-overlay"><span class="project-tag">FERTILIZER</span><span class="project-contribution">25%</span></div>
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI-2_krcym6.jpg" alt="Polyurethane Plant Layout">
+          <div class="project-overlay"><span class="project-tag">POLYMERS</span><span class="project-contribution">CRTEC</span></div>
         </div>
         <div class="project-body">
-          <h3>YUNTH — Urea Production Plant</h3>
-          <div class="project-client">Qinghai Yuntianhua International Fertilizer Co., Ltd</div>
-          <div class="project-meta"><span>📍 Qinghai, China</span><span>⚖ 600,000 t/yr</span><span>🔢 ENCOSC26KJ102</span></div>
-          <p>Large-scale urea fertilizer production facility. One of the largest capacity projects in the portfolio.</p>
-          <div class="project-products"><span class="product-tag">Urea</span><span class="product-tag">Fertilizer</span></div>
-          <div class="project-view-more">View Full Details</div>
+          <h3>Polyurethane Prepolymer Plant</h3>
+          <div class="project-client">Large-Scale Chemical Plant Study</div>
+          <div class="project-meta"><span>📍 China / Remote</span><span>⚖ July - Oct 2024</span></div>
+          <p>Contributed to 3D piping layout designs and equipment arrangement variations for systems processing TDA, MDI, and aluminum-based catalysts.</p>
+          <div class="project-products"><span class="product-tag">Prepolymer</span><span class="product-tag">Polyurethane</span></div>
+          <div class="project-view-more">View Technical Details</div>
         </div>
       </div>
 
-      <!-- 2. BINGSUAN -->
-      <div class="project-card fade-up" data-sector="chemicals" data-project="bingsuan">
+      <!-- Project 2: Jingshida MPP & DPP -->
+      <div class="project-card fade-up" data-sector="pigments" data-project="jingshida">
         <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/BINGSUAN_1_qbva7e.png" alt="BINGSUAN Propionic Acid">
-          <div class="project-overlay"><span class="project-tag">FINE CHEMICALS</span><span class="project-contribution">100%</span></div>
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdijru.png" alt="Jingshida Fuel Additives Plant">
+          <div class="project-overlay"><span class="project-tag">ADDITIVES</span><span class="project-contribution">100%</span></div>
         </div>
         <div class="project-body">
-          <h3>BINGSUAN — Propionic Acid Plant</h3>
-          <div class="project-client">Lanzhou Aigmed Synthetic Biotechnology Co., Ltd</div>
-          <div class="project-meta"><span>📍 Lanzhou, China</span><span>⚖ 5,000 t/yr</span><span>🔢 ENCOSC26001</span></div>
-          <p>Complete 100% design contribution for synthetic biotechnology propionic acid production facility.</p>
-          <div class="project-products"><span class="product-tag">Propionic Acid</span><span class="product-tag">Biotech</span></div>
-          <div class="project-view-more">View Full Details</div>
+          <h3>MPP & DPP Fuel Additive Plant</h3>
+          <div class="project-client">Sichuan Jingshida Technology (ENCOSC24029)</div>
+          <div class="project-meta"><span>📍 Sichuan, China</span><span>⚖ 5000t/a MPP</span></div>
+          <p>Complete 3D layout modeling of structural, architectural, and gallery steelwork. Created 2D isometric outputs in AutoCAD.</p>
+          <div class="project-products"><span class="product-tag">MPP</span><span class="product-tag">DPP Additives</span></div>
+          <div class="project-view-more">View Technical Details</div>
         </div>
       </div>
 
-      <!-- 3. QIXIANG -->
-      <div class="project-card fade-up" data-sector="energy" data-project="qixiang">
-        <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/QIXANG-1_ojnjoz.png" alt="QIXIANG Steam Plant">
-          <div class="project-overlay"><span class="project-tag">ENERGY</span><span class="project-contribution">75%</span></div>
-        </div>
-        <div class="project-body">
-          <h3>QIXIANG — Steam Generation Facility</h3>
-          <div class="project-client">Zibo Qixiang Tengda Chemical Co., Ltd</div>
-          <div class="project-meta"><span>📍 Zibo, China</span><span>⚖ 3,360,000 t/yr</span><span>🔢 S20251023</span></div>
-          <p>Major steam generation facility with 75% design contribution. High-capacity energy infrastructure.</p>
-          <div class="project-products"><span class="product-tag">Steam</span><span class="product-tag">Energy</span></div>
-          <div class="project-view-more">View Full Details</div>
-        </div>
-      </div>
-
-      <!-- 4. YUXIANGHY - NO IMAGE -->
-      <div class="project-card fade-up" data-sector="energy" data-project="yuxianghy">
-        <div class="project-img">
-          <div class="project-img-placeholder">
-            <div class="project-img-placeholder-icon">⚡</div>
-            <div class="project-img-placeholder-text">YUXIANGHY · WASTE HEAT</div>
-          </div>
-          <div class="project-overlay"><span class="project-tag">ENERGY</span><span class="project-contribution">100%</span></div>
-        </div>
-        <div class="project-body">
-          <h3>YUXIANGHY — Nitric Acid Waste Heat Recovery</h3>
-          <div class="project-client">Xinjiang Yuxiang Poplar Chemical Co., Ltd</div>
-          <div class="project-meta"><span>📍 Xinjiang, China</span><span>🌱 20,000 t CO₂</span><span>🔢 ENCOSC25005</span></div>
-          <p>Complete 100% design for nitric acid waste heat recovery system. Environmental sustainability project.</p>
-          <div class="project-products"><span class="product-tag">Waste Heat</span><span class="product-tag">CO₂ Reduction</span></div>
-          <div class="project-view-more">View Full Details</div>
-        </div>
-      </div>
-
-      <!-- 5. ARIT -->
-      <div class="project-card fade-up" data-sector="construction" data-project="arit">
-        <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/ARIT-4_m8jdbc.png" alt="ARIT Concrete Admixtures">
-          <div class="project-overlay"><span class="project-tag">CONSTRUCTION</span><span class="project-contribution">100%</span></div>
-        </div>
-        <div class="project-body">
-          <h3>ARIT — Concrete Admixtures Plant</h3>
-          <div class="project-client">Linzhi Aolaite New Materials Co., Ltd</div>
-          <div class="project-meta"><span>📍 Linzhi, China</span><span>⚖ 500,000 t/yr</span><span>🔢 ENCOSC25046</span></div>
-          <p>Full 100% design contribution for large-scale concrete admixtures production facility.</p>
-          <div class="project-products"><span class="product-tag">Concrete Admixtures</span><span class="product-tag">Water Reducing Agent</span></div>
-          <div class="project-view-more">View Full Details</div>
-        </div>
-      </div>
-
-      <!-- 6. SANMING -->
-      <div class="project-card fade-up" data-sector="materials" data-project="sanming">
-        <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868727/SANMING_1_uen56s.jpg" alt="SANMING Lithium">
-          <div class="project-overlay"><span class="project-tag">NEW MATERIALS</span><span class="project-contribution">100%</span></div>
-        </div>
-        <div class="project-body">
-          <h3>SANMING — Lithium Hexafluorophosphate</h3>
-          <div class="project-client">Fujian Sanming Runxiang New Materials Co., Ltd</div>
-          <div class="project-meta"><span> Fujian, China</span><span> 50 t/yr</span><span>🔢 ENCOSC25061</span></div>
-          <p>Complete 100% design for lithium hexafluorophosphate production — critical electrolyte for Li-ion batteries.</p>
-          <div class="project-products"><span class="product-tag">LiPF₆</span><span class="product-tag">Battery Materials</span></div>
-          <div class="project-view-more">View Full Details</div>
-        </div>
-      </div>
-
-      <!-- 7. HAIFENG -->
-      <div class="project-card fade-up" data-sector="chemicals" data-project="haifeng">
-        <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HAIFENG_llrwiw.png" alt="HAIFENG Glycol">
-          <div class="project-overlay"><span class="project-tag">FINE CHEMICALS</span><span class="project-contribution">100%</span></div>
-        </div>
-        <div class="project-body">
-          <h3>HAIFENG — Triethylene & Tetraethylene Glycol</h3>
-          <div class="project-client">Yibin Haifeng Herui Co., Ltd</div>
-          <div class="project-meta"><span>📍 Yibin, China</span><span>⚖ 50K + 100K t/yr</span><span>🔢 ENCO25174</span></div>
-          <p>Complete 100% design for dual glycol production: Triethylene Glycol (50,000 t/yr) and Tetraethylene Glycol (100,000 t/yr).</p>
-          <div class="project-products"><span class="product-tag">TEG</span><span class="product-tag">TetraEG</span></div>
-          <div class="project-view-more">View Full Details</div>
-        </div>
-      </div>
-
-      <!-- 8. EZHONG - NO IMAGE -->
+      <!-- Project 3: Ezhong Potash -->
       <div class="project-card fade-up" data-sector="fertilizer" data-project="ezhong">
         <div class="project-img">
           <div class="project-img-placeholder">
-            <div class="project-img-placeholder-icon"></div>
-            <div class="project-img-placeholder-text">EZHONG · FERTILIZER</div>
-          </div>
-          <div class="project-overlay"><span class="project-tag">FERTILIZER</span><span class="project-contribution">100%</span></div>
-        </div>
-        <div class="project-body">
-          <h3>EZHONG — Potash Fertilizer & Calcium Chloride</h3>
-          <div class="project-client">Gubei Ezhong Ecological Agriculture Technology Co., Ltd</div>
-          <div class="project-meta"><span>📍 Gubei, China</span><span> 80K + 50K t/yr</span><span>🔢 ENCOSC24009</span></div>
-          <p>Complete 100% design for dual-product agricultural facility: Potash fertilizer and Calcium chloride.</p>
-          <div class="project-products"><span class="product-tag">Potash Fertilizer</span><span class="product-tag">CaCl₂</span></div>
-          <div class="project-view-more">View Full Details</div>
-        </div>
-      </div>
-
-      <!-- 9. JSD -->
-      <div class="project-card fade-up" data-sector="chemicals" data-project="jsd">
-        <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdjjru.png" alt="JSD Chemicals">
-          <div class="project-overlay"><span class="project-tag">FINE CHEMICALS</span><span class="project-contribution">100%</span></div>
-        </div>
-        <div class="project-body">
-          <h3>JSD — Melamine Polyphosphate & DPP</h3>
-          <div class="project-client">Sichuan Jingshida Technology Co., Ltd</div>
-          <div class="project-meta"><span>📍 Sichuan, China</span><span>⚖ 5K + 3K t/yr</span><span>🔢 ENCOSC24029</span></div>
-          <p>Complete 100% design for dual specialty chemical production: Melamine polyphosphate and DPP pigment.</p>
-          <div class="project-products"><span class="product-tag">MPP</span><span class="product-tag">DPP Pigment</span></div>
-          <div class="project-view-more">View Full Details</div>
-        </div>
-      </div>
-
-      <!-- 10. SHICHENGSHOU - NO IMAGE -->
-      <div class="project-card fade-up" data-sector="fertilizer" data-project="shichengshou">
-        <div class="project-img">
-          <div class="project-img-placeholder">
             <div class="project-img-placeholder-icon">🌱</div>
-            <div class="project-img-placeholder-text">SHICHENGSHOU · ECO</div>
+            <div class="project-img-placeholder-text">EZHONG PLANT</div>
           </div>
-          <div class="project-overlay"><span class="project-tag">AGRICULTURE</span><span class="project-contribution">20%</span></div>
+          <div class="project-overlay"><span class="project-tag">FERTILIZERS</span><span class="project-contribution">100%</span></div>
         </div>
         <div class="project-body">
-          <h3>SHICHENGSHOU — Soil Remediation Agent</h3>
-          <div class="project-client">Sichuan Shichengshou Ecological Technology Co., Ltd</div>
-          <div class="project-meta"><span>📍 Sichuan, China</span><span>⚖ 60,000 t/yr</span><span>🔢 ENCOSC24062</span></div>
-          <p>20% design contribution for soil remediation agent production facility. Environmental technology project.</p>
-          <div class="project-products"><span class="product-tag">Soil Remediation</span><span class="product-tag">Ecological</span></div>
-          <div class="project-view-more">View Full Details</div>
+          <h3>Ezhong Potash & Calcium Plant</h3>
+          <div class="project-client">EZHONG(LVHUAGAI) (ENCOSC24009)</div>
+          <div class="project-meta"><span>📍 Hubei, China</span><span>⚖ 80,000 TPY</span></div>
+          <p>Structural layout planning, routing validation, Navisworks rendering, and coordination for a high-output agricultural processing plant.</p>
+          <div class="project-products"><span class="product-tag">Potash</span><span class="product-tag">CaCl2</span></div>
+          <div class="project-view-more">View Technical Details</div>
         </div>
       </div>
 
-      <!-- 11. HNLC -->
-      <div class="project-card fade-up" data-sector="pvc" data-project="hnlc">
+      <!-- Project 4: Xingfa Bio-Based Pilot -->
+      <div class="project-card fade-up" data-sector="chemical" data-project="xingfa">
         <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg" alt="HNLC PVC">
-          <div class="project-overlay"><span class="project-tag">PVC / CHLOR-ALKALI</span><span class="project-contribution">100%</span></div>
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg" alt="Xingfa Bio-based Materials Pilot Plant">
+          <div class="project-overlay"><span class="project-tag">BIO-BASED</span><span class="project-contribution">100%</span></div>
         </div>
         <div class="project-body">
-          <h3>HNLC — PVC Resin & Acetylene Plant</h3>
-          <div class="project-client">Henan Lianchuang Chemical Co., Ltd</div>
-          <div class="project-meta"><span>📍 Henan, China</span><span>⚖ 200,000 t/yr</span><span>🔢 ENCOSC24242</span></div>
-          <p>Complete 100% design for PVC resin and acetylene production facility. Major chlor-alkali complex.</p>
-          <div class="project-products"><span class="product-tag">PVC Resin</span><span class="product-tag">Acetylene</span></div>
-          <div class="project-view-more">View Full Details</div>
+          <h3>Xingfa Materials Pilot Plant</h3>
+          <div class="project-client">Hubei Jixing Chemical Group (ENCOSC23043)</div>
+          <div class="project-meta"><span>📍 Hubei, China</span><span>⚖ Nitric Oxidation</span></div>
+          <p>Created comprehensive 3D system routing, designed localized support configurations, and generated mechanical material take-offs.</p>
+          <div class="project-products"><span class="product-tag">Dehydration</span><span class="product-tag">Air Oxidation</span></div>
+          <div class="project-view-more">View Technical Details</div>
         </div>
       </div>
 
-      <!-- 12. XINGFA -->
-      <div class="project-card fade-up" data-sector="materials" data-project="xingfa">
+      <!-- Project 5: Lianchuang Polyether -->
+      <div class="project-card fade-up" data-sector="chemical" data-project="lianchuang">
         <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg" alt="XINGFA FDCA">
-          <div class="project-overlay"><span class="project-tag">NEW MATERIALS</span><span class="project-contribution">100%</span></div>
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg" alt="Lianchuang polyether">
+          <div class="project-overlay"><span class="project-tag">POLYMERS</span><span class="project-contribution">CRTEC</span></div>
         </div>
         <div class="project-body">
-          <h3>XINGFA — 2,5-Furandicarboxylic Acid (FDCA)</h3>
-          <div class="project-client">Hubei Jixing Chemical Group Co., Ltd</div>
-          <div class="project-meta"><span>📍 Hubei, China</span><span>⚖ 100 t/yr</span><span>🔢 ENCOSC23043</span></div>
-          <p>Complete 100% design for FDCA production — sustainable bio-based polymer precursor replacing petroleum-based TPA.</p>
-          <div class="project-products"><span class="product-tag">FDCA</span><span class="product-tag">Bio-Polymer</span></div>
-          <div class="project-view-more">View Full Details</div>
+          <h3>Lianchuang PO & Polyether Plant</h3>
+          <div class="project-client">Henan Lianchuang Chemical</div>
+          <div class="project-meta"><span>📍 Henan, China</span><span>⚖ 20,000 T/Y</span></div>
+          <p>Supervised layout updates, produced anti-corrosion documentation tables, and modeled complex pipeline routes inside E3D.</p>
+          <div class="project-products"><span class="product-tag">Propylene Oxide</span><span class="product-tag">Polyether</span></div>
+          <div class="project-view-more">View Technical Details</div>
         </div>
       </div>
 
-      <!-- 13. QICHUANG - NO IMAGE -->
-      <div class="project-card fade-up" data-sector="chemicals" data-project="qichuang">
+      <!-- Project 6: Hechang Anthracene -->
+      <div class="project-card fade-up" data-sector="pigments" data-project="hechang">
+        <div class="project-img">
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg" alt="Hechang Anthracene Separation">
+          <div class="project-overlay"><span class="project-tag">PETROCHEM</span><span class="project-contribution">100%</span></div>
+        </div>
+        <div class="project-body">
+          <h3>Coarse Anthracene Separation Device</h3>
+          <div class="project-client">Hubei Hechang New Energy Materials</div>
+          <div class="project-meta"><span>📍 Hubei, China</span><span>⚖ > 600 Pipes</span></div>
+          <p>Piping layout design for a Class A tank farm and workshop under strict Chinese industrial safety code GB51283-2020.</p>
+          <div class="project-products"><span class="product-tag">Anthracene</span><span class="product-tag">Separation</span></div>
+          <div class="project-view-more">View Technical Details</div>
+        </div>
+      </div>
+
+      <!-- Project 7: Yuxianghy Waste Heat Recovery -->
+      <div class="project-card fade-up" data-sector="utility" data-project="yuxianghy">
         <div class="project-img">
           <div class="project-img-placeholder">
-            <div class="project-img-placeholder-icon">🧪</div>
-            <div class="project-img-placeholder-text">QICHUANG · FINE CHEM</div>
+            <div class="project-img-placeholder-icon">⚡</div>
+            <div class="project-img-placeholder-text">YUXIANGHY HEAT RECOVERY</div>
           </div>
-          <div class="project-overlay"><span class="project-tag">FINE CHEMICALS</span><span class="project-contribution">20%</span></div>
+          <div class="project-overlay"><span class="project-tag">RECOVERY</span><span class="project-contribution">100%</span></div>
         </div>
         <div class="project-body">
-          <h3>QICHUANG — Fine Chemicals (Phenylhydrazine)</h3>
-          <div class="project-client">Wuhai Qichuang New Materials Technology Co., Ltd</div>
-          <div class="project-meta"><span>📍 Wuhai, China</span><span>⚖ 3,000 t/yr</span><span> ENCOSC23059</span></div>
-          <p>20% design contribution for fine chemicals production including phenylhydrazine. Specialty chemical facility.</p>
-          <div class="project-products"><span class="product-tag">Phenylhydrazine</span><span class="product-tag">Fine Chemicals</span></div>
-          <div class="project-view-more">View Full Details</div>
+          <h3>Nitric Acid Waste Heat Recovery</h3>
+          <div class="project-client">Xinjiang Yuxiang Poplar Chemical</div>
+          <div class="project-meta"><span>📍 Xinjiang, China</span><span>⚖ Pilot Project</span></div>
+          <p>Drafted piping systems, positioned core heat transfer components, and finalized anti-corrosion/insulation specifications.</p>
+          <div class="project-products"><span class="product-tag">Waste Heat</span><span class="product-tag">Energy Recovery</span></div>
+          <div class="project-view-more">View Technical Details</div>
         </div>
       </div>
 
-      <!-- 14. HAILIANG - NO IMAGE -->
-      <div class="project-card fade-up" data-sector="materials" data-project="hailiang">
-        <div class="project-img">
-          <div class="project-img-placeholder">
-            <div class="project-img-placeholder-icon">⚗</div>
-            <div class="project-img-placeholder-text">HAILIANG · DIAMINES</div>
-          </div>
-          <div class="project-overlay"><span class="project-tag">NEW MATERIALS</span><span class="project-contribution">100%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CERTIFICATES SECTION ==================== -->
+<section class="section" id="certificates" style="background-color: var(--bg-alt);">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 40px">
+      <div class="section-label" style="justify-content:center">Credentials</div>
+      <h2 class="section-title">Certifications & <span>Training</span></h2>
+      <p class="section-subtitle" style="margin:0 auto">Specialized qualifications in structural analysis, life-extension studies, and pipe engineering.</p>
+    </div>
+    
+    <div class="cert-grid">
+      <!-- Cert 1: Stress Course -->
+      <div class="cert-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Stress_course_Certificate_page-0001_vwmcax.jpg', '_blank')">
+        <div class="cert-img-wrap">
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Stress_course_Certificate_page-0001_vwmcax.jpg" alt="Stress Course Certificate">
         </div>
-        <div class="project-body">
-          <h3>HAILIANG — DMTDA & DETDA Diamines</h3>
-          <div class="project-client">Shandong Hailiang New Materials Co., Ltd</div>
-          <div class="project-meta"><span>📍 Shandong, China</span><span> 2.5K + 4K t/yr</span><span>🔢 ENCOSC22004</span></div>
-          <p>Complete 100% design for dual diamine production: DMTDA (2,500 t/yr) and DETDA (4,000 t/yr). Polyurethane curing agents.</p>
-          <div class="project-products"><span class="product-tag">DMTDA</span><span class="product-tag">DETDA</span></div>
-          <div class="project-view-more">View Full Details</div>
+        <div class="cert-body">
+          <h4>Stress Analysis & Mechanics Course</h4>
+          <p>&gt; Zdravko Ivančić Mentorship</p>
         </div>
       </div>
 
-      <!-- 15. HECHANG -->
-      <div class="project-card fade-up" data-sector="materials" data-project="hechang">
-        <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg" alt="HECHANG">
-          <div class="project-overlay"><span class="project-tag">NEW MATERIALS</span><span class="project-contribution">100%</span></div>
+      <!-- Cert 2: Flexibility Calculations -->
+      <div class="cert-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Flexibility_Calc_Stress_course_Certificate_page-0001_mt1m2q.jpg', '_blank')">
+        <div class="cert-img-wrap">
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Flexibility_Calc_Stress_course_Certificate_page-0001_mt1m2q.jpg" alt="Flexibility Calculations Stress Course">
         </div>
-        <div class="project-body">
-          <h3>HECHANG — Crude Anthracene Plant</h3>
-          <div class="project-client">Hubei Hechang New Energy Materials Co., Ltd</div>
-          <div class="project-meta"><span>📍 Hubei, China</span><span>⚖ 10,000 t/yr</span><span>🔢 ENCOSC22070</span></div>
-          <p>Complete 100% design for crude anthracene production facility. Polycyclic aromatic hydrocarbon for advanced materials.</p>
-          <div class="project-products"><span class="product-tag">Crude Anthracene</span><span class="product-tag">Energy Materials</span></div>
-          <div class="project-view-more">View Full Details</div>
+        <div class="cert-body">
+          <h4>Flexibility Calculations & Stress Analysis</h4>
+          <p>&gt; Piping Mechanics Study</p>
         </div>
       </div>
 
-      <!-- 16. SHUZHONG - NO IMAGE -->
-      <div class="project-card fade-up" data-sector="pharma" data-project="shuzhong">
-        <div class="project-img">
-          <div class="project-img-placeholder">
-            <div class="project-img-placeholder-icon">💊</div>
-            <div class="project-img-placeholder-text">SHUZHONG · PHARMA</div>
-          </div>
-          <div class="project-overlay"><span class="project-tag">PHARMACEUTICALS</span><span class="project-contribution">20%</span></div>
+      <!-- Cert 3: Pulsation Analysis -->
+      <div class="cert-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Pulsation_analysis_Certificate_page-0001_n5u1ky.jpg', '_blank')">
+        <div class="cert-img-wrap">
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Pulsation_analysis_Certificate_page-0001_n5u1ky.jpg" alt="Pulsation Analysis Certificate">
         </div>
-        <div class="project-body">
-          <h3>SHUZHONG — Pepsin & Pancreatin Production</h3>
-          <div class="project-client">Sichuan Shuzhong Pharmaceutical Chemical Co., Ltd</div>
-          <div class="project-meta"><span>📍 Sichuan, China</span><span>⚖ 12 + 120 t/yr</span><span>🔢 ENCOSC22108</span></div>
-          <p>20% design contribution for pharmaceutical enzyme production: Pepsin (12 t/yr) and Pancreatin (120 t/yr).</p>
-          <div class="project-products"><span class="product-tag">Pepsin</span><span class="product-tag">Pancreatin</span></div>
-          <div class="project-view-more">View Full Details</div>
+        <div class="cert-body">
+          <h4>Acoustic Pulsation & Vibration Analysis</h4>
+          <p>&gt; Dynamic Mechanics Program</p>
         </div>
       </div>
 
-      <!-- 17. HUAYI -->
-      <div class="project-card fade-up" data-sector="pvc" data-project="huayi">
-        <div class="project-img">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI-2_krcym6.jpg" alt="HUAYI Caustic PVC">
-          <div class="project-overlay"><span class="project-tag">PVC / CHLOR-ALKALI</span><span class="project-contribution">60%</span></div>
+      <!-- Cert 4: FFS Life Extension Study -->
+      <div class="cert-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/FFS_Life_Extension_Study_of_Thermal_Cyclic_Service_Piping_System_page-0001_ywiloh.jpg', '_blank')">
+        <div class="cert-img-wrap">
+          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/FFS_Life_Extension_Study_of_Thermal_Cyclic_Service_Piping_System_page-0001_ywiloh.jpg" alt="FFS Life Extension Study">
         </div>
-        <div class="project-body">
-          <h3>HUAYI — Caustic Soda & PVC Oxychlorination</h3>
-          <div class="project-client">Shanghaichem Engineering Incorporation</div>
-          <div class="project-meta"><span> Shanghai, China</span><span>⚖ 1,300,000 t/yr</span><span>🔢 0215-20-200-A03-00</span></div>
-          <p>60% design contribution for one of the largest projects. Major chlor-alkali and PVC oxychlorination complex.</p>
-          <div class="project-products"><span class="product-tag">Caustic Soda</span><span class="product-tag">PVC</span><span class="product-tag">Oxychlorination</span></div>
-          <div class="project-view-more">View Full Details</div>
+        <div class="cert-body">
+          <h4>FFS & Thermal Cyclic Service Study</h4>
+          <p>&gt; Systems Integrity Engineering</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -2109,82 +1681,37 @@ img{max-width:100%;display:block}
   </div>
 </div>
 
-<!-- ==================== RECOMMENDATIONS ==================== -->
-<section class="section recommendations" id="recommendations">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;max-width:740px;margin:0 auto 75px">
-      <div class="section-label" style="justify-content:center">Testimonials</div>
-      <h2 class="section-title">Professional <span>Recommendations</span></h2>
-      <p class="section-subtitle" style="margin:0 auto">Endorsements from academic mentors and industry professionals.</p>
-    </div>
-    <div class="rec-grid">
-      <div class="rec-card fade-up">
-        <div class="rec-quote">"</div>
-        <p class="rec-text">I have known Abdu Demle Melaku for five years as a standout student in the School of Mechanical and Chemical Engineering at Wollo University. He was a top scorer with exceptional practical skills, combining academic excellence with innovative problem-solving abilities. He demonstrated outstanding dedication, strong technical expertise, and a commendable work ethic throughout his studies. I highly recommend him for any engineering position without reservation.</p>
-        <div class="rec-author">
-          <div class="rec-avatar">JM</div>
-          <div class="rec-author-info">
-            <h4>Mr. Jemal Mohammed</h4>
-            <p>Mechanical Engineering Department Head · Wollo University</p>
-            <div class="rec-contact">May16ej@gmail.com · +251 914 715 673</div>
-          </div>
-        </div>
-      </div>
-      <div class="rec-card fade-up">
-        <div class="rec-quote">"</div>
-        <p class="rec-text">Abdu is a motivated mechanical engineering graduate with a strong ability to learn and solve problems systematically. He demonstrates excellent communication and teamwork skills, and is recognized for his dedication and strong moral values. He is committed to applying his engineering knowledge to real-world problem solving. I recommend him highly.</p>
-        <div class="rec-author">
-          <div class="rec-avatar">HM</div>
-          <div class="rec-author-info">
-            <h4>Mr. Habtamu Mulatu</h4>
-            <p>Lecturer · Wollo University</p>
-            <div class="rec-contact">habtamumu@kiot.edu.et · +251 920 263 252</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ==================== CONTACT ==================== -->
 <section class="section contact" id="contact">
   <div class="container">
-    <div class="fade-up" style="text-align:center;max-width:740px;margin:0 auto 75px">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 60px">
       <div class="section-label" style="justify-content:center">Get In Touch</div>
-      <h2 class="section-title">Let's Work <span>Together</span></h2>
-      <p class="section-subtitle" style="margin:0 auto">Seeking international opportunities in oil & gas and petrochemical engineering. Let's connect.</p>
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+      <p class="section-subtitle" style="margin:0 auto">I am interested in opportunities in the fields of chemical and piping process design globally.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info fade-up">
         <div class="contact-item">
           <div class="contact-icon">📍</div>
-          <div><h4>Location</h4><p>Addis Ababa, Megenagna, Ethiopia</p></div>
+          <div><h4>Base Location</h4><p>Addis Ababa, Megenagna, Ethiopia</p></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉</div>
-          <div><h4>Email</h4><p>abdudemle0899@gmail.com</p></div>
+          <div><h4>Email Address</h4><p>enqopaz@gmail.com</p></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📱</div>
-          <div><h4>Phone</h4><p>(+251) 910 298 713</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">💼</div>
-          <div><h4>LinkedIn</h4><p>linkedin.com/in/abdu-demle-melaku-571b0b246</p></div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🌐</div>
-          <div><h4>Company</h4><p>www.crtec-et.com</p></div>
+          <div><h4>Direct Phone</h4><p>(+251) 941920504</p></div>
         </div>
       </div>
       <div class="contact-form fade-up">
         <form id="contactForm">
           <div class="form-row">
-            <div class="form-group"><label>Full Name *</label><input type="text" required placeholder="Your name"></div>
-            <div class="form-group"><label>Email *</label><input type="email" required placeholder="your@email.com"></div>
+            <div class="form-group"><label>Your Name *</label><input type="text" required placeholder="Name/Company"></div>
+            <div class="form-group"><label>Email Address *</label><input type="email" required placeholder="name@domain.com"></div>
           </div>
-          <div class="form-group"><label>Subject *</label><input type="text" required placeholder="What's this about?"></div>
-          <div class="form-group"><label>Message *</label><textarea required placeholder="Tell me about your project or opportunity..."></textarea></div>
+          <div class="form-group"><label>Subject *</label><input type="text" required placeholder="Scope of Discussion"></div>
+          <div class="form-group"><label>Message *</label><textarea required placeholder="Outline your requirements or opportunities..."></textarea></div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message →</button>
         </form>
       </div>
@@ -2197,575 +1724,49 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h3>Abdu Demle <span>Melaku</span></h3>
-        <p>Mechanical Engineer specializing in petrochemical piping design. Currently leading piping design teams at CRTEC, delivering 17+ industrial projects worldwide.</p>
+        <h3>Beamlak <span>Alemayehu</span></h3>
+        <p>Specializing in 3D Plant Design and Pipe Modeling with AVEVA Suite, CAESAR II, and AutoCAD workflows.</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/abdu-demle-melaku-571b0b246" target="_blank" aria-label="LinkedIn">in</a>
-          <a href="mailto:abdudemle0899@gmail.com" aria-label="Email">@</a>
-          <a href="tel:+251910298713" aria-label="Phone">📱</a>
+          <a href="mailto:enqopaz@gmail.com" aria-label="Email">@</a>
+          <a href="tel:+251941920504" aria-label="Phone">📱</a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h4>Navigation Links</h4>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects (17)</a></li>
-          <li><a href="#recommendations">Recommendations</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#skills">Skills & Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Project Sectors</h4>
+        <h4>Technical Expertise</h4>
         <ul>
-          <li><a href="#projects">Fertilizer & Agriculture</a></li>
-          <li><a href="#projects">Energy & Utilities</a></li>
-          <li><a href="#projects">Fine Chemicals</a></li>
-          <li><a href="#projects">Pharmaceuticals</a></li>
-          <li><a href="#projects">New Materials</a></li>
-          <li><a href="#projects">PVC / Chlor-Alkali</a></li>
-          <li><a href="#projects">Construction Chemicals</a></li>
+          <li><a href="#skills">AVEVA E3D/PDMS Layout</a></li>
+          <li><a href="#skills">Pipe Stress Basics</a></li>
+          <li><a href="#skills">Chemical Process Sim</a></li>
+          <li><a href="#skills">Equipment Modelling</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Abdu Demle Melaku. All rights reserved. | Designed with precision & passion for engineering.</p>
+      <p>© 2026 Beamlak Alemayehu. All rights reserved. | Engineering with precision.</p>
     </div>
   </div>
 </footer>
 
 <script>
 // ============================================================
-// PROJECT DATA - Complete details for all 17 projects
-// Each project has its correct images from the workbook
-// Projects without images use styled placeholders
+// PROJECT DATA - Dynamic mappings for Beamlak's Projects
 // ============================================================
 const projectData = {
-  yunth: {
-    tag: 'FERTILIZER',
-    title: 'YUNTH — Urea Production Plant',
-    client: 'Qinghai Yuntianhua International Fertilizer Co., Ltd',
-    hasImage: false,
-    gallery: [],
-    meta: [
-      { label: 'Location', value: 'Qinghai, China' },
-      { label: 'Capacity', value: '600,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC26KJ102' },
-      { label: 'Sector', value: 'Fertilizer & Agriculture' },
-      { label: 'Design Contribution', value: '25%' }
-    ],
-    description: `
-      <p>The YUNTH Urea Production Plant is one of the largest capacity projects in CRTEC's portfolio, representing a major fertilizer manufacturing facility located in Qinghai, China. This project involved significant piping design contribution (25%) for a 600,000 tons per year urea production plant, serving as a critical component of China's agricultural infrastructure.</p>
-      <p>As part of the CRTEC piping design team, I contributed to the comprehensive 3D plant modeling, piping routing, and engineering documentation for this large-scale fertilizer facility. The project required coordination with multidisciplinary teams including process, mechanical, electrical, and instrumentation engineers to ensure seamless integration of all plant systems.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Contributed to 3D plant modeling using AVEVA E3D for the urea production facility</li>
-        <li>Assisted in piping system design and routing based on process P&IDs</li>
-        <li>Supported the preparation of isometric drawings and material take-offs</li>
-        <li>Participated in design reviews and clash detection sessions</li>
-        <li>Coordinated with process and mechanical teams for equipment layout</li>
-        <li>Reviewed piping specifications per ASME B31.3 standards</li>
-      </ul>
-    `,
-    products: ['Urea', 'Fertilizer', 'Agricultural Chemicals'],
-    contribution: 25,
-    contributionText: 'Significant contribution to piping design and 3D modeling for one of the largest fertilizer plants in the portfolio. Worked alongside senior engineers on critical process piping systems.'
-  },
-  bingsuan: {
-    tag: 'FINE CHEMICALS',
-    title: 'BINGSUAN — Propionic Acid Plant',
-    client: 'Lanzhou Aigmed Synthetic Biotechnology Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/BINGSUAN_1_qbva7e.png',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/BINGSUAN_1_qbva7e.png'
-    ],
-    meta: [
-      { label: 'Location', value: 'Lanzhou, China' },
-      { label: 'Capacity', value: '5,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC26001' },
-      { label: 'Sector', value: 'Fine Chemicals / Biotech' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The BINGSUAN project represents a complete 100% design contribution for a synthetic biotechnology propionic acid production facility in Lanzhou, China. This specialty chemical plant produces 5,000 tons per year of propionic acid, an important organic acid used in food preservation, animal feed, and pharmaceutical applications.</p>
-      <p>As the lead piping designer on this project, I was responsible for the complete piping engineering scope from initial 3D modeling through final isometric drawing production. The project showcased our team's ability to deliver comprehensive engineering solutions for biotechnology-focused chemical production facilities.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete 3D plant modeling using AVEVA PDMS/E3D</li>
-        <li>Developed piping component databases using AVEVA Paragon</li>
-        <li>Built pipe specifications (SPECON) per ASME B16 standards</li>
-        <li>Produced all isometric drawings, BOM, and weld mapping</li>
-        <li>Performed clash detection and design optimization</li>
-        <li>Prepared Material Take-Off reports for procurement</li>
-        <li>Coordinated with process engineers for P&ID implementation</li>
-      </ul>
-    `,
-    products: ['Propionic Acid', 'Biotechnology Products', 'Food Grade Chemicals'],
-    contribution: 100,
-    contributionText: 'Complete 100% design contribution — led the entire piping engineering scope from concept through detailed design and documentation delivery.'
-  },
-  qixiang: {
-    tag: 'ENERGY',
-    title: 'QIXIANG — Steam Generation Facility',
-    client: 'Zibo Qixiang Tengda Chemical Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/QIXANG-1_ojnjoz.png',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/QIXANG-1_ojnjoz.png',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868726/QIXANG-2_uudvq8.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868724/QIXANG_x8pizv.jpg'
-    ],
-    meta: [
-      { label: 'Location', value: 'Zibo, China' },
-      { label: 'Capacity', value: '3,360,000 t/yr' },
-      { label: 'Project Code', value: 'S20251023' },
-      { label: 'Sector', value: 'Energy & Utilities' },
-      { label: 'Design Contribution', value: '75%' }
-    ],
-    description: `
-      <p>The QIXIANG Steam Generation Facility is a major energy infrastructure project with 75% design contribution from CRTEC. Located in Zibo, China, this massive facility has an annual capacity of 3.36 million tons, making it one of the highest-capacity projects in our portfolio. The plant provides critical steam supply for chemical production operations.</p>
-      <p>This project required extensive piping engineering expertise due to the high-pressure, high-temperature steam systems involved. The complexity of the steam generation and distribution network demanded rigorous adherence to international standards and careful coordination across multiple engineering disciplines.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Contributed to 75% of the piping design scope for the steam generation facility</li>
-        <li>Modeled high-pressure steam piping systems in AVEVA E3D</li>
-        <li>Designed pipe supports and structural frameworks for heavy piping</li>
-        <li>Performed flexibility analysis for critical steam lines</li>
-        <li>Produced comprehensive isometric drawings for installation</li>
-        <li>Coordinated with mechanical team on boiler and turbine interfaces</li>
-        <li>Reviewed material specifications for high-temperature service</li>
-      </ul>
-    `,
-    products: ['Steam Generation', 'Energy Supply', 'Industrial Utilities'],
-    contribution: 75,
-    contributionText: 'Major 75% design contribution — one of the highest-capacity projects (3.36M t/yr) with complex high-pressure steam piping systems.'
-  },
-  yuxianghy: {
-    tag: 'ENERGY',
-    title: 'YUXIANGHY — Nitric Acid Waste Heat Recovery',
-    client: 'Xinjiang Yuxiang Poplar Chemical Co., Ltd',
-    hasImage: false,
-    gallery: [],
-    meta: [
-      { label: 'Location', value: 'Xinjiang, China' },
-      { label: 'Environmental Impact', value: '20,000 t CO₂ reduction/yr' },
-      { label: 'Project Code', value: 'ENCOSC25005' },
-      { label: 'Sector', value: 'Energy / Environmental' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The YUXIANGHY project represents a complete 100% design contribution for a nitric acid waste heat recovery system in Xinjiang, China. This environmental sustainability project is designed to reduce 20,000 tons of CO₂ emissions annually through advanced energy recovery technology, making it a flagship green engineering initiative.</p>
-      <p>The project involved designing complex heat exchanger networks and recovery piping systems that capture waste heat from nitric acid production processes and convert it into useful energy. This type of project represents the future of sustainable chemical engineering.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for waste heat recovery systems</li>
-        <li>Modeled heat exchanger networks in 3D plant environment</li>
-        <li>Designed high-temperature piping for heat recovery applications</li>
-        <li>Prepared comprehensive engineering documentation</li>
-        <li>Optimized piping layouts for thermal efficiency</li>
-        <li>Coordinated with environmental engineers on emissions reduction targets</li>
-      </ul>
-    `,
-    products: ['Waste Heat Recovery', 'CO₂ Reduction', 'Energy Efficiency', 'Green Technology'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for an environmental sustainability project reducing 20,000 tons of CO₂ annually through energy recovery technology.'
-  },
-  arit: {
-    tag: 'CONSTRUCTION',
-    title: 'ARIT — Concrete Admixtures Plant',
-    client: 'Linzhi Aolaite New Materials Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/ARIT-4_m8jdbc.png',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/ARIT-4_m8jdbc.png',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868720/ARIT-3_nhjxrb.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868720/ARIT-2_glxtea.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868718/ARIT-1_nsipg6.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868718/ARIT_vj5dyt.jpg'
-    ],
-    meta: [
-      { label: 'Location', value: 'Linzhi, China' },
-      { label: 'Capacity', value: '500,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC25046' },
-      { label: 'Sector', value: 'Construction Chemicals' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The ARIT Concrete Admixtures Plant is a large-scale chemical manufacturing facility with 100% design contribution from CRTEC. Located in Linzhi, China, this plant produces 500,000 tons per year of construction chemicals including concrete admixtures, water reducing agents, quick setting agents, and expanding agents.</p>
-      <p>This high-volume production facility required comprehensive piping engineering for multiple product lines, storage systems, and distribution networks. The project demonstrated our team's capability to handle complex multi-product chemical plants with diverse piping requirements.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete 3D plant modeling for the entire facility</li>
-        <li>Designed piping systems for multiple chemical product lines</li>
-        <li>Modeled storage tanks and distribution networks</li>
-        <li>Prepared isometric drawings for all piping systems</li>
-        <li>Developed material specifications for corrosive service</li>
-        <li>Coordinated with process team on batch production systems</li>
-        <li>Performed clash detection across all disciplines</li>
-      </ul>
-    `,
-    products: ['Concrete Admixtures', 'Water Reducing Agent', 'Quick Setting Agent', 'Expanding Agent'],
-    contribution: 100,
-    contributionText: 'Complete 100% design contribution for a high-volume (500K t/yr) construction chemicals facility with multiple product lines.'
-  },
-  sanming: {
-    tag: 'NEW MATERIALS',
-    title: 'SANMING — Lithium Hexafluorophosphate',
-    client: 'Fujian Sanming Runxiang New Materials Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868727/SANMING_1_uen56s.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868727/SANMING_1_uen56s.jpg'
-    ],
-    meta: [
-      { label: 'Location', value: 'Fujian, China' },
-      { label: 'Capacity', value: '50 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC25061' },
-      { label: 'Sector', value: 'New Materials / Battery' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The SANMING project represents a complete 100% design contribution for lithium hexafluorophosphate (LiPF₆) production — a critical electrolyte material for lithium-ion batteries. Located in Fujian, China, this high-value specialty chemical facility supports the rapidly growing electric vehicle battery supply chain.</p>
-      <p>LiPF₆ is the most widely used lithium salt in commercial lithium-ion battery electrolytes. The production process requires extremely precise piping design due to the highly reactive and moisture-sensitive nature of the chemicals involved. This project showcased our expertise in handling specialized chemical processes.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for LiPF₆ production facility</li>
-        <li>Designed specialized piping for moisture-sensitive chemical handling</li>
-        <li>Modeled reactor systems and purification equipment</li>
-        <li>Prepared detailed isometric drawings for installation</li>
-        <li>Developed material specifications for corrosive service</li>
-        <li>Coordinated with process engineers on safety-critical systems</li>
-      </ul>
-    `,
-    products: ['Lithium Hexafluorophosphate (LiPF₆)', 'Battery Electrolyte', 'EV Battery Materials'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for a high-value specialty chemical facility supporting the electric vehicle battery supply chain.'
-  },
-  haifeng: {
-    tag: 'FINE CHEMICALS',
-    title: 'HAIFENG — Triethylene & Tetraethylene Glycol',
-    client: 'Yibin Haifeng Herui Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HAIFENG_llrwiw.png',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HAIFENG_llrwiw.png'
-    ],
-    meta: [
-      { label: 'Location', value: 'Yibin, China' },
-      { label: 'Capacity', value: '50,000 + 100,000 t/yr' },
-      { label: 'Project Code', value: 'ENCO25174' },
-      { label: 'Sector', value: 'Fine Chemicals' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The HAIFENG project represents a complete 100% design contribution for a dual glycol production facility in Yibin, China. This multi-product chemical plant produces Triethylene Glycol (50,000 t/yr) and Tetraethylene Glycol (100,000 t/yr), which are important industrial solvents used in natural gas dehydration, air disinfection, and various chemical synthesis applications.</p>
-      <p>The project required careful piping design to handle multiple product streams with different properties and processing requirements. The large combined capacity of 150,000 tons per year made this one of the significant chemical production facilities in our portfolio.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete 3D plant modeling for dual glycol production</li>
-        <li>Designed piping systems for multiple product lines</li>
-        <li>Modeled distillation columns and separation equipment</li>
-        <li>Prepared comprehensive isometric documentation</li>
-        <li>Developed material specifications for glycol service</li>
-        <li>Coordinated with process team on multi-product operations</li>
-      </ul>
-    `,
-    products: ['Triethylene Glycol (TEG)', 'Tetraethylene Glycol', 'Industrial Solvents'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for a dual-product glycol facility with combined capacity of 150,000 tons per year.'
-  },
-  ezhong: {
-    tag: 'FERTILIZER',
-    title: 'EZHONG — Potash Fertilizer & Calcium Chloride',
-    client: 'Gubei Ezhong Ecological Agriculture Technology Co., Ltd',
-    hasImage: false,
-    gallery: [],
-    meta: [
-      { label: 'Location', value: 'Gubei, China' },
-      { label: 'Capacity', value: '80,000 + 50,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC24009' },
-      { label: 'Sector', value: 'Fertilizer & Agriculture' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The EZHONG project represents a complete 100% design contribution for a dual-product agricultural facility in Gubei, China. This ecological agriculture technology plant produces Potash fertilizer (80,000 t/yr) and Calcium chloride (50,000 t/yr), supporting sustainable agricultural practices with a focus on ecological production methods.</p>
-      <p>The project required comprehensive piping engineering for two distinct product lines with different chemical properties and processing requirements. The ecological focus of the facility demanded careful attention to environmental considerations in the design.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for dual-product facility</li>
-        <li>Designed separate piping systems for potash and CaCl₂ production</li>
-        <li>Modeled production equipment and storage systems</li>
-        <li>Prepared detailed engineering documentation</li>
-        <li>Developed material specifications for agricultural chemical service</li>
-        <li>Coordinated with environmental team on ecological requirements</li>
-      </ul>
-    `,
-    products: ['Potash Fertilizer', 'Calcium Chloride', 'Agricultural Chemicals'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for a dual-product agricultural facility with ecological production focus.'
-  },
-  jsd: {
-    tag: 'FINE CHEMICALS',
-    title: 'JSD — Melamine Polyphosphate & DPP',
-    client: 'Sichuan Jingshida Technology Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdjjru.png',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdjjru.png',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/JSD-1_nzv3rz.png',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868724/JSD-2_jfbttr.jpg'
-    ],
-    meta: [
-      { label: 'Location', value: 'Sichuan, China' },
-      { label: 'Capacity', value: '5,000 + 3,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC24029' },
-      { label: 'Sector', value: 'Fine Chemicals' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The JSD project represents a complete 100% design contribution for dual specialty chemical production in Sichuan, China. This facility produces Melamine polyphosphate (5,000 t/yr), an important flame retardant used in plastics and textiles, and Diketopyrrolopyrrole or DPP (3,000 t/yr), a high-performance pigment used in automotive coatings and industrial applications.</p>
-      <p>The project required specialized piping design for two very different chemical processes — one involving flame retardant synthesis and the other involving complex organic pigment production. This diversity showcased our team's versatility in handling various chemical engineering challenges.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for dual specialty chemical production</li>
-        <li>Designed piping systems for flame retardant synthesis</li>
-        <li>Modeled complex organic pigment production equipment</li>
-        <li>Prepared comprehensive isometric drawings</li>
-        <li>Developed specialized material specifications</li>
-        <li>Coordinated with process engineers on both product lines</li>
-      </ul>
-    `,
-    products: ['Melamine Polyphosphate (Flame Retardant)', 'Diketopyrrolopyrrole (DPP Pigment)', 'Specialty Chemicals'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for dual specialty chemical production — flame retardants and high-performance pigments.'
-  },
-  shichengshou: {
-    tag: 'AGRICULTURE',
-    title: 'SHICHENGSHOU — Soil Remediation Agent',
-    client: 'Sichuan Shichengshou Ecological Technology Co., Ltd',
-    hasImage: false,
-    gallery: [],
-    meta: [
-      { label: 'Location', value: 'Sichuan, China' },
-      { label: 'Capacity', value: '60,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC24062' },
-      { label: 'Sector', value: 'Agriculture / Environmental' },
-      { label: 'Design Contribution', value: '20%' }
-    ],
-    description: `
-      <p>The SHICHENGSHOU project represents a 20% design contribution for a soil remediation agent production facility in Sichuan, China. This environmental technology project supports ecological restoration efforts with a production capacity of 60,000 tons per year of soil remediation agents.</p>
-      <p>Soil remediation is a critical environmental technology that helps restore contaminated land to productive use. The production of remediation agents requires careful chemical engineering to ensure the effectiveness and safety of the final products.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Contributed to piping design for soil remediation agent production</li>
-        <li>Assisted in 3D modeling of production equipment</li>
-        <li>Supported preparation of engineering documentation</li>
-        <li>Coordinated with environmental engineers on product specifications</li>
-        <li>Reviewed piping layouts for production efficiency</li>
-      </ul>
-    `,
-    products: ['Soil Remediation Agents', 'Environmental Technology', 'Ecological Restoration'],
-    contribution: 20,
-    contributionText: '20% design contribution for an environmental technology project supporting ecological restoration with 60,000 tons annual capacity.'
-  },
-  hnlc: {
-    tag: 'PVC / CHLOR-ALKALI',
-    title: 'HNLC — PVC Resin & Acetylene Plant',
-    client: 'Henan Lianchuang Chemical Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868722/HNLC-1_spvk6o.jpg'
-    ],
-    meta: [
-      { label: 'Location', value: 'Henan, China' },
-      { label: 'Capacity', value: '200,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC24242' },
-      { label: 'Sector', value: 'PVC / Chlor-Alkali' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The HNLC project represents a complete 100% design contribution for a PVC resin and acetylene production facility in Henan, China. This major chlor-alkali complex has an annual capacity of 200,000 tons and represents one of the significant industrial projects in our portfolio.</p>
-      <p>PVC (Polyvinyl Chloride) is one of the most widely used plastics in the world, and its production requires complex chemical processes involving chlorine, ethylene, and acetylene. The project required comprehensive piping engineering for highly corrosive and hazardous chemical services.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for PVC resin and acetylene production</li>
-        <li>Designed piping systems for chlor-alkali processes</li>
-        <li>Modeled complex chemical reactors and separation equipment</li>
-        <li>Prepared detailed isometric drawings for installation</li>
-        <li>Developed material specifications for corrosive service</li>
-        <li>Coordinated with safety engineers on hazardous chemical handling</li>
-        <li>Performed clash detection across all disciplines</li>
-      </ul>
-    `,
-    products: ['PVC Resin', 'Acetylene', 'Chlor-Alkali Products'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for a major chlor-alkali complex producing 200,000 tons per year of PVC resin and acetylene.'
-  },
-  xingfa: {
-    tag: 'NEW MATERIALS',
-    title: 'XINGFA — 2,5-Furandicarboxylic Acid (FDCA)',
-    client: 'Hubei Jixing Chemical Group Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/XINGFA-2_tx3pzd.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868727/XINGFA-1_hso8zg.jpg'
-    ],
-    meta: [
-      { label: 'Location', value: 'Hubei, China' },
-      { label: 'Capacity', value: '100 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC23043' },
-      { label: 'Sector', value: 'New Materials / Green Chemistry' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The XINGFA project represents a complete 100% design contribution for FDCA (2,5-Furandicarboxylic Acid) production in Hubei, China. FDCA is a sustainable bio-based polymer precursor that is replacing petroleum-based terephthalic acid (TPA) in the production of sustainable plastics. This cutting-edge green chemistry project represents the future of sustainable materials.</p>
-      <p>FDCA is considered one of the most important platform chemicals for the bio-based economy. It can be used to produce PEF (polyethylene furanoate), a bioplastic that offers superior barrier properties compared to PET, making it ideal for beverage bottles and food packaging.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for FDCA production facility</li>
-        <li>Designed specialized piping for bio-based chemical processes</li>
-        <li>Modeled fermentation and purification equipment</li>
-        <li>Prepared comprehensive engineering documentation</li>
-        <li>Developed material specifications for organic acid service</li>
-        <li>Coordinated with process engineers on green chemistry requirements</li>
-      </ul>
-    `,
-    products: ['FDCA (2,5-Furandicarboxylic Acid)', 'Bio-Polymer Precursor', 'Sustainable Plastics', 'Green Chemistry'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for a cutting-edge green chemistry project producing sustainable bio-based polymer precursors.'
-  },
-  qichuang: {
-    tag: 'FINE CHEMICALS',
-    title: 'QICHUANG — Fine Chemicals (Phenylhydrazine)',
-    client: 'Wuhai Qichuang New Materials Technology Co., Ltd',
-    hasImage: false,
-    gallery: [],
-    meta: [
-      { label: 'Location', value: 'Wuhai, China' },
-      { label: 'Capacity', value: '3,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC23059' },
-      { label: 'Sector', value: 'Fine Chemicals' },
-      { label: 'Design Contribution', value: '20%' }
-    ],
-    description: `
-      <p>The QICHUANG project represents a 20% design contribution for fine chemicals production including phenylhydrazine in Wuhai, China. This specialty chemical manufacturing facility produces 3,000 tons per year of pharmaceutical and agrochemical intermediates.</p>
-      <p>Phenylhydrazine is an important organic compound used in the synthesis of pharmaceuticals, agricultural chemicals, and dyes. The production process requires careful handling due to the toxic and reactive nature of the chemicals involved.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Contributed to piping design for phenylhydrazine production</li>
-        <li>Assisted in 3D modeling of chemical processing equipment</li>
-        <li>Supported preparation of engineering documentation</li>
-        <li>Coordinated with process engineers on safety requirements</li>
-        <li>Reviewed piping layouts for hazardous chemical service</li>
-      </ul>
-    `,
-    products: ['Phenylhydrazine', 'Pharmaceutical Intermediates', 'Agrochemical Intermediates'],
-    contribution: 20,
-    contributionText: '20% design contribution for a specialty chemical facility producing pharmaceutical and agrochemical intermediates.'
-  },
-  hailiang: {
-    tag: 'NEW MATERIALS',
-    title: 'HAILIANG — DMTDA & DETDA Diamines',
-    client: 'Shandong Hailiang New Materials Co., Ltd',
-    hasImage: false,
-    gallery: [],
-    meta: [
-      { label: 'Location', value: 'Shandong, China' },
-      { label: 'Capacity', value: '2,500 + 4,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC22004' },
-      { label: 'Sector', value: 'New Materials' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The HAILIANG project represents a complete 100% design contribution for dual diamine production in Shandong, China. This facility produces Dimethylthiotoluenediamine or DMTDA (2,500 t/yr) and Diethyltoluenediamine or DETDA (4,000 t/yr), which are critical polyurethane curing agents used in industrial applications including coatings, elastomers, and adhesives.</p>
-      <p>DMTDA and DETDA are high-performance curing agents that provide excellent mechanical properties and chemical resistance to polyurethane products. The production of these specialty chemicals requires precise process control and careful piping design.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for dual diamine production</li>
-        <li>Designed piping systems for amine chemical processing</li>
-        <li>Modeled reactor systems and purification equipment</li>
-        <li>Prepared detailed isometric drawings</li>
-        <li>Developed material specifications for amine service</li>
-        <li>Coordinated with process team on curing agent production</li>
-      </ul>
-    `,
-    products: ['DMTDA (Dimethylthiotoluenediamine)', 'DETDA (Diethyltoluenediamine)', 'Polyurethane Curing Agents'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for dual diamine production facility producing critical polyurethane curing agents.'
-  },
-  hechang: {
-    tag: 'NEW MATERIALS',
-    title: 'HECHANG — Crude Anthracene Plant',
-    client: 'Hubei Hechang New Energy Materials Co., Ltd',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg'
-    ],
-    meta: [
-      { label: 'Location', value: 'Hubei, China' },
-      { label: 'Capacity', value: '10,000 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC22070' },
-      { label: 'Sector', value: 'New Materials / Energy' },
-      { label: 'Design Contribution', value: '100%' }
-    ],
-    description: `
-      <p>The HECHANG project represents a complete 100% design contribution for crude anthracene production in Hubei, China. This facility produces 10,000 tons per year of crude anthracene, a polycyclic aromatic hydrocarbon used in dyes, pigments, and advanced materials for energy applications.</p>
-      <p>Anthracene is an important precursor for the production of various high-value chemicals and materials. It is used in the manufacture of dyes, plastics, and wood preservatives, and has applications in organic semiconductors and solar cells.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Led complete piping design for anthracene production</li>
-        <li>Designed piping systems for aromatic hydrocarbon processing</li>
-        <li>Modeled distillation and crystallization equipment</li>
-        <li>Prepared comprehensive engineering documentation</li>
-        <li>Developed material specifications for aromatic service</li>
-        <li>Coordinated with process engineers on purification systems</li>
-      </ul>
-    `,
-    products: ['Crude Anthracene', 'Polycyclic Aromatic Hydrocarbons', 'Energy Materials', 'Advanced Materials'],
-    contribution: 100,
-    contributionText: 'Complete 100% design for a polycyclic aromatic hydrocarbon production facility supporting advanced materials and energy applications.'
-  },
-  shuzhong: {
-    tag: 'PHARMACEUTICALS',
-    title: 'SHUZHONG — Pepsin & Pancreatin Production',
-    client: 'Sichuan Shuzhong Pharmaceutical Chemical Co., Ltd',
-    hasImage: false,
-    gallery: [],
-    meta: [
-      { label: 'Location', value: 'Sichuan, China' },
-      { label: 'Capacity', value: '12 + 120 t/yr' },
-      { label: 'Project Code', value: 'ENCOSC22108' },
-      { label: 'Sector', value: 'Pharmaceuticals / Biotech' },
-      { label: 'Design Contribution', value: '20%' }
-    ],
-    description: `
-      <p>The SHUZHONG project represents a 20% design contribution for pharmaceutical enzyme production in Sichuan, China. This biotech pharmaceutical facility produces Pepsin (12 t/yr) and Pancreatin (120 t/yr), which are important digestive enzymes used in pharmaceutical and nutritional supplement applications.</p>
-      <p>Pepsin is a digestive enzyme that breaks down proteins in the stomach, while Pancreatin is a mixture of digestive enzymes produced by the pancreas. Both are used in pharmaceutical formulations for digestive disorders and as nutritional supplements.</p>
-      <h4>Key Responsibilities:</h4>
-      <ul>
-        <li>Contributed to piping design for pharmaceutical enzyme production</li>
-        <li>Assisted in 3D modeling of biotech processing equipment</li>
-        <li>Supported preparation of GMP-compliant documentation</li>
-        <li>Coordinated with process engineers on sterile processing requirements</li>
-        <li>Reviewed piping layouts for pharmaceutical-grade service</li>
-      </ul>
-    `,
-    products: ['Pepsin', 'Pancreatin', 'Digestive Enzymes', 'Pharmaceutical Products'],
-    contribution: 20,
-    contributionText: '20% design contribution for a biotech pharmaceutical facility producing digestive enzymes for medical applications.'
-  },
-  huayi: {
-    tag: 'PVC / CHLOR-ALKALI',
-    title: 'HUAYI — Caustic Soda & PVC Oxychlorination',
-    client: 'Shanghaichem Engineering Incorporation',
+  prepolymer: {
+    tag: 'POLYMERS',
+    title: 'Polyurethane Prepolymer Layout Project',
+    client: 'Process Engineering Studies',
     hasImage: true,
     heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI-2_krcym6.jpg',
     gallery: [
@@ -2774,35 +1775,202 @@ const projectData = {
       'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI_gcdh0q.jpg'
     ],
     meta: [
-      { label: 'Location', value: 'Shanghai, China' },
-      { label: 'Capacity', value: '1,300,000 t/yr' },
-      { label: 'Project Code', value: '0215-20-200-A03-00' },
-      { label: 'Sector', value: 'PVC / Chlor-Alkali' },
-      { label: 'Design Contribution', value: '60%' }
+      { label: 'Asset Location', value: 'Shanghai/Remote' },
+      { label: 'Catalysts Used', value: 'TDA, MDI, Aluminum-based' },
+      { label: 'Role', value: 'Piping Designer' },
+      { label: 'Software Used', value: 'AVEVA PDMS' }
     ],
     description: `
-      <p>The HUAYI project represents a 60% design contribution for one of the largest projects in CRTEC's portfolio. This major chlor-alkali and PVC oxychlorination complex in Shanghai, China has an annual capacity of 1.3 million tons, making it a flagship project that demonstrates our team's capability to handle world-scale industrial facilities.</p>
-      <p>The chlor-alkali industry is fundamental to modern chemical manufacturing, producing chlorine, caustic soda (sodium hydroxide), and hydrogen from salt water. These products are essential raw materials for thousands of downstream chemical processes. The PVC oxychlorination process is a key method for producing vinyl chloride monomer, the building block of PVC plastic.</p>
-      <h4>Key Responsibilities:</h4>
+      <p>This project involved designing process lines for a polyurethane prepolymer layout study. The design accommodates process equipment configurations associated with treating reactant matrices such as TDA, MDI, and customized aluminum-based organic catalysts.</p>
+      <h4>Engineering Actions Taken:</h4>
       <ul>
-        <li>Contributed to 60% of the piping design scope for this world-scale facility</li>
-        <li>Modeled complex chlor-alkali process piping in AVEVA E3D</li>
-        <li>Designed piping systems for highly corrosive chlorine and caustic service</li>
-        <li>Prepared comprehensive isometric drawings for installation</li>
-        <li>Developed specialized material specifications for chlor-alkali service</li>
-        <li>Coordinated with multiple engineering disciplines on this complex project</li>
-        <li>Participated in design reviews with international engineering teams</li>
-        <li>Performed clash detection across all plant areas</li>
+        <li>Configured layout interfaces in 3D using AVEVA PDMS modules.</li>
+        <li>Designed process connections for reactors and localized vessels.</li>
+        <li>Arranged and coordinated system pipe racks, platforms, and maintenance routes.</li>
+        <li>Established anti-corrosion layer definitions for localized pipeline assets.</li>
       </ul>
     `,
-    products: ['Caustic Soda (NaOH)', 'PVC (Polyvinyl Chloride)', 'Chlorine', 'Oxychlorination Products'],
+    products: ['Prepolymer', 'Reactant Systems', 'Catalytic Feeds'],
     contribution: 60,
-    contributionText: 'Major 60% design contribution for the largest project in the portfolio — a world-scale chlor-alkali and PVC complex with 1.3 million tons annual capacity.'
+    contributionText: 'Responsible for process-area modeling, equipment positioning, and generation of anti-corrosion specifications.'
+  },
+  jingshida: {
+    tag: 'ADDITIVES',
+    title: 'MPP & DPP Fuel Additive Plant',
+    client: 'Sichuan Jingshida Technology Co. (ENCOSC24029)',
+    hasImage: true,
+    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdijru.png',
+    gallery: [
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdijru.png',
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/JSD-1_nzv3rz.png',
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868724/JSD-2_jfbttr.jpg'
+    ],
+    meta: [
+      { label: 'Plant Type', value: 'Chemical Additives' },
+      { label: 'Plant Capacity', value: '5000t/a MPP & 3000t/a DPP' },
+      { label: 'Code', value: 'ENCOSC24029' },
+      { label: 'Design Contribution', value: '100%' }
+    ],
+    description: `
+      <p>A full layout configuration task for Sichuan Jingshida Technology. This process facility handles high-volume fuel additive blends (Melamine Polyphosphate & DPP), requiring meticulous spacing and structural engineering.</p>
+      <h4>Engineering Actions Taken:</h4>
+      <ul>
+        <li>Modeled structural steelwork, concrete platform bases, and pipeline corridors using AVEVA E3D/PDMS.</li>
+        <li>Organized process pumps, valves, and specialized heat exchanges dynamically in 3D.</li>
+        <li>Resolved complex layout clashes within dense pipe rack arrangements.</li>
+        <li>Completed localized 2D isometric revisions in AutoCAD based on routing evaluations.</li>
+      </ul>
+    `,
+    products: ['MPP Fuel Additive', 'DPP Additives', 'Organic Polymers'],
+    contribution: 100,
+    contributionText: 'Formulated the plant structures, detailed piping system routes, resolved space clashes, and generated standard deliverables.'
+  },
+  ezhong: {
+    tag: 'FERTILIZERS',
+    title: 'Potash Fertilizer & CaCl2 Plant',
+    client: 'Gubei Ezhong Ecological Agriculture (ENCOSC24009)',
+    hasImage: false,
+    gallery: [],
+    meta: [
+      { label: 'Plant Location', value: 'Gubei, China' },
+      { label: 'Capacity', value: '80,000 TPY Potash / 50,000 TPY CaCl2' },
+      { label: 'Code', value: 'ENCOSC24009' },
+      { label: 'Application', value: 'AVEVA E3D' }
+    ],
+    description: `
+      <p>This layout engineering project covers Gubei Ezhong's twin-train potash and calcium agricultural processing facility, emphasizing structural alignment and fluid transfer efficiency.</p>
+      <h4>Engineering Actions Taken:</h4>
+      <ul>
+        <li>Developed process area configurations inside E3D's structural module.</li>
+        <li>Constructed process piping routes for dense fluid streams.</li>
+        <li>Coordinated design reviews using Navisworks visualization files.</li>
+        <li>Calculated system specifications and verified pipeline support frameworks.</li>
+      </ul>
+    `,
+    products: ['Potash Fertilizer', 'Calcium Chloride', 'Ecological Minerals'],
+    contribution: 100,
+    contributionText: 'Executed full structural design blocks, calculated pipeline routing solutions, and configured support configurations.'
+  },
+  xingfa: {
+    tag: 'BIO-BASED',
+    title: 'Xingfa Materials Pilot Plant',
+    client: 'Hubei Jixing Chemical Group (ENCOSC23043)',
+    hasImage: true,
+    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg',
+    gallery: [
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg',
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/XINGFA-2_tx3pzd.jpg',
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868727/XINGFA-1_hso8zg.jpg'
+    ],
+    meta: [
+      { label: 'Process Units', value: 'Air/Nitric Acid Oxidation' },
+      { label: 'Technology', value: 'Bio-Based Materials Synthesis' },
+      { label: 'Role', value: 'Lead Piping Designer' },
+      { label: 'Deliverables', value: 'Material Take-off & supports' }
+    ],
+    description: `
+      <p>Designed a pilot plant focusing on the conversion of biomass feedstocks into specialty polymers, featuring thermal reactors, air injection loops, and multi-stage distillation columns.</p>
+      <h4>Engineering Actions Taken:</h4>
+      <ul>
+        <li>Modeled the overall plant environment including steel systems and support grids.</li>
+        <li>Routed complex, highly corrosive nitric acid distribution networks.</li>
+        <li>Configured specialized pipe hangers and pipe supports suited for high-temperature cycles.</li>
+        <li>Constructed corrosion and safety specification tables to guide the field assembly crew.</li>
+      </ul>
+    `,
+    products: ['Organic Acids', 'Polymer Intermediates', 'Bio-based Base Stocks'],
+    contribution: 100,
+    contributionText: 'Owned the 3D process routing task, specified dynamic pipe supports, and generated full procurement schedules.'
+  },
+  lianchuang: {
+    tag: 'POLYMERS',
+    title: 'PO & Polyether Plant Project',
+    client: 'Henan Lianchuang Chemical Co.',
+    hasImage: true,
+    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg',
+    gallery: [
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg',
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868722/HNLC-1_spvk6o.jpg'
+    ],
+    meta: [
+      { label: 'Plant Capacity', value: '20,000 TPY Polyether' },
+      { label: 'Process Focus', value: 'Propylene Oxide Synthesis' },
+      { label: 'Design Tool', value: 'AVEVA PDMS' },
+      { label: 'Asset Code', value: 'HNLC-2' }
+    ],
+    description: `
+      <p>Involved coordinating layout updates for Henan Lianchuang's Polyether process train. The environment features high-pressure systems requiring optimized pipe spacing and supports.</p>
+      <h4>Engineering Actions Taken:</h4>
+      <ul>
+        <li>Modeled reactor platforms, access stairs, and associated column piping systems.</li>
+        <li>Established localized piping layout patterns near core heat exchange clusters.</li>
+        <li>Developed thermal insulation schedules to maintain precise process temperatures.</li>
+        <li>Coordinated layout adjustments through multidisciplinary design meetings.</li>
+      </ul>
+    `,
+    products: ['Propylene Oxide', 'Specialty Polyethers', 'Solvents'],
+    contribution: 80,
+    contributionText: 'Responsible for structural asset modeling, primary layout adjustments, and heat insulation specifications.'
+  },
+  hechang: {
+    tag: 'PETROCHEM',
+    title: 'Anthracene Separation Workshop',
+    client: 'Hubei Hechang New Energy Materials (ENCOSC22070)',
+    hasImage: true,
+    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg',
+    gallery: [
+      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg'
+    ],
+    meta: [
+      { label: 'Device Focus', value: 'Coarse Anthracene Crystallization' },
+      { label: 'Standard Adherence', value: 'GB51283-2020 (Hazardous Materials)' },
+      { label: 'Piping Density', value: '> 600 pipelines modeled' },
+      { label: 'Platform Used', value: 'Navisworks & E3D' }
+    ],
+    description: `
+      <p>This layout scope comprised the coarse anthracene processing workshop and an adjacent Class A tank farm. Due to toxic and flammable process environments, design actions adhered strictly to industrial standard GB51283-2020.</p>
+      <h4>Engineering Actions Taken:</h4>
+      <ul>
+        <li>Assembled comprehensive plant models, representing vessels, feed lines, and utility routes.</li>
+        <li>Engineered a system of critical pipe supports considering thermal growth properties.</li>
+        <li>Conducted thorough model checks and clash verification in Navisworks to optimize installation clearances.</li>
+        <li>Formatted complete material schedules and specified protective surface coatings.</li>
+      </ul>
+    `,
+    products: ['Coarse Anthracene', 'Aromatic Hydrocarbons', 'Energy Feedstocks'],
+    contribution: 100,
+    contributionText: 'Formulated the entire workshop design system, optimized routing configurations, and ensured strict code compliance.'
+  },
+  yuxianghy: {
+    tag: 'RECOVERY',
+    title: 'Nitric Acid Heat Recovery Plant',
+    client: 'Xinjiang Yuxiang Poplar Chemical',
+    hasImage: false,
+    gallery: [],
+    meta: [
+      { label: 'Project Goal', value: 'Heat Recovery & Energy Capture' },
+      { label: 'Systems Modeled', value: 'Flue Gas & Water Condensers' },
+      { label: 'Engineering Code', value: 'ASME B31.3' },
+      { label: 'Software', value: 'AVEVA PDMS' }
+    ],
+    description: `
+      <p>A specialized energy-capture pilot project. The facility recovers waste heat generated during nitric acid oxidation stages and uses it to pre-heat secondary utility lines.</p>
+      <h4>Engineering Actions Taken:</h4>
+      <ul>
+        <li>Assembled the 3D plant equipment model based on thermal flowsheets.</li>
+        <li>Routed boiler feed loops and high-pressure steam utility lines.</li>
+        <li>Produced insulation specifications to minimize thermal dissipation.</li>
+        <li>Delivered detailed isometric schematics for fabrication purposes.</li>
+      </ul>
+    `,
+    products: ['High-Pressure Steam', 'Pre-heated Feedwater', 'Utility Condensate'],
+    contribution: 100,
+    contributionText: 'Engineered layout routes, drafted dynamic pipe supports, and completed detailed material schedules.'
   }
 };
 
 // ============================================================
-// NAVIGATION
+// NAVIGATION & TOGGLES
 // ============================================================
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -2815,7 +1983,7 @@ navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
 // ============================================================
-// SCROLL ANIMATIONS
+// SCROLL REVEAL & STAT COUNTERS
 // ============================================================
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -2827,9 +1995,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// ============================================================
-// SKILL BARS ANIMATION
-// ============================================================
 const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -2842,9 +2007,6 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.skill-category').forEach(el => skillObserver.observe(el));
 
-// ============================================================
-// COUNTER ANIMATION
-// ============================================================
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -2852,7 +2014,7 @@ const counterObserver = new IntersectionObserver((entries) => {
       const target = parseInt(el.dataset.count);
       if (!target) return;
       let current = 0;
-      const increment = target / 50;
+      const increment = target / 40;
       const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -2868,7 +2030,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
 // ============================================================
-// PROJECT FILTERING
+// PROJECTS FILTERING
 // ============================================================
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
@@ -2888,7 +2050,7 @@ filterBtns.forEach(btn => {
 });
 
 // ============================================================
-// PROJECT MODAL
+// INTERACTIVE PORTFOLIO MODAL
 // ============================================================
 const modal = document.getElementById('projectModal');
 const modalClose = document.getElementById('modalClose');
@@ -2898,7 +2060,6 @@ function openProjectModal(projectId) {
   const data = projectData[projectId];
   if (!data) return;
 
-  // Build hero section
   if (data.hasImage) {
     modalHero.innerHTML = `
       <img class="modal-hero-img" src="${data.heroImg}" alt="${data.title}">
@@ -2912,8 +2073,7 @@ function openProjectModal(projectId) {
   } else {
     modalHero.innerHTML = `
       <div class="modal-hero-placeholder">
-        <div class="modal-hero-placeholder-icon"></div>
-        <div style="color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:2px">${data.tag}</div>
+        <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;letter-spacing:2px;font-size:1.1rem">${data.tag}</div>
       </div>
       <div class="modal-hero-overlay"></div>
       <div class="modal-hero-content">
@@ -2924,7 +2084,6 @@ function openProjectModal(projectId) {
     `;
   }
 
-  // Meta grid
   const metaHtml = data.meta.map(m => `
     <div class="modal-meta-item">
       <div class="modal-meta-label">${m.label}</div>
@@ -2933,18 +2092,16 @@ function openProjectModal(projectId) {
   `).join('');
   document.getElementById('modalMeta').innerHTML = metaHtml;
 
-  // Description
   document.getElementById('modalDescription').innerHTML = data.description;
 
-  // Gallery
   if (data.gallery && data.gallery.length > 0) {
     const galleryHtml = data.gallery.map((img, idx) => `
       <div class="modal-gallery-item" onclick="window.open('${img}', '_blank')">
-        <img src="${img}" alt="${data.title} - View ${idx + 1}">
+        <img src="${img}" alt="${data.title} - Render ${idx + 1}">
       </div>
     `).join('');
     document.getElementById('modalGallery').innerHTML = `
-      <h4>Project Gallery (${data.gallery.length} Images)</h4>
+      <h4>Plant Model Renders (${data.gallery.length})</h4>
       <div class="modal-gallery-grid">${galleryHtml}</div>
     `;
     document.getElementById('modalGallery').style.display = 'block';
@@ -2952,18 +2109,16 @@ function openProjectModal(projectId) {
     document.getElementById('modalGallery').style.display = 'none';
   }
 
-  // Products
   const productsHtml = data.products.map(p => `<span class="modal-product-tag">${p}</span>`).join('');
   document.getElementById('modalProducts').innerHTML = `
-    <h4>Products & Outputs</h4>
+    <h4>Process Components / Stream Focus</h4>
     <div class="modal-products-list">${productsHtml}</div>
   `;
 
-  // Contribution
   document.getElementById('modalContribution').innerHTML = `
     <div class="modal-contribution-icon">${data.contribution}%</div>
     <div class="modal-contribution-text">
-      <h4>Design Contribution: ${data.contribution}%</h4>
+      <h4>Involvement Scope: ${data.contribution}%</h4>
       <p>${data.contributionText}</p>
     </div>
   `;
@@ -2987,10 +2142,8 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Attach click handlers to project cards
 projectCards.forEach(card => {
-  card.addEventListener('click', (e) => {
-    if (e.target.closest('.modal-gallery-item')) return;
+  card.addEventListener('click', () => {
     const projectId = card.dataset.project;
     if (projectId && projectData[projectId]) {
       openProjectModal(projectId);
@@ -2999,24 +2152,24 @@ projectCards.forEach(card => {
 });
 
 // ============================================================
-// CONTACT FORM
+// CONTACT FORM SUBMISSION
 // ============================================================
 document.getElementById('contactForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const btn = this.querySelector('button');
-  const original = btn.textContent;
+  const originalText = btn.textContent;
   btn.textContent = 'Message Sent ✓';
   btn.style.background = '#00e676';
+  btn.style.color = '#000';
   setTimeout(() => {
-    btn.textContent = original;
+    btn.textContent = originalText;
     btn.style.background = '';
+    btn.style.color = '';
     this.reset();
   }, 2500);
 });
 
-// ============================================================
-// SMOOTH SCROLL FOR ANCHOR LINKS
-// ============================================================
+// Smooth scroll handling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -3028,42 +2181,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
-// ============================================================
-// PARALLAX EFFECT ON HERO
-// ============================================================
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const heroBanner = document.querySelector('.hero-banner');
-  if (heroBanner && scrolled < window.innerHeight) {
-    heroBanner.style.transform = `translateY(${scrolled * 0.3}px)`;
-  }
-});
-
-// ============================================================
-// ACTIVE NAV LINK HIGHLIGHTING
-// ============================================================
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.pageYOffset >= sectionTop) {
-      current = section.getAttribute('id');
-    }
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.style.color = '';
-    if (link.getAttribute('href') === '#' + current) {
-      link.style.color = 'var(--cyan)';
-    }
-  });
-});
-
-console.log('Abdu Demle Melaku - Portfolio Website Loaded Successfully');
-console.log('Total Projects: 17');
-console.log('Projects with images: 10 (BINGSUAN, QIXIANG, ARIT, SANMING, HAIFENG, JSD, HNLC, XINGFA, HECHANG, HUAYI)');
-console.log('Projects without images (placeholder): 7 (YUNTH, YUXIANGHY, EZHONG, SHICHENGSHOU, QICHUANG, HAILIANG, SHUZHONG)');
 </script>
 </body>
 </html>
+```
