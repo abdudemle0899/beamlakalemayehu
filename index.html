@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beamlak Alemayehu | Piping Design Engineer Portfolio</title>
-<meta name="description" content="Portfolio of Beamlak Alemayehu, Piping Design Engineer & Chemical Engineer specializing in AVEVA E3D, PDMS, and pipe stress analysis.">
+<title>Beamlak Alemayehu | Piping Design Engineer & Pipe Stress Professional</title>
+<meta name="description" content="Portfolio of Beamlak Alemayehu, Piping Design Supervisor & Pipe Stress Engineering Professional specializing in AVEVA E3D, PDMS, CAESAR II, and ASME B31.3.">
 
 <link href="https://cdn.jsdelivr.net/npm/fontsource-space-grotesk@5.0.0/index.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/fontsource-cormorant-garamond@5.0.0/index.css" rel="stylesheet">
@@ -13,23 +13,32 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#f9f6f0;         /* Technical Draft Paper Warm White */
-  --bg-alt:#efece6;     /* Shaded Document Gray/Beige */
-  --text:#1c1c1c;       /* Ink Black */
-  --text-dim:#5a5d60;   /* Slate Gray */
-  --accent:#bc6c25;     /* Warm Clay/Terracotta (Copper pipes theme) */
-  --accent-soft:#dda15e;
-  --accent-dim:rgba(188,108,37,0.08);
-  --border:#1c1c1c;     /* Clean solid drawing borders */
-  --border-light:rgba(28,28,28,0.15);
-  --radius:4px;         /* Technical drawing style - sharp, clean corners */
+  --navy:#0A2540;
+  --navy-deep:#061526;
+  --navy-light:#1E3A5F;
+  --navy-soft:#2C4A70;
+  --white:#FFFFFF;
+  --off-white:#F7F9FC;
+  --steel:#6B7280;
+  --steel-light:#9CA3AF;
+  --steel-dark:#4B5563;
+  --steel-pale:#E5E7EB;
+  --steel-bg:#F3F4F6;
+  --border:var(--navy);
+  --border-light:rgba(10,37,64,0.15);
+  --accent:var(--navy);
+  --radius:4px;
   --transition:0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-sm:0 1px 2px rgba(10,37,64,0.05);
+  --shadow-md:0 4px 12px rgba(10,37,64,0.08);
+  --shadow-lg:0 12px 32px rgba(10,37,64,0.12);
 }
 
+html{scroll-behavior:smooth}
 body{
   font-family:'Space Grotesk',sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  background:var(--off-white);
+  color:var(--navy-deep);
   line-height:1.6;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
@@ -38,7 +47,7 @@ body{
 h1,h2,h3,h4{
   font-family:'Cormorant Garamond',serif;
   font-weight:600;
-  color:var(--text);
+  color:var(--navy);
   line-height:1.15;
 }
 
@@ -51,13 +60,13 @@ h1,h2,h3,h4{
 
 /* Left Column - Fixed Sidebar */
 .sidebar{
-  width:350px;
-  background:var(--bg-alt);
-  border-right:2px solid var(--border);
+  width:340px;
+  background:var(--navy);
+  color:var(--white);
   position:fixed;
   top:0;left:0;bottom:0;
   z-index:100;
-  padding:40px;
+  padding:40px 32px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -66,82 +75,83 @@ h1,h2,h3,h4{
 
 /* Right Column - Scrollable Main Canvas */
 .main-canvas{
-  margin-left:350px;
+  margin-left:340px;
   flex:1;
   position:relative;
+  background:var(--off-white);
 }
 
 /* ==================== SIDEBAR COMPONENTS ==================== */
-.sidebar-profile{
-  text-align:center;
-}
+.sidebar-profile{text-align:center}
 .profile-frame{
-  width:160px;
-  height:160px;
-  border:2px solid var(--border);
+  width:150px;height:150px;
+  border:2px solid var(--white);
   border-radius:var(--radius);
   overflow:hidden;
   margin:0 auto 24px;
-  background:var(--bg);
+  background:var(--navy-light);
 }
-.profile-frame img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+.profile-frame img{width:100%;height:100%;object-fit:cover}
 .sidebar-identity h2{
-  font-size:1.8rem;
-  margin-bottom:6px;
+  font-size:1.7rem;color:var(--white);margin-bottom:6px;
 }
 .sidebar-identity p{
   font-family:'Space Grotesk',sans-serif;
-  font-size:0.85rem;
+  font-size:0.78rem;
   text-transform:uppercase;
   letter-spacing:1.5px;
-  color:var(--accent);
-  font-weight:600;
+  color:var(--steel-light);
+  font-weight:500;
+}
+.sidebar-identity .title-line{
+  display:block;
+  margin-bottom:4px;
 }
 
 .sidebar-nav{
   margin:40px 0;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:14px;
 }
 .sidebar-nav a{
-  font-size:1rem;
+  font-size:0.92rem;
   font-weight:500;
-  color:var(--text-dim);
+  color:var(--steel-light);
   display:flex;
   align-items:center;
   gap:12px;
-  padding:6px 0;
+  padding:8px 12px;
   transition:all var(--transition);
-  position:relative;
+  border-left:2px solid transparent;
 }
 .sidebar-nav a span{
   font-family:'JetBrains Mono',monospace;
-  font-size:0.75rem;
-  color:var(--accent);
-  border:1px solid var(--accent);
-  padding:2px 6px;
+  font-size:0.72rem;
+  color:var(--white);
+  background:var(--navy-light);
+  padding:3px 8px;
   border-radius:2px;
+  border:1px solid rgba(255,255,255,0.15);
 }
 .sidebar-nav a:hover{
-  color:var(--text);
-  padding-left:8px;
+  color:var(--white);
+  border-left-color:var(--white);
+  background:rgba(255,255,255,0.04);
 }
 .sidebar-nav a.active{
-  color:var(--text);
+  color:var(--white);
   font-weight:700;
+  border-left-color:var(--white);
+  background:rgba(255,255,255,0.06);
 }
 
 .sidebar-meta{
-  border-top:1.5px solid var(--border-light);
+  border-top:1px solid rgba(255,255,255,0.15);
   padding-top:20px;
-  font-size:0.8rem;
+  font-size:0.78rem;
   font-family:'JetBrains Mono',monospace;
-  color:var(--text-dim);
+  color:var(--steel-light);
 }
 .sidebar-meta-row{
   display:flex;
@@ -149,506 +159,776 @@ h1,h2,h3,h4{
   margin-bottom:6px;
 }
 .sidebar-meta-row strong{
-  color:var(--text);
+  color:var(--white);
+  font-weight:500;
 }
 
 /* ==================== MAIN CANVAS SECTIONS ==================== */
 .canvas-section{
   padding:100px 80px;
-  border-bottom:1.5px solid var(--border-light);
+  border-bottom:1px solid var(--border-light);
 }
-.canvas-section:last-child{
-  border-bottom:none;
-}
+.canvas-section:last-child{border-bottom:none}
 
-/* Section Header styling */
 .tech-header{
   margin-bottom:60px;
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
-  border-bottom:2px solid var(--border);
+  border-bottom:2px solid var(--navy);
   padding-bottom:16px;
 }
-.tech-header-title{
-  font-size:3rem;
-}
+.tech-header-title{font-size:2.8rem}
 .tech-header-tag{
   font-family:'JetBrains Mono',monospace;
-  font-size:0.85rem;
+  font-size:0.82rem;
   text-transform:uppercase;
-  color:var(--accent);
+  color:var(--steel);
   font-weight:600;
+  letter-spacing:1px;
 }
 
 /* ==================== HERO SECTION ==================== */
-.hero-editorial{
+.hero-banner{
+  background:var(--navy);
+  color:var(--white);
+  position:relative;
+  overflow:hidden;
+}
+.hero-banner::before{
+  content:'';
+  position:absolute;
+  top:0;right:0;
+  width:50%;height:100%;
+  background:linear-gradient(135deg, transparent 0%, rgba(30,58,95,0.4) 100%);
+  pointer-events:none;
+}
+.hero-banner .tech-header{
+  border-bottom-color:rgba(255,255,255,0.2);
+}
+.hero-banner .tech-header-title{color:var(--white)}
+.hero-banner .tech-header-tag{color:var(--steel-light)}
+
+.hero-content{
   display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:40px;
+  grid-template-columns:1.3fr 1fr;
+  gap:60px;
   align-items:center;
+  position:relative;
+  z-index:2;
 }
-.editorial-text h1{
-  font-size:clamp(3rem,6vw,5rem);
-  line-height:1;
-  margin-bottom:24px;
+.hero-text h1{
+  font-size:clamp(2.4rem,5vw,4rem);
+  color:var(--white);
+  line-height:1.05;
+  margin-bottom:20px;
 }
-.editorial-text h1 span{
+.hero-text .hero-name{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.4em;
+  font-weight:400;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--steel-light);
+  margin-bottom:12px;
+}
+.hero-text .hero-title{
   display:block;
   font-family:'Space Grotesk',sans-serif;
-  font-size:0.35em;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  color:var(--accent);
+  font-size:0.28em;
+  font-weight:500;
+  letter-spacing:1px;
+  color:var(--steel-light);
+  margin-top:8px;
+}
+.hero-text .hero-sub{
+  font-size:1.1rem;
+  color:var(--steel-light);
+  line-height:1.7;
+  margin-bottom:28px;
+  max-width:540px;
+}
+.hero-tools{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:36px;
+}
+.tool-chip{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;
+  padding:6px 14px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.2);
+  color:var(--white);
+  border-radius:2px;
+  letter-spacing:0.5px;
+}
+.hero-cta{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.btn-primary{
+  background:var(--white);
+  color:var(--navy);
+  padding:14px 28px;
   font-weight:700;
-  margin-top:10px;
+  font-size:0.88rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  border:none;
+  cursor:pointer;
+  transition:all var(--transition);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 }
-.editorial-text p{
-  font-size:1.15rem;
-  color:var(--text-dim);
-  line-height:1.65;
-  margin-bottom:30px;
+.btn-primary:hover{
+  background:var(--steel-pale);
+  transform:translateY(-2px);
 }
-.hero-technical-drawing{
-  border:2px solid var(--border);
-  background:var(--bg-alt);
+.btn-secondary{
+  background:transparent;
+  color:var(--white);
+  padding:14px 28px;
+  font-weight:600;
+  font-size:0.88rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  border:1.5px solid rgba(255,255,255,0.4);
+  cursor:pointer;
+  transition:all var(--transition);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.btn-secondary:hover{
+  border-color:var(--white);
+  background:rgba(255,255,255,0.08);
+}
+
+.hero-visual{
+  border:1px solid rgba(255,255,255,0.2);
+  background:var(--navy-deep);
   padding:16px;
   position:relative;
 }
-.hero-technical-drawing::after{
+.hero-visual::after{
   content:'';
   position:absolute;
   inset:8px;
-  border:1px dashed var(--border-light);
+  border:1px dashed rgba(255,255,255,0.15);
   pointer-events:none;
 }
-.drawing-img{
-  aspect-ratio:4/3;
+.hero-visual img{
   width:100%;
+  aspect-ratio:4/3;
   object-fit:cover;
-  border:1px solid var(--border);
+  border:1px solid rgba(255,255,255,0.15);
 }
 .drawing-label{
   font-family:'JetBrains Mono',monospace;
-  font-size:0.75rem;
+  font-size:0.72rem;
   text-transform:uppercase;
   margin-top:12px;
   display:flex;
   justify-content:space-between;
+  color:var(--steel-light);
 }
 
-/* ==================== OVERVIEW / METADATA ==================== */
-.overview-grid{
+/* ==================== PROFESSIONAL SUMMARY ==================== */
+.summary-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:60px;
+  align-items:start;
+}
+.summary-statement{
+  font-size:1.6rem;
+  line-height:1.4;
+  color:var(--navy);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  position:relative;
+  padding-left:24px;
+  border-left:3px solid var(--navy);
+}
+.summary-details{
+  font-size:1rem;
+  color:var(--steel-dark);
+}
+.summary-details p{margin-bottom:16px}
+.specialization-list{
+  list-style:none;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:60px;
+  gap:10px;
+  margin-top:20px;
 }
-.overview-statement{
-  font-size:1.4rem;
-  line-height:1.6;
-  font-style:italic;
-  color:var(--accent);
-  font-family:'Cormorant Garamond',serif;
+.specialization-list li{
+  font-size:0.9rem;
+  color:var(--navy);
+  padding:10px 14px;
+  background:var(--white);
+  border:1px solid var(--border-light);
+  border-left:3px solid var(--navy);
+  font-weight:500;
+  transition:all var(--transition);
 }
-.overview-details{
-  font-size:1.02rem;
-  color:var(--text-dim);
-}
-.overview-details p{
-  margin-bottom:16px;
+.specialization-list li:hover{
+  background:var(--navy);
+  color:var(--white);
+  transform:translateX(4px);
 }
 
-/* ==================== TECHNICAL MATRIX (SKILLS) ==================== */
-.matrix-container{
+/* ==================== FEATURED PROJECTS (CARDS) ==================== */
+.projects-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:28px;
 }
-.matrix-block{
-  border:1.5px solid var(--border);
-  padding:30px;
-  background:var(--bg-alt);
-  position:relative;
-}
-.matrix-block h4{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:1.1rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-bottom:20px;
-  border-bottom:1px solid var(--border-light);
-  padding-bottom:10px;
-  color:var(--accent);
-}
-.matrix-list{
-  list-style:none;
+.project-card{
+  background:var(--white);
+  border:1.5px solid var(--border-light);
+  padding:0;
+  transition:all var(--transition);
+  cursor:pointer;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  overflow:hidden;
 }
-.matrix-list li{
+.project-card:hover{
+  border-color:var(--navy);
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-lg);
+}
+.project-card-header{
+  background:var(--navy);
+  color:var(--white);
+  padding:20px 24px;
   display:flex;
   justify-content:space-between;
-  font-size:0.92rem;
+  align-items:center;
 }
-.matrix-list li span:last-child{
+.project-card-header .code{
   font-family:'JetBrains Mono',monospace;
-  font-weight:600;
+  font-size:0.75rem;
+  color:var(--steel-light);
+  letter-spacing:1px;
 }
-
-/* ==================== BLUEPRINT BLUE DIVISION (EXPERIENCE) ==================== */
-.blueprint-experience{
+.project-card-header .capacity{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;
+  background:rgba(255,255,255,0.15);
+  padding:4px 10px;
+  border-radius:2px;
+}
+.project-card-body{
+  padding:24px;
+  flex:1;
   display:flex;
   flex-direction:column;
-  gap:40px;
 }
-.blueprint-card{
-  border:2px solid var(--border);
-  display:grid;
-  grid-template-columns:250px 1fr;
+.project-card-body h3{
+  font-size:1.4rem;
+  margin-bottom:4px;
 }
-.blueprint-card-left{
-  background:var(--bg-alt);
-  border-right:2px solid var(--border);
-  padding:30px;
-  font-family:'JetBrains Mono',monospace;
-}
-.blueprint-card-left .date{
-  font-size:1rem;
-  font-weight:700;
-  color:var(--accent);
-}
-.blueprint-card-left .meta{
-  font-size:0.8rem;
-  margin-top:12px;
-  color:var(--text-dim);
-}
-.blueprint-card-right{
-  padding:30px;
-}
-.blueprint-card-right h3{
-  font-size:1.6rem;
-  margin-bottom:6px;
-}
-.blueprint-card-right .company{
+.project-card-body .subtitle{
   font-family:'Space Grotesk',sans-serif;
-  font-size:0.9rem;
+  font-size:0.82rem;
+  color:var(--steel);
   text-transform:uppercase;
   letter-spacing:1px;
-  color:var(--accent);
-  font-weight:600;
-  margin-bottom:20px;
+  margin-bottom:16px;
+  font-weight:500;
 }
-.blueprint-card-right ul{
+.project-card-body .deliverables{
   list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-top:auto;
 }
-.blueprint-card-right li{
-  font-size:0.95rem;
-  color:var(--text-dim);
-  margin-bottom:10px;
+.project-card-body .deliverables li{
+  font-size:0.88rem;
+  color:var(--steel-dark);
   padding-left:18px;
   position:relative;
 }
-.blueprint-card-right li::before{
+.project-card-body .deliverables li::before{
   content:'→';
   position:absolute;
   left:0;
-  color:var(--accent);
+  color:var(--navy);
+  font-weight:700;
 }
-
-/* ==================== PIPING SYSTEM PROJECTS (TABLE & LOGS) ==================== */
-.projects-filter{
+.project-card-footer{
+  padding:16px 24px;
+  border-top:1px solid var(--border-light);
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.75rem;
+  color:var(--steel);
   display:flex;
-  gap:10px;
-  margin-bottom:30px;
-  flex-wrap:wrap;
-}
-.filter-tab{
-  padding:8px 16px;
-  border:1.5px solid var(--border);
-  background:transparent;
-  font-size:0.85rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:all var(--transition);
-}
-.filter-tab:hover, .filter-tab.active{
-  background:var(--border);
-  color:var(--bg);
-}
-
-.technical-logs{
-  border-top:1.5px solid var(--border);
-}
-.project-row{
-  border-bottom:1.5px solid var(--border-light);
-  padding:24px 0;
-  display:grid;
-  grid-template-columns:120px 2fr 1.2fr 100px;
+  justify-content:space-between;
   align-items:center;
+}
+.project-card-footer .view-link{
+  color:var(--navy);
+  font-weight:600;
   cursor:pointer;
-  transition:all var(--transition);
 }
-.project-row:hover{
-  padding-left:12px;
-  background:rgba(188,108,37,0.03);
+.project-card-footer .view-link:hover{text-decoration:underline}
+
+/* ==================== PIPE STRESS ENGINEERING (NEW - STRONG) ==================== */
+.stress-section{
+  background:var(--navy);
+  color:var(--white);
+  position:relative;
+  overflow:hidden;
 }
-.project-row .code{
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.85rem;
-  color:var(--accent);
+.stress-section::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:60%;height:200%;
+  background:radial-gradient(ellipse, rgba(30,58,95,0.5) 0%, transparent 70%);
+  pointer-events:none;
 }
-.project-row h4{
-  font-size:1.35rem;
+.stress-section .tech-header{
+  border-bottom-color:rgba(255,255,255,0.2);
 }
-.project-row .system{
-  font-size:0.9rem;
-  color:var(--text-dim);
-}
-.project-row .action-trigger{
-  text-align:right;
+.stress-section .tech-header-title{color:var(--white)}
+.stress-section .tech-header-tag{color:var(--steel-light)}
+
+.stress-intro{
   font-size:1.2rem;
+  color:var(--steel-light);
+  max-width:700px;
+  margin-bottom:50px;
+  line-height:1.7;
+  position:relative;
+  z-index:2;
 }
 
-/* ==================== PROJECT DRAWERS (MODAL REPLACEMENT) ==================== */
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(28,28,28,0.7);
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-  z-index:2000;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity var(--transition);
-  display:flex;
-  justify-content:flex-end;
+.stress-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+  position:relative;
+  z-index:2;
 }
-.modal-overlay.active{
-  opacity:1;
-  pointer-events:auto;
+.stress-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:32px 28px;
+  transition:all var(--transition);
+  position:relative;
 }
-.modal-drawer{
-  width:600px;
-  max-width:100%;
-  background:var(--bg);
-  border-left:2.5px solid var(--border);
-  height:100vh;
-  overflow-y:auto;
-  padding:40px;
-  transform:translateX(100%);
-  transition:transform var(--transition);
-  display:flex;
-  flex-direction:column;
-  gap:30px;
+.stress-card:hover{
+  background:rgba(255,255,255,0.08);
+  border-color:rgba(255,255,255,0.3);
+  transform:translateY(-4px);
 }
-.modal-overlay.active .modal-drawer{
-  transform:translateX(0);
-}
-.drawer-close{
-  align-self:flex-start;
-  padding:8px 16px;
-  border:1.5px solid var(--border);
-  font-size:0.85rem;
-  font-weight:600;
-  text-transform:uppercase;
-  cursor:pointer;
-}
-.drawer-header h3{
-  font-size:2rem;
-  margin-top:16px;
-}
-.drawer-header .tag{
+.stress-card .icon{
   font-family:'JetBrains Mono',monospace;
-  font-size:0.8rem;
-  color:var(--accent);
-  text-transform:uppercase;
-}
-.drawer-media-frame{
-  border:1.5px solid var(--border);
-  background:var(--bg-alt);
-  padding:10px;
-}
-.drawer-media-frame img{
-  width:100%;
-  aspect-ratio:1.5/1;
-  object-fit:cover;
-  border:1px solid var(--border);
-}
-.drawer-technical-desc h5{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:0.9rem;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  color:var(--accent);
-  margin-bottom:12px;
-}
-.drawer-technical-desc p{
-  font-size:0.95rem;
-  color:var(--text-dim);
+  font-size:0.75rem;
+  color:var(--steel-light);
+  letter-spacing:2px;
   margin-bottom:16px;
 }
-.drawer-technical-desc ul{
-  list-style:none;
+.stress-card h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--white);
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  margin-bottom:14px;
 }
-.drawer-technical-desc li{
+.stress-card p{
   font-size:0.9rem;
-  color:var(--text-dim);
-  padding:6px 0;
+  color:var(--steel-light);
+  line-height:1.6;
+}
+
+.stress-training{
+  margin-top:50px;
+  padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.15);
+  position:relative;
+  z-index:2;
+}
+.stress-training h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.85rem;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--steel-light);
+  margin-bottom:20px;
+}
+.training-logos{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.training-chip{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.8rem;
+  padding:10px 20px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.2);
+  color:var(--white);
+  transition:all var(--transition);
+}
+.training-chip:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:var(--white);
+}
+
+/* ==================== TECHNICAL COMPETENCIES ==================== */
+.competencies-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+.competency-block{
+  border:1.5px solid var(--navy);
+  padding:32px;
+  background:var(--white);
+  position:relative;
+  transition:all var(--transition);
+}
+.competency-block:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+}
+.competency-block h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.05rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--navy);
+  color:var(--navy);
+}
+.competency-list{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.competency-list li{
+  font-size:0.9rem;
+  color:var(--steel-dark);
+  padding:8px 0 8px 18px;
+  position:relative;
   border-bottom:1px dashed var(--border-light);
+}
+.competency-list li::before{
+  content:'▸';
+  position:absolute;
+  left:0;
+  color:var(--navy);
+  font-weight:700;
+}
+.competency-list li:last-child{border-bottom:none}
+
+/* ==================== LEADERSHIP EXPERIENCE ==================== */
+.leadership-block{
+  background:var(--white);
+  border:2px solid var(--navy);
+  display:grid;
+  grid-template-columns:280px 1fr;
+  overflow:hidden;
+}
+.leadership-left{
+  background:var(--navy);
+  color:var(--white);
+  padding:40px 32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.leadership-left .role{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.82rem;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--steel-light);
+  margin-bottom:12px;
+}
+.leadership-left h3{
+  font-size:1.8rem;
+  color:var(--white);
+  margin-bottom:20px;
+}
+.leadership-left .company{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.78rem;
+  color:var(--steel-light);
+  line-height:1.6;
+}
+.leadership-left .date-badge{
+  display:inline-block;
+  padding:6px 14px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.75rem;
+  margin-top:20px;
+}
+
+.leadership-right{
+  padding:40px;
+}
+.leadership-right .lead-intro{
+  font-size:1.05rem;
+  color:var(--steel-dark);
+  margin-bottom:24px;
+  line-height:1.7;
+}
+.leadership-right h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.82rem;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--navy);
+  margin-bottom:16px;
+  font-weight:700;
+}
+.leadership-responsibilities{
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.leadership-responsibilities li{
+  font-size:0.9rem;
+  color:var(--steel-dark);
+  padding:12px 14px;
+  background:var(--off-white);
+  border-left:3px solid var(--navy);
+  transition:all var(--transition);
+}
+.leadership-responsibilities li:hover{
+  background:var(--navy);
+  color:var(--white);
 }
 
 /* ==================== CERTIFICATES GRID ==================== */
 .certificates-masonry{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:24px;
 }
-.certificate-blueprint-card{
-  border:1.5px solid var(--border);
-  background:var(--bg-alt);
+.certificate-card{
+  background:var(--white);
+  border:1.5px solid var(--border-light);
   padding:20px;
   transition:all var(--transition);
+  cursor:pointer;
 }
-.certificate-blueprint-card:hover{
-  border-color:var(--accent);
+.certificate-card:hover{
+  border-color:var(--navy);
   transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
 }
 .cert-image-frame{
-  border:1.5px solid var(--border);
+  border:1px solid var(--border-light);
   overflow:hidden;
   aspect-ratio:1.4/1;
   margin-bottom:16px;
-  background:#fff;
+  background:var(--off-white);
 }
 .cert-image-frame img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+  width:100%;height:100%;object-fit:cover;
+  transition:transform var(--transition);
 }
-.certificate-blueprint-card h4{
-  font-size:1.2rem;
+.certificate-card:hover .cert-image-frame img{transform:scale(1.03)}
+.certificate-card h4{
+  font-size:1.1rem;
   margin-bottom:4px;
 }
-.certificate-blueprint-card p{
+.certificate-card .cert-org{
   font-family:'JetBrains Mono',monospace;
   font-size:0.75rem;
-  color:var(--accent);
+  color:var(--steel);
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
 
-/* ==================== CONTACT SHEET ==================== */
-.contact-block{
-  border:2.5px solid var(--border);
-  background:var(--bg-alt);
-  display:grid;
-  grid-template-columns:1fr 1.2fr;
+/* ==================== CONTACT - LET'S CONNECT ==================== */
+.contact-section{
+  background:var(--navy);
+  color:var(--white);
 }
-.contact-block-left{
-  padding:40px;
-  border-right:2.5px solid var(--border);
+.contact-section .tech-header{
+  border-bottom-color:rgba(255,255,255,0.2);
+}
+.contact-section .tech-header-title{color:var(--white)}
+.contact-section .tech-header-tag{color:var(--steel-light)}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.contact-left h3{
+  font-size:2.6rem;
+  color:var(--white);
+  margin-bottom:16px;
+  line-height:1.1;
+}
+.contact-left .contact-sub{
+  font-size:1.05rem;
+  color:var(--steel-light);
+  margin-bottom:32px;
+  line-height:1.7;
+}
+.contact-left .available-for{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.78rem;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--steel-light);
+  margin-bottom:14px;
+}
+.contact-left .services-list{
+  list-style:none;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  gap:10px;
+  margin-bottom:32px;
 }
-.contact-block-left h3{
-  font-size:2.5rem;
+.contact-left .services-list li{
+  font-size:0.95rem;
+  color:var(--white);
+  padding-left:20px;
+  position:relative;
 }
-.contact-block-left .details{
-  margin-top:40px;
+.contact-left .services-list li::before{
+  content:'◆';
+  position:absolute;
+  left:0;
+  color:var(--steel-light);
+  font-size:0.7rem;
+  top:4px;
+}
+.contact-location{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.82rem;
+  color:var(--steel-light);
+  padding:14px 18px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+.contact-right{
   display:flex;
   flex-direction:column;
   gap:16px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:0.85rem;
 }
-.contact-block-left .details a{
-  color:var(--accent);
-}
-.contact-block-right{
-  padding:40px;
-}
-.contact-field{
-  margin-bottom:20px;
-}
-.contact-field label{
-  display:block;
-  font-size:0.8rem;
-  font-weight:700;
-  text-transform:uppercase;
-  margin-bottom:6px;
-}
-.contact-field input, .contact-field textarea{
-  width:100%;
-  padding:12px;
-  background:var(--bg);
-  border:1.5px solid var(--border);
-  font-family:inherit;
-  font-size:0.9rem;
-}
-.contact-field input:focus, .contact-field textarea:focus{
-  outline:none;
-  border-color:var(--accent);
-}
-.contact-btn{
-  background:var(--border);
-  color:var(--bg);
-  padding:12px 24px;
-  border:none;
-  font-weight:700;
-  text-transform:uppercase;
-  cursor:pointer;
+.contact-btn-large{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:24px 32px;
+  background:var(--white);
+  color:var(--navy);
+  text-decoration:none;
   transition:all var(--transition);
+  border:2px solid var(--white);
 }
-.contact-btn:hover{
-  background:var(--accent);
+.contact-btn-large:hover{
+  background:transparent;
+  color:var(--white);
+  transform:translateX(8px);
 }
+.contact-btn-large .btn-label{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.1rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.contact-btn-large .btn-sub{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.75rem;
+  color:var(--steel);
+  margin-top:4px;
+}
+.contact-btn-large:hover .btn-sub{color:var(--steel-light)}
+.contact-btn-large .btn-arrow{
+  font-size:1.5rem;
+  transition:transform var(--transition);
+}
+.contact-btn-large:hover .btn-arrow{transform:translateX(6px)}
 
-/* ==================== RESPONSIVE WORK ==================== */
-@media(max-width:1024px){
-  .sidebar{
-    width:100%;
-    position:relative;
-    height:auto;
-    border-right:none;
-    border-bottom:2px solid var(--border);
-    padding:30px;
-  }
-  .main-canvas{
-    margin-left:0;
-  }
-  .app-container{
-    flex-direction:column;
-  }
-  .canvas-section{
-    padding:60px 24px;
-  }
-  .hero-editorial{
-    grid-template-columns:1fr;
-  }
-  .contact-block{
-    grid-template-columns:1fr;
-  }
-  .contact-block-left{
-    border-right:none;
-    border-bottom:2px solid var(--border);
-  }
-  .blueprint-card{
-    grid-template-columns:1fr;
-  }
-  .blueprint-card-left{
-    border-right:none;
-    border-bottom:2px solid var(--border);
-  }
+.contact-btn-large.outline{
+  background:transparent;
+  color:var(--white);
+  border-color:rgba(255,255,255,0.3);
+}
+.contact-btn-large.outline:hover{
+  background:var(--white);
+  color:var(--navy);
+}
+.contact-btn-large.outline .btn-sub{color:var(--steel-light)}
+
+/* ==================== FOOTER ==================== */
+.footer{
+  background:var(--navy-deep);
+  color:var(--steel-light);
+  padding:32px 80px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.78rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+.footer a{color:var(--white);text-decoration:none}
+
+/* ==================== RESPONSIVE ==================== */
+@media(max-width:1100px){
+  .sidebar{width:100%;position:relative;height:auto;border-right:none;padding:30px}
+  .main-canvas{margin-left:0}
+  .app-container{flex-direction:column}
+  .canvas-section{padding:60px 28px}
+  .hero-content,.summary-grid,.contact-grid{grid-template-columns:1fr}
+  .leadership-block{grid-template-columns:1fr}
+  .leadership-left{border-right:none;border-bottom:2px solid var(--navy)}
+  .leadership-responsibilities{grid-template-columns:1fr}
+  .footer{padding:30px 28px;flex-direction:column;gap:12px;text-align:center}
 }
 @media(max-width:600px){
-  .project-row{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-  .project-row .action-trigger{
-    text-align:left;
-  }
+  .hero-text h1{font-size:2rem}
+  .tech-header-title{font-size:2rem}
+  .projects-grid{grid-template-columns:1fr}
+  .stress-grid,.competencies-grid,.certificates-masonry{grid-template-columns:1fr}
+  .specialization-list{grid-template-columns:1fr}
+  .contact-left h3{font-size:2rem}
+}
+
+/* ==================== ANIMATIONS ==================== */
+.fade-up{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
@@ -656,313 +936,496 @@ h1,h2,h3,h4{
 
 <div class="app-container">
 
-  <!-- ==================== LEFT COLLAPSIBLE TECHNICAL PANEL ==================== -->
+  <!-- ==================== LEFT SIDEBAR ==================== -->
   <aside class="sidebar">
     <div class="sidebar-profile">
       <div class="profile-frame">
-        <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782290586/BAM_PICTURE_ocnzbs.jpg" alt="Beamlak Alemayehu Picture">
+        <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782290586/BAM_PICTURE_ocnzbs.jpg" alt="Beamlak Alemayehu">
       </div>
       <div class="sidebar-identity">
         <h2>Beamlak Alemayehu</h2>
-        <p>Piping Design Engineer</p>
+        <span class="title-line">Piping Design Engineer</span>
+        <span class="title-line">| Supervisor |</span>
+        <span class="title-line">Pipe Stress Professional</span>
       </div>
     </div>
 
     <nav class="sidebar-nav">
-      <a href="#home" class="active"><span>01</span> OVERVIEW</a>
-      <a href="#skills"><span>02</span> CORE MATRIX</a>
-      <a href="#experience"><span>03</span> BLUEPRINT CAREER</a>
-      <a href="#projects"><span>04</span> PIPING LOGS</a>
-      <a href="#certificates"><span>05</span> CERTIFICATES</a>
-      <a href="#contact"><span>06</span> CONNECTION SHEET</a>
+      <a href="#home" class="active"><span>01</span> HOME</a>
+      <a href="#summary"><span>02</span> PROFILE</a>
+      <a href="#projects"><span>03</span> PROJECTS</a>
+      <a href="#stress"><span>04</span> PIPE STRESS</a>
+      <a href="#competencies"><span>05</span> COMPETENCIES</a>
+      <a href="#leadership"><span>06</span> LEADERSHIP</a>
+      <a href="#certificates"><span>07</span> CERTIFICATES</a>
+      <a href="#contact"><span>08</span> CONNECT</a>
     </nav>
 
     <div class="sidebar-meta">
       <div class="sidebar-meta-row">
-        <span>NATIONALITY:</span>
-        <strong>Ethiopian</strong>
-      </div>
-      <div class="sidebar-meta-row">
-        <span>YOB:</span>
-        <strong>2000</strong>
-      </div>
-      <div class="sidebar-meta-row">
         <span>LOCATION:</span>
-        <strong>Addis Ababa</strong>
+        <strong>Addis Ababa, Ethiopia</strong>
+      </div>
+      <div class="sidebar-meta-row">
+        <span>EXPERIENCE:</span>
+        <strong>15+ Projects</strong>
+      </div>
+      <div class="sidebar-meta-row">
+        <span>STATUS:</span>
+        <strong>Available</strong>
       </div>
     </div>
   </aside>
 
-  <!-- ==================== MAIN Blueprint SCREEN ==================== -->
+  <!-- ==================== MAIN CANVAS ==================== -->
   <main class="main-canvas">
 
-    <!-- OVERVIEW / HERO -->
-    <section class="canvas-section" id="home">
-      <div class="hero-editorial">
-        <div class="editorial-text">
-          <h1>Piping & Process Layout.<span>Chemical Engineer by Training</span></h1>
-          <p>Analytical design engineer with over 1.5 years of industrial layout design expertise. Highly specialized in structural configurations, equipment spacing, routing systems, and material management within heavy industrial systems.</p>
-          <a href="#contact" class="tech-header-tag" style="text-decoration: underline;">Request Technical Coordination →</a>
-        </div>
-        <div class="hero-technical-drawing">
-          <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782225559/5899963404942773487_hpu6vb.jpg" class="drawing-img" alt="Piping Structural Study background">
-          <div class="drawing-label">
-            <span>DRAWING: PL-001-A</span>
-            <span>CRTEC LAYOUT STUDY</span>
-          </div>
-        </div>
+    <!-- SECTION 1: HERO BANNER -->
+    <section class="canvas-section hero-banner" id="home">
+      <div class="tech-header">
+        <h2 class="tech-header-title">Industrial Piping & Stress Engineering</h2>
+        <span class="tech-header-tag">[ SECTION 01 ]</span>
       </div>
 
-      <div class="overview-grid" style="margin-top: 80px;">
-        <div class="overview-statement">
-          "Ensuring structural coherence, mechanical integrity, and precise component layouts across multi-million dollar chemical facilities."
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>
+            <span class="hero-name">Beamlak Alemayehu Ayele</span>
+            Designing Safe, Efficient, and Buildable Industrial Piping Systems
+            <span class="hero-title">Piping Design Engineer | Supervisor | Pipe Stress Engineering Professional</span>
+          </h1>
+          <p class="hero-sub">
+            Specializing in petrochemical, chemical, fertilizer, and process plant projects. Experienced in delivering 15+ industrial facilities using AVEVA E3D, PDMS, Navisworks, AutoCAD, and CAESAR II.
+          </p>
+          <div class="hero-tools">
+            <span class="tool-chip">CAESAR II</span>
+            <span class="tool-chip">AVEVA E3D</span>
+            <span class="tool-chip">PDMS</span>
+            <span class="tool-chip">AutoCAD</span>
+            <span class="tool-chip">Navisworks</span>
+            <span class="tool-chip">ASME B31.3</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#projects" class="btn-primary">View Projects →</a>
+            <a href="#" class="btn-secondary" onclick="alert('Resume download will be available soon.'); return false;">↓ Download Resume</a>
+          </div>
         </div>
-        <div class="overview-details">
-          <p>Applying a meticulous chemical engineering perspective to plant design, managing everything from pipeline galleries to complete process train modeling. Confident working in complex design environments incorporating hazardous chemical rules, pressure loops, and structural restraints.</p>
-          <p>Currently reinforcing my core analytical capabilities in pipe flexibility and localized stress analysis through a highly technical 6-month mentorship under industry authority Zdravko Ivančić.</p>
+
+        <div class="hero-visual">
+          <img src="https://image.qwenlm.ai/public_source/e4927543-1efc-4c72-abc2-c87d8df6f06c/1728994f6-3dd9-4942-b7db-e14e37b7ceb9.png" alt="Piping Isometric Drawing">
+          <div class="drawing-label">
+            <span>DRAWING: PL-001-A</span>
+            <span>PIPING ISOMETRIC</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CORE MATRIX (SKILLS & EDUCATION) -->
-    <section class="canvas-section" id="skills">
+    <!-- SECTION 2: PROFESSIONAL SUMMARY -->
+    <section class="canvas-section" id="summary">
       <div class="tech-header">
-        <h2 class="tech-header-title">Core Matrix</h2>
+        <h2 class="tech-header-title">Engineering Profile</h2>
         <span class="tech-header-tag">[ SECTION 02 ]</span>
       </div>
 
-      <div class="matrix-container">
-        <!-- Education block -->
-        <div class="matrix-block">
-          <h4>Academic Base</h4>
-          <div style="margin-bottom: 20px;">
-            <p style="font-size: 0.95rem; font-weight:700;">BSc in Chemical Engineering</p>
-            <p style="font-size: 0.82rem; color: var(--accent); font-family: 'JetBrains Mono';">University of Gondar | 2018 — 2023</p>
-            <p style="font-size: 0.85rem; color: var(--text-dim); margin-top:6px;">Thesis: Design and fabrication for extraction of oil from garden cress seeds.</p>
-          </div>
-          <div>
-            <p style="font-size: 0.95rem; font-weight:700;">Data Analysis Nanodegree</p>
-            <p style="font-size: 0.82rem; color: var(--accent); font-family: 'JetBrains Mono';">Udacity | 2024 — 2025</p>
-          </div>
+      <div class="summary-grid">
+        <div class="summary-statement">
+          "Chemical Engineering graduate and Piping Design Supervisor with experience delivering over 15 industrial and petrochemical projects across international facilities."
         </div>
-
-        <!-- Software block -->
-        <div class="matrix-block">
-          <h4>Layout Applications</h4>
-          <ul class="matrix-list">
-            <li><span>AVEVA E3D / PDMS</span> <span>90%</span></li>
-            <li><span>Navisworks</span> <span>85%</span></li>
-            <li><span>AutoCAD</span> <span>88%</span></li>
-            <li><span>CAESAR II</span> <span>75%</span></li>
-            <li><span>DWSIM (Simulation)</span> <span>80%</span></li>
-          </ul>
-        </div>
-
-        <!-- Competencies -->
-        <div class="matrix-block">
-          <h4>Piping Competencies</h4>
-          <ul class="matrix-list">
-            <li><span>Equipment Spacing</span> <span>95%</span></li>
-            <li><span>Pipeline Gallery Routing</span> <span>90%</span></li>
-            <li><span>Structural Support Systems</span> <span>85%</span></li>
-            <li><span>Material Take-Offs (MTO)</span> <span>92%</span></li>
-            <li><span>Thermal Calculations</span> <span>80%</span></li>
+        <div class="summary-details">
+          <p>
+            Currently positioned as a Piping Design Engineer and Ethiopian Design Team Supervisor at CRTEC, with a clear trajectory toward Pipe Stress Engineering specialization. My work bridges multidisciplinary coordination, ASME B31.3 compliance, and advanced 3D plant design.
+          </p>
+          <p>
+            Advancing expertise in pipe flexibility analysis, thermal expansion, and nozzle load verification through specialized CAESAR II training and mentorship from industry authorities including Numikon, Stressman Engineering, and Dynaflow Research Group.
+          </p>
+          <ul class="specialization-list">
+            <li>3D Plant Design</li>
+            <li>Pipe Routing Optimization</li>
+            <li>Pipe Stress Analysis</li>
+            <li>Pipe Support Design</li>
+            <li>Multidisciplinary Coordination</li>
+            <li>ASME B31.3 Compliance</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- BLUEPRINT CAREER (EXPERIENCE) -->
-    <section class="canvas-section" id="experience">
+    <!-- SECTION 3: FEATURED PROJECTS -->
+    <section class="canvas-section" id="projects">
       <div class="tech-header">
-        <h2 class="tech-header-title">Blueprint Career</h2>
+        <h2 class="tech-header-title">Featured Projects</h2>
         <span class="tech-header-tag">[ SECTION 03 ]</span>
       </div>
 
-      <div class="blueprint-experience">
-        <!-- CRTEC card -->
-        <div class="blueprint-card fade-up">
-          <div class="blueprint-card-left">
-            <span class="date">2024 — PRESENT</span>
-            <div class="meta">ROLE: PIPING DESIGNER / TEAM LEADER</div>
+      <div class="projects-grid">
+        <!-- HECHANG -->
+        <div class="project-card fade-up" onclick="openDrawer('hechang')">
+          <div class="project-card-header">
+            <span class="code">HECHANG</span>
+            <span class="capacity">10,000 TPA</span>
           </div>
-          <div class="blueprint-card-right">
-            <h3>Piping Design Engineer & Coordinator</h3>
-            <div class="company">China Rail Transit Engineering Consultancy (CRTEC)</div>
-            <ul>
-              <li>Heavily involved in modeling and routing pipelines across 7+ remote process plant developments.</li>
-              <li>Generated accurate 3D profiles of system structures and piping grids inside AVEVA E3D/PDMS environments.</li>
-              <li>Calculated detailed Material Take-offs (MTO) and formulated physical pipe supports.</li>
-              <li>Utilized Navisworks for advanced model assembly and multi-discipline interference checks.</li>
-              <li>Configured standardized layout tables covering anti-corrosion layer values and physical insulation depths.</li>
-              <li>Supervised work schedules and provided technical layout guidance to junior engineers.</li>
+          <div class="project-card-body">
+            <h3>Crude Anthracene Facility</h3>
+            <div class="subtitle">Petrochemical Separation Workshop</div>
+            <ul class="deliverables">
+              <li>600+ piping systems designed</li>
+              <li>Tank farm modeling</li>
+              <li>GB51283-2020 compliance</li>
+              <li>Navisworks validation</li>
             </ul>
+          </div>
+          <div class="project-card-footer">
+            <span>Class A Hazardous Area</span>
+            <span class="view-link">View Details →</span>
           </div>
         </div>
 
-        <!-- NALF card -->
-        <div class="blueprint-card fade-up">
-          <div class="blueprint-card-left">
-            <span class="date">2021 — 2022</span>
-            <div class="meta">ROLE: PROJECT TEAM LEAD</div>
+        <!-- HNLC -->
+        <div class="project-card fade-up" onclick="openDrawer('hnlc')">
+          <div class="project-card-header">
+            <span class="code">HNLC</span>
+            <span class="capacity">200,000 TPA</span>
           </div>
-          <div class="blueprint-card-right">
-            <h3>Alternative Fuel Evaluation Team Lead</h3>
-            <div class="company">National Alcohol & Liquor Factory (NALF)</div>
-            <ul>
-              <li>Directed a process assessment team evaluating secondary combustion fuels for high-capacity industrial boilers.</li>
-              <li>Modeled chemical behaviors and heat transfer characteristics inside DWSIM software.</li>
-              <li>Recommended structural burner modifications to optimize thermal performance.</li>
+          <div class="project-card-body">
+            <h3>PVC Resin & Acetylene Plant</h3>
+            <div class="subtitle">Full Lifecycle Piping Design</div>
+            <ul class="deliverables">
+              <li>Full project piping ownership</li>
+              <li>Process routing optimization</li>
+              <li>Support engineering</li>
+              <li>Material take-off generation</li>
             </ul>
+          </div>
+          <div class="project-card-footer">
+            <span>Petrochemical Complex</span>
+            <span class="view-link">View Details →</span>
+          </div>
+        </div>
+
+        <!-- XINGFA -->
+        <div class="project-card fade-up" onclick="openDrawer('xingfa')">
+          <div class="project-card-header">
+            <span class="code">XINGFA</span>
+            <span class="capacity">100 TON/YR</span>
+          </div>
+          <div class="project-card-body">
+            <h3>FDCA Pilot Plant</h3>
+            <div class="subtitle">Bio-Based Materials Facility</div>
+            <ul class="deliverables">
+              <li>Piping design & routing</li>
+              <li>Pipe support engineering</li>
+              <li>Insulation documentation</li>
+              <li>Corrosion protection design</li>
+            </ul>
+          </div>
+          <div class="project-card-footer">
+            <span>Pilot Scale Production</span>
+            <span class="view-link">View Details →</span>
+          </div>
+        </div>
+
+        <!-- EZHONG -->
+        <div class="project-card fade-up" onclick="openDrawer('ezhong')">
+          <div class="project-card-header">
+            <span class="code">EZHONG</span>
+            <span class="capacity">80,000 TPA</span>
+          </div>
+          <div class="project-card-body">
+            <h3>Potash Fertilizer & Calcium Chloride</h3>
+            <div class="subtitle">Agricultural Chemical Facility</div>
+            <ul class="deliverables">
+              <li>100% design contribution</li>
+              <li>Structural support grids</li>
+              <li>Pipeline gallery routing</li>
+              <li>Navisworks clash detection</li>
+            </ul>
+          </div>
+          <div class="project-card-footer">
+            <span>Ecological Agriculture</span>
+            <span class="view-link">View Details →</span>
+          </div>
+        </div>
+
+        <!-- JSD -->
+        <div class="project-card fade-up" onclick="openDrawer('jsd')">
+          <div class="project-card-header">
+            <span class="code">JINGSHIDA</span>
+            <span class="capacity">5,000 TPA</span>
+          </div>
+          <div class="project-card-body">
+            <h3>Melamine Polyphosphate Plant</h3>
+            <div class="subtitle">Specialty Chemical Complex</div>
+            <ul class="deliverables">
+              <li>100% design contribution</li>
+              <li>3D modeling & routing</li>
+              <li>Isometric drafting</li>
+              <li>Insulation specifications</li>
+            </ul>
+          </div>
+          <div class="project-card-footer">
+            <span>Polymers & Synthetics</span>
+            <span class="view-link">View Details →</span>
+          </div>
+        </div>
+
+        <!-- HAILIANG -->
+        <div class="project-card fade-up" onclick="openDrawer('hailiang')">
+          <div class="project-card-header">
+            <span class="code">HAILIANG</span>
+            <span class="capacity">2,500 TON</span>
+          </div>
+          <div class="project-card-body">
+            <h3>DMTDA & DETDA Materials Plant</h3>
+            <div class="subtitle">New Materials Production</div>
+            <ul class="deliverables">
+              <li>100% design contribution</li>
+              <li>Process piping systems</li>
+              <li>Support design</li>
+              <li>MTO generation</li>
+            </ul>
+          </div>
+          <div class="project-card-footer">
+            <span>New Materials</span>
+            <span class="view-link">View Details →</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PIPING LOGS (PROJECTS) -->
-    <section class="canvas-section" id="projects">
+    <!-- SECTION 4: PIPE STRESS ENGINEERING (NEW - STRONG) -->
+    <section class="canvas-section stress-section" id="stress">
       <div class="tech-header">
-        <h2 class="tech-header-title">Piping & Industrial Logs</h2>
+        <h2 class="tech-header-title">Pipe Stress Engineering</h2>
         <span class="tech-header-tag">[ SECTION 04 ]</span>
       </div>
 
-      <div class="projects-filter">
-        <button class="filter-tab active" data-filter="all">All Logs</button>
-        <button class="filter-tab" data-filter="polymers">Polymers & Synthetics</button>
-        <button class="filter-tab" data-filter="organic">Organic Specialties</button>
-        <button class="filter-tab" data-filter="minerals">Minerals & Fertilizers</button>
-        <button class="filter-tab" data-filter="utilities">Utilities & Energy</button>
+      <p class="stress-intro">
+        Focused on advancing expertise in pipe stress analysis — the critical discipline ensuring piping systems withstand thermal expansion, sustained loads, and dynamic forces throughout their operational lifecycle.
+      </p>
+
+      <div class="stress-grid">
+        <div class="stress-card fade-up">
+          <div class="icon">[ 01 ]</div>
+          <h4>Flexibility Analysis</h4>
+          <p>Evaluating piping system flexibility per ASME B31.3 to ensure safe thermal expansion and contraction without excessive stress on equipment nozzles or supports.</p>
+        </div>
+        <div class="stress-card fade-up">
+          <div class="icon">[ 02 ]</div>
+          <h4>Sustained Load Evaluation</h4>
+          <p>Analyzing weight-induced stresses including pipe, fluid, insulation, and component loads to verify structural integrity under static conditions.</p>
+        </div>
+        <div class="stress-card fade-up">
+          <div class="icon">[ 03 ]</div>
+          <h4>Thermal Expansion Analysis</h4>
+          <p>Modeling temperature-induced displacement and stress cycles to design effective expansion loops, offsets, and flexible routing configurations.</p>
+        </div>
+        <div class="stress-card fade-up">
+          <div class="icon">[ 04 ]</div>
+          <h4>Nozzle Load Verification</h4>
+          <p>Validating forces and moments at equipment connections against API, NEMA, and manufacturer limits to protect rotating and static equipment.</p>
+        </div>
+        <div class="stress-card fade-up">
+          <div class="icon">[ 05 ]</div>
+          <h4>Pulsation Analysis</h4>
+          <p>Assessing acoustic-induced vibration and flow-induced pulsation in compressor and pump discharge systems per API 618/619 standards.</p>
+        </div>
+        <div class="stress-card fade-up">
+          <div class="icon">[ 06 ]</div>
+          <h4>Pipe Support Optimization</h4>
+          <p>Designing and optimizing support locations, types, and spring selections to control displacement while minimizing stress concentrations.</p>
+        </div>
       </div>
 
-      <div class="technical-logs">
-        <!-- Jingshida -->
-        <div class="project-row" data-sector="polymers" data-project="jsd">
-          <span class="code">ENCOSC24029</span>
-          <h4>Jingshida MPP & DPP Fuel Additive Plant</h4>
-          <span class="system">MPP/DPP Crystallization System</span>
-          <span class="action-trigger">→</span>
-        </div>
-        <!-- Xingfa -->
-        <div class="project-row" data-sector="organic" data-project="xingfa">
-          <span class="code">ENCOSC23043</span>
-          <h4>Xingfa Bio-Based Materials Pilot Plant</h4>
-          <span class="system">Nitric Acid Oxidation Grid</span>
-          <span class="action-trigger">→</span>
-        </div>
-        <!-- Ezhong -->
-        <div class="project-row" data-sector="minerals" data-project="ezhong">
-          <span class="code">ENCOSC24009</span>
-          <h4>Ezhong Ecological Agriculture Facility</h4>
-          <span class="system">Potash & CaCl2 Production Lines</span>
-          <span class="action-trigger">→</span>
-        </div>
-        <!-- Hechang -->
-        <div class="project-row" data-sector="utilities" data-project="hechang">
-          <span class="code">ENCOSC22070</span>
-          <h4>Hechang Coarse Anthracene Separation Workshop</h4>
-          <span class="system">Class A Tank Farm Layout</span>
-          <span class="action-trigger">→</span>
-        </div>
-        <!-- Lianchuang -->
-        <div class="project-row" data-sector="polymers" data-project="lianchuang">
-          <span class="code">HNLC-2</span>
-          <h4>Lianchuang Polyether Plant System</h4>
-          <span class="system">Propylene Oxide Reactant Loops</span>
-          <span class="action-trigger">→</span>
-        </div>
-        <!-- Prepolymer -->
-        <div class="project-row" data-sector="polymers" data-project="prepolymer">
-          <span class="code">PU-STUDY</span>
-          <h4>Polyurethane Prepolymer Plant study</h4>
-          <span class="system">TDA & MDI Catalyst Spacing</span>
-          <span class="action-trigger">→</span>
+      <div class="stress-training">
+        <h4>Software & Training Partners</h4>
+        <div class="training-logos">
+          <span class="training-chip">CAESAR II</span>
+          <span class="training-chip">Stressman Engineering</span>
+          <span class="training-chip">Dynaflow Research Group</span>
+          <span class="training-chip">VELOSI</span>
+          <span class="training-chip">Numikon Mentorship</span>
+          <span class="training-chip">EngineeringTrainer.com</span>
         </div>
       </div>
     </section>
 
-    <!-- CERTIFICATES -->
-    <section class="canvas-section" id="certificates">
+    <!-- SECTION 5: TECHNICAL COMPETENCIES -->
+    <section class="canvas-section" id="competencies">
       <div class="tech-header">
-        <h2 class="tech-header-title">Stress & Structural Credentials</h2>
+        <h2 class="tech-header-title">Technical Competencies</h2>
         <span class="tech-header-tag">[ SECTION 05 ]</span>
       </div>
 
-      <div class="certificates-masonry">
-        <!-- Certificate 1 -->
-        <div class="certificate-blueprint-card" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Stress_course_Certificate_page-0001_vwmcax.jpg', '_blank')">
-          <div class="cert-image-frame">
-            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Stress_course_Certificate_page-0001_vwmcax.jpg" alt="Stress course Certificate">
-          </div>
-          <h4>Piping Stress Analysis Certificate</h4>
-          <p>&gt; Zdravko Ivančić Mentorship Program</p>
+      <div class="competencies-grid">
+        <div class="competency-block fade-up">
+          <h4>Design & Modeling</h4>
+          <ul class="competency-list">
+            <li>AVEVA E3D</li>
+            <li>AVEVA PDMS</li>
+            <li>AutoCAD</li>
+            <li>Navisworks</li>
+            <li>DWSIM Simulation</li>
+          </ul>
         </div>
-
-        <!-- Certificate 2 -->
-        <div class="certificate-blueprint-card" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Flexibility_Calc_Stress_course_Certificate_page-0001_mt1m2q.jpg', '_blank')">
-          <div class="cert-image-frame">
-            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Flexibility_Calc_Stress_course_Certificate_page-0001_mt1m2q.jpg" alt="Flexibility course Certificate">
-          </div>
-          <h4>Thermal Flexibility Calculations</h4>
-          <p>&gt; Piping Structural Stress Mechanics</p>
+        <div class="competency-block fade-up">
+          <h4>Stress Analysis</h4>
+          <ul class="competency-list">
+            <li>CAESAR II</li>
+            <li>Flexibility Analysis</li>
+            <li>Pipe Support Design</li>
+            <li>Nozzle Load Assessment</li>
+            <li>Pulsation Analysis</li>
+          </ul>
         </div>
-
-        <!-- Certificate 3 -->
-        <div class="certificate-blueprint-card" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Pulsation_analysis_Certificate_page-0001_n5u1ky.jpg', '_blank')">
-          <div class="cert-image-frame">
-            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Pulsation_analysis_Certificate_page-0001_n5u1ky.jpg" alt="Pulsation analysis Certificate">
-          </div>
-          <h4>Acoustic Pulsation & Vibration</h4>
-          <p>&gt; Dynamic Mechanics Analysis Study</p>
-        </div>
-
-        <!-- Certificate 4 -->
-        <div class="certificate-blueprint-card" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/FFS_Life_Extension_Study_of_Thermal_Cyclic_Service_Piping_System_page-0001_ywiloh.jpg', '_blank')">
-          <div class="cert-image-frame">
-            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/FFS_Life_Extension_Study_of_Thermal_Cyclic_Service_Piping_System_page-0001_ywiloh.jpg" alt="FFS Life Extension Study">
-          </div>
-          <h4>FFS Thermal Cyclic Service Analysis</h4>
-          <p>&gt; Life Extension Piping Analysis Study</p>
+        <div class="competency-block fade-up">
+          <h4>Codes & Standards</h4>
+          <ul class="competency-list">
+            <li>ASME B31.3</li>
+            <li>ASME B31.1</li>
+            <li>ASME B31.4</li>
+            <li>ASME B31.8</li>
+            <li>API Standards</li>
+            <li>NEMA Standards</li>
+            <li>GB51283-2020</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- CONNECTION SHEET (CONTACT) -->
-    <section class="canvas-section" id="contact">
+    <!-- SECTION 6: LEADERSHIP EXPERIENCE -->
+    <section class="canvas-section" id="leadership">
       <div class="tech-header">
-        <h2 class="tech-header-title">Connection Sheet</h2>
+        <h2 class="tech-header-title">Leadership Experience</h2>
         <span class="tech-header-tag">[ SECTION 06 ]</span>
       </div>
 
-      <div class="contact-block">
-        <div class="contact-block-left">
-          <h3>Request Plant Layout Support.</h3>
-          <div class="details">
-            <div>
-              <span>DIRECT COMMUNICATIONS PORT:</span>
-              <p><a href="mailto:enqopaz@gmail.com">enqopaz@gmail.com</a></p>
-            </div>
-            <div>
-              <span>MOBILE PHONE UNIT:</span>
-              <p><a href="tel:+251941920504">(+251) 941920504</a></p>
+      <div class="leadership-block fade-up">
+        <div class="leadership-left">
+          <div>
+            <div class="role">Current Position</div>
+            <h3>Ethiopian Design Team Supervisor</h3>
+            <div class="company">
+              China Rail Transit Engineering<br>
+              Consultancy (CRTEC)
             </div>
           </div>
+          <span class="date-badge">MAY 2024 — PRESENT</span>
         </div>
-        <div class="contact-block-right">
-          <form id="contactForm">
-            <div class="contact-field">
-              <label>Origin Name *</label>
-              <input type="text" required placeholder="Organization / Coordinator">
+        <div class="leadership-right">
+          <p class="lead-intro">
+            Leading the Ethiopian Design Team at CRTEC by coordinating project execution, model reviews, deliverable quality, interdisciplinary collaboration, client requirements, and schedule adherence.
+          </p>
+          <h4>Core Responsibilities</h4>
+          <ul class="leadership-responsibilities">
+            <li>Project Execution Oversight</li>
+            <li>3D Model Reviews & QA</li>
+            <li>Deliverable Quality Control</li>
+            <li>Interdisciplinary Collaboration</li>
+            <li>Client Requirements Alignment</li>
+            <li>Schedule Adherence Management</li>
+            <li>Junior Engineer Mentorship</li>
+            <li>Technical Layout Guidance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CERTIFICATES -->
+    <section class="canvas-section" id="certificates">
+      <div class="tech-header">
+        <h2 class="tech-header-title">Professional Certifications</h2>
+        <span class="tech-header-tag">[ SECTION 07 ]</span>
+      </div>
+
+      <div class="certificates-masonry">
+        <div class="certificate-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Stress_course_Certificate_page-0001_vwmcax.jpg', '_blank')">
+          <div class="cert-image-frame">
+            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Stress_course_Certificate_page-0001_vwmcax.jpg" alt="Stress Course Certificate">
+          </div>
+          <h4>Piping Stress Analysis</h4>
+          <div class="cert-org">Numikon Mentorship Program</div>
+        </div>
+
+        <div class="certificate-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Flexibility_Calc_Stress_course_Certificate_page-0001_mt1m2q.jpg', '_blank')">
+          <div class="cert-image-frame">
+            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Flexibility_Calc_Stress_course_Certificate_page-0001_mt1m2q.jpg" alt="Flexibility Certificate">
+          </div>
+          <h4>Flexibility Calculation B31.3</h4>
+          <div class="cert-org">Stressman Engineering</div>
+        </div>
+
+        <div class="certificate-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Pulsation_analysis_Certificate_page-0001_n5u1ky.jpg', '_blank')">
+          <div class="cert-image-frame">
+            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/Beamlak_Alemayehu_Pulsation_analysis_Certificate_page-0001_n5u1ky.jpg" alt="Pulsation Certificate">
+          </div>
+          <h4>Complete Pulsation Analysis</h4>
+          <div class="cert-org">Dynaflow Research Group</div>
+        </div>
+
+        <div class="certificate-card fade-up" onclick="window.open('https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/FFS_Life_Extension_Study_of_Thermal_Cyclic_Service_Piping_System_page-0001_ywiloh.jpg', '_blank')">
+          <div class="cert-image-frame">
+            <img src="https://res.cloudinary.com/de5casjbu/image/upload/v1782285024/FFS_Life_Extension_Study_of_Thermal_Cyclic_Service_Piping_System_page-0001_ywiloh.jpg" alt="FFS Certificate">
+          </div>
+          <h4>FFS & Life Extension Study</h4>
+          <div class="cert-org">VELOSI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: CONTACT - LET'S CONNECT -->
+    <section class="canvas-section contact-section" id="contact">
+      <div class="tech-header">
+        <h2 class="tech-header-title">Let's Connect</h2>
+        <span class="tech-header-tag">[ SECTION 08 ]</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h3>Ready to deliver your next industrial piping project.</h3>
+          <p class="contact-sub">
+            Available for piping design engineering, pipe stress engineering, plant design projects, engineering consulting, and international opportunities.
+          </p>
+
+          <div class="available-for">Available For</div>
+          <ul class="services-list">
+            <li>Piping Design Engineering</li>
+            <li>Pipe Stress Engineering</li>
+            <li>Plant Design Projects</li>
+            <li>Engineering Consulting</li>
+            <li>International Opportunities</li>
+          </ul>
+
+          <div class="contact-location">
+            <span>📍</span>
+            <span>Addis Ababa, Ethiopia</span>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <a href="mailto:beamlakalemayehu24@gmail.com" class="contact-btn-large">
+            <div>
+              <div class="btn-label">Email Me</div>
+              <div class="btn-sub">beamlakalemayehu24@gmail.com</div>
             </div>
-            <div class="contact-field">
-              <label>Return Mail Port *</label>
-              <input type="email" required placeholder="contact@origin.com">
+            <span class="btn-arrow">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/beamlak-alemayehu-piping" target="_blank" class="contact-btn-large outline">
+            <div>
+              <div class="btn-label">LinkedIn</div>
+              <div class="btn-sub">Connect professionally</div>
             </div>
-            <div class="contact-field">
-              <label>Message Content *</label>
-              <textarea required placeholder="Discuss project scope, layout assignments, or stress studies..."></textarea>
+            <span class="btn-arrow">→</span>
+          </a>
+
+          <a href="#" class="contact-btn-large outline" onclick="alert('Resume download will be available soon.'); return false;">
+            <div>
+              <div class="btn-label">Download Resume</div>
+              <div class="btn-sub">Full CV in PDF format</div>
             </div>
-            <button type="submit" class="contact-btn">Send Technical Sheet</button>
-          </form>
+            <span class="btn-arrow">↓</span>
+          </a>
         </div>
       </div>
     </section>
@@ -970,7 +1433,13 @@ h1,h2,h3,h4{
   </main>
 </div>
 
-<!-- ==================== SIDE-DRAWER PANEL FOR TECHNICAL Renders ==================== -->
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div>© 2026 Beamlak Alemayehu Ayele — Piping Design Engineer & Pipe Stress Professional</div>
+  <div>Addis Ababa, Ethiopia · <a href="tel:+251941920504">+251 941 920 504</a></div>
+</footer>
+
+<!-- ==================== PROJECT DRAWER ==================== -->
 <div class="modal-overlay" id="projectDrawerOverlay">
   <div class="modal-drawer" id="projectDrawer">
     <button class="drawer-close" id="drawerClose">✕ Close Drawing</button>
@@ -978,153 +1447,196 @@ h1,h2,h3,h4{
       <span class="tag" id="drawerTag">SYSTEM DESIGN</span>
       <h3 id="drawerTitle">Project Title</h3>
     </div>
-    <div class="drawer-media-frame" id="drawerMedia">
-      <!-- Image dynamically rendered here -->
-    </div>
-    <div class="drawer-technical-desc" id="drawerDesc">
-      <!-- Desc text here -->
-    </div>
+    <div class="drawer-media-frame" id="drawerMedia"></div>
+    <div class="drawer-technical-desc" id="drawerDesc"></div>
   </div>
 </div>
 
+<style>
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(6,21,38,0.75);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  z-index:2000;
+  opacity:0;pointer-events:none;
+  transition:opacity var(--transition);
+  display:flex;justify-content:flex-end;
+}
+.modal-overlay.active{opacity:1;pointer-events:auto}
+.modal-drawer{
+  width:600px;max-width:100%;
+  background:var(--off-white);
+  border-left:2.5px solid var(--navy);
+  height:100vh;overflow-y:auto;
+  padding:40px;
+  transform:translateX(100%);
+  transition:transform var(--transition);
+  display:flex;flex-direction:column;gap:30px;
+}
+.modal-overlay.active .modal-drawer{transform:translateX(0)}
+.drawer-close{
+  align-self:flex-start;
+  padding:8px 16px;
+  border:1.5px solid var(--navy);
+  background:var(--white);
+  color:var(--navy);
+  font-size:0.85rem;font-weight:600;
+  text-transform:uppercase;cursor:pointer;
+  font-family:'Space Grotesk',sans-serif;
+}
+.drawer-close:hover{background:var(--navy);color:var(--white)}
+.drawer-header h3{font-size:2rem;margin-top:16px}
+.drawer-header .tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.8rem;color:var(--steel);
+  text-transform:uppercase;letter-spacing:1px;
+}
+.drawer-media-frame{
+  border:1.5px solid var(--border-light);
+  background:var(--white);padding:10px;
+}
+.drawer-media-frame img{
+  width:100%;aspect-ratio:1.5/1;object-fit:cover;
+  border:1px solid var(--border-light);
+}
+.drawer-technical-desc h5{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.85rem;text-transform:uppercase;
+  letter-spacing:1.5px;color:var(--navy);
+  margin-bottom:12px;margin-top:16px;font-weight:700;
+}
+.drawer-technical-desc h5:first-child{margin-top:0}
+.drawer-technical-desc p{
+  font-size:0.95rem;color:var(--steel-dark);
+  margin-bottom:16px;line-height:1.7;
+}
+.drawer-technical-desc ul{list-style:none}
+.drawer-technical-desc li{
+  font-size:0.9rem;color:var(--steel-dark);
+  padding:8px 0 8px 18px;
+  border-bottom:1px dashed var(--border-light);
+  position:relative;
+}
+.drawer-technical-desc li::before{
+  content:'→';position:absolute;left:0;color:var(--navy);font-weight:700;
+}
+.drawer-technical-desc li:last-child{border-bottom:none}
+</style>
+
 <script>
 // ============================================================
-// DATA STRUCTURE FOR BEAMLAK'S PROJECTS (BLUEPRINT EDITION)
+// PROJECT DATA
 // ============================================================
 const projectData = {
-  jsd: {
-    tag: 'POLYMERS / SPECIALTY',
-    title: 'Jingshida Fuel Additive Plant System',
+  hechang: {
+    tag: 'PETROCHEMICAL · 10,000 TPA',
+    title: 'Crude Anthracene Separation Workshop',
     hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdijru.png',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdijru.png',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/JSD-1_nzv3rz.png',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868724/JSD-2_jfbttr.jpg'
-    ],
+    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg',
     description: `
-      <h5>Technical Log: ENCOSC24029</h5>
-      <p>Responsible for assembling structural and mechanical design profiles of Sichuan Jingshida's high-capacity fuel additive complex. Systems were structured around twin production loops processing Melamine Polyphosphate and Diketopyrrolopyrrole.</p>
-      <h5>Detailed Execution Scope:</h5>
+      <h5>Project Overview</h5>
+      <p>Modeled the 10,000-ton/year Crude Anthracene workshop and Class A Tank area; designed over 600 piping systems following GB51283-2020 safety codes; generated supports, MTO, anti-corrosion, and insulation tables; and validated the design using Navisworks.</p>
+      <h5>Key Deliverables</h5>
       <ul>
-        <li>Assembled structural concrete frameworks and pipeline gallery paths using AVEVA E3D/PDMS.</li>
-        <li>Organized process reactors, centrifugal fluid systems, and safety bypass loops.</li>
-        <li>Prepared dynamic isometric drafts in AutoCAD, maintaining spacing limits for maintenance access.</li>
-        <li>Drafted multi-stage thermal and corrosion insulation specification matrices.</li>
+        <li>600+ piping systems designed per GB51283-2020</li>
+        <li>Class A hazardous area tank farm modeling</li>
+        <li>Navisworks clash detection & validation</li>
+        <li>Support, MTO, anti-corrosion & insulation tables</li>
+      </ul>
+    `
+  },
+  hnlc: {
+    tag: 'PETROCHEMICAL · 200,000 TPA',
+    title: 'PVC Resin & Acetylene Plant',
+    hasImage: true,
+    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg',
+    description: `
+      <h5>Project Overview</h5>
+      <p>Managed 100% of the piping design for the 200,000-ton/year PVC Resin & Acetylene plant; delivered full-lifecycle 3D modeling, optimized process routing, support placement, and material control documentation.</p>
+      <h5>Key Deliverables</h5>
+      <ul>
+        <li>Full project piping ownership (100%)</li>
+        <li>Process routing optimization</li>
+        <li>Support engineering & placement</li>
+        <li>Material take-off generation</li>
       </ul>
     `
   },
   xingfa: {
-    tag: 'ORGANIC CHEMISTRY',
-    title: 'Xingfa Bio-Based Materials Plant Grid',
+    tag: 'BIO-BASED · 100 TON/YR',
+    title: 'FDCA Pilot Plant',
     hasImage: true,
     heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/XINGFA-3_u4kvuh.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868729/XINGFA-2_tx3pzd.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868727/XINGFA-1_hso8zg.jpg'
-    ],
     description: `
-      <h5>Technical Log: ENCOSC23043</h5>
-      <p>Piping layout design for a complex bio-based polymers pilot development featuring multiple specialized process cells including Air Oxidation, Nitric Acid Oxidation, and organic dehydration vessels.</p>
-      <h5>Detailed Execution Scope:</h5>
+      <h5>Project Overview</h5>
+      <p>Modeled the 100-ton/year FDCA pilot plant; designed piping and supports for Air/Nitric Acid Oxidation and Dehydration units; generated MTO, anti-corrosion, and insulation tables.</p>
+      <h5>Key Deliverables</h5>
       <ul>
-        <li>Modeled structural layout matrices and main utility pipelines using E3D.</li>
-        <li>Calculated custom support locations under high stress and thermal cycles.</li>
-        <li>Calculated and compiled material quantities (MTO) for processing modules.</li>
-        <li>Defined specific material coatings matching severe chemical oxidation risks.</li>
+        <li>Piping design for oxidation & dehydration units</li>
+        <li>Pipe support engineering</li>
+        <li>Insulation documentation</li>
+        <li>Corrosion protection design</li>
       </ul>
     `
   },
   ezhong: {
-    tag: 'MINERALS & SALTS',
-    title: 'Ezhong Potash & Calcium Fertilizer Facility',
+    tag: 'FERTILIZER · 80,000 TPA',
+    title: 'Potash Fertilizer & Calcium Chloride',
     hasImage: false,
-    gallery: [],
     description: `
-      <h5>Technical Log: ENCOSC24009</h5>
-      <p>Coordinated civil and structural routing layers for an ecological agricultural refinery handling Potash fertilizers and Calcium Chloride processing streams.</p>
-      <h5>Detailed Execution Scope:</h5>
+      <h5>Project Overview</h5>
+      <p>80,000-ton Potash Fertilizer & 50,000-ton Calcium Chloride project with 100% design contribution. Coordinated civil and structural routing layers for an ecological agricultural refinery.</p>
+      <h5>Key Deliverables</h5>
       <ul>
-        <li>Formulated structural support grids and high-load piping support stations in 3D.</li>
-        <li>Designed extensive pipeline gallery runs across process areas.</li>
-        <li>Verified and modified isometric draft geometries in AutoCAD.</li>
-        <li>Validated routing models in Navisworks, preventing potential conflicts with existing physical equipment.</li>
+        <li>100% design contribution</li>
+        <li>Structural support grids</li>
+        <li>Pipeline gallery routing</li>
+        <li>Navisworks clash detection</li>
       </ul>
     `
   },
-  hechang: {
-    tag: 'UTILITY & PETROCHEMICAL',
-    title: 'Hechang Coarse Anthracene Separation Workshop',
+  jsd: {
+    tag: 'SPECIALTY CHEMICAL · 5,000 TPA',
+    title: 'Melamine Polyphosphate Plant',
     hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868721/HECHANG-2_i3jpj3.jpg'
-    ],
+    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868730/JSD_kdijru.png',
     description: `
-      <h5>Technical Log: ENCOSC22070</h5>
-      <p>Structured the physical pipeline models for Hubei Hechang's Coarse Anthracene crystallization plant and nearby Class A hazardous materials storage installations.</p>
-      <h5>Detailed Execution Scope:</h5>
+      <h5>Project Overview</h5>
+      <p>5,000-ton Melamine Polyphosphate & 3,000-ton project with 100% design contribution. Assembled structural and mechanical design profiles of the high-capacity fuel additive complex.</p>
+      <h5>Key Deliverables</h5>
       <ul>
-        <li>Structured the layout of over 600 distinct piping routes following GB51283-2020 fire-safety codes.</li>
-        <li>Calculated layout requirements and developed configurations for pump stations and utility blocks.</li>
-        <li>Developed anti-corrosion tables for outdoor storage equipment.</li>
-        <li>Checked spatial constraints and verified access lanes using Navisworks visualization files.</li>
+        <li>100% design contribution</li>
+        <li>3D modeling in AVEVA E3D/PDMS</li>
+        <li>Isometric drafting in AutoCAD</li>
+        <li>Insulation specification matrices</li>
       </ul>
     `
   },
-  lianchuang: {
-    tag: 'POLYMERS / PO',
-    title: 'Lianchuang Polyether Plant System',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HNLC-2_h8mlsu.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868722/HNLC-1_spvk6o.jpg'
-    ],
+  hailiang: {
+    tag: 'NEW MATERIALS · 2,500 TON',
+    title: 'DMTDA & DETDA Materials Plant',
+    hasImage: false,
     description: `
-      <h5>Technical Log: HNLC-2</h5>
-      <p>Piping layout design for Henan Lianchuang's Propylene Oxide and high-grade Polyether unit, emphasizing loop optimizations and support positions.</p>
-      <h5>Detailed Execution Scope:</h5>
+      <h5>Project Overview</h5>
+      <p>2,500-ton Dimethylthiotoluene Diamine & 4,000-ton Diethyltoluene Diamine project with 100% design contribution for Shandong Hailiang New Materials Co., Ltd.</p>
+      <h5>Key Deliverables</h5>
       <ul>
-        <li>Built structures, reactor configurations, and system galleries in AVEVA PDMS.</li>
-        <li>Defined specific locations for safety vents, emergency bypass grids, and support brackets.</li>
-        <li>Organized thermal expansion loops to prevent high stress on structural steel joints.</li>
-        <li>Coordinated design revisions with process and civil engineering groups.</li>
-      </ul>
-    `
-  },
-  prepolymer: {
-    tag: 'POLYMERS',
-    title: 'Polyurethane Prepolymer Facility Study',
-    hasImage: true,
-    heroImg: 'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI-2_krcym6.jpg',
-    gallery: [
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI-2_krcym6.jpg',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI-1_mqems4.png',
-      'https://res.cloudinary.com/de5casjbu/image/upload/v1781868723/HUAYI_gcdh0q.jpg'
-    ],
-    description: `
-      <h5>Technical Log: PU-STUDY</h5>
-      <p>Process layout and equipment location assessments for a system refining polyurethane prepolymer lines, involving TDA and MDI reactant loops.</p>
-      <h5>Detailed Execution Scope:</h5>
-      <ul>
-        <li>Sized reactor spacing profiles based on reaction characteristics.</li>
-        <li>Modeled core equipment structures and access platforms in AVEVA PDMS.</li>
-        <li>Formulated layout schemes to restrict exposure risk near localized feed modules.</li>
-        <li>Compiled material quantities (MTO) and developed anti-corrosion specifications.</li>
+        <li>100% design contribution</li>
+        <li>Process piping systems</li>
+        <li>Support design</li>
+        <li>MTO generation</li>
       </ul>
     `
   }
 };
 
 // ============================================================
-// SYSTEM INTERACTION: DRAWER MODAL FOR PROJECTS
+// DRAWER MODAL
 // ============================================================
 const overlay = document.getElementById('projectDrawerOverlay');
 const drawer = document.getElementById('projectDrawer');
 const closeBtn = document.getElementById('drawerClose');
-
 const drawerTag = document.getElementById('drawerTag');
 const drawerTitle = document.getElementById('drawerTitle');
 const drawerMedia = document.getElementById('drawerMedia');
@@ -1133,24 +1645,15 @@ const drawerDesc = document.getElementById('drawerDesc');
 function openDrawer(projectId) {
   const data = projectData[projectId];
   if(!data) return;
-
   drawerTag.textContent = data.tag;
   drawerTitle.textContent = data.title;
-
   if (data.hasImage) {
-    drawerMedia.innerHTML = `
-      <img src="${data.heroImg}" alt="${data.title}">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; margin-top:8px; text-align:right;">
-        RENDER FILE: ${projectId.toUpperCase()}_REV01.JPG
-      </div>
-    `;
+    drawerMedia.innerHTML = `<img src="${data.heroImg}" alt="${data.title}">`;
     drawerMedia.style.display = 'block';
   } else {
     drawerMedia.style.display = 'none';
   }
-
   drawerDesc.innerHTML = data.description;
-
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -1161,45 +1664,11 @@ function closeDrawer() {
 }
 
 closeBtn.addEventListener('click', closeDrawer);
-overlay.addEventListener('click', (e) => {
-  if (e.target === overlay) closeDrawer();
-});
-document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape') closeDrawer();
-});
-
-// Attach project row clicks
-document.querySelectorAll('.project-row').forEach(row => {
-  row.addEventListener('click', () => {
-    const id = row.dataset.project;
-    openDrawer(id);
-  });
-});
+overlay.addEventListener('click', (e) => { if (e.target === overlay) closeDrawer(); });
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDrawer(); });
 
 // ============================================================
-// PROJECT TAB FILTERING
-// ============================================================
-const tabs = document.querySelectorAll('.filter-tab');
-const rows = document.querySelectorAll('.project-row');
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-
-    const filter = tab.dataset.filter;
-    rows.forEach(row => {
-      if(filter === 'all' || row.dataset.sector === filter) {
-        row.style.display = 'grid';
-      } else {
-        row.style.display = 'none';
-      }
-    });
-  });
-});
-
-// ============================================================
-// ACTIVE SIDEBAR LINK HIGHLIGHTING & SCROLL WATCH
+// ACTIVE SIDEBAR LINK HIGHLIGHTING
 // ============================================================
 const sections = document.querySelectorAll('.canvas-section');
 const navLinks = document.querySelectorAll('.sidebar-nav a');
@@ -1208,20 +1677,14 @@ window.addEventListener('scroll', () => {
   let currentSec = '';
   sections.forEach(section => {
     const top = section.offsetTop - 120;
-    if(window.pageYOffset >= top) {
-      currentSec = section.getAttribute('id');
-    }
+    if(window.pageYOffset >= top) currentSec = section.getAttribute('id');
   });
-
   navLinks.forEach(link => {
     link.classList.remove('active');
-    if(link.getAttribute('href') === '#' + currentSec) {
-      link.classList.add('active');
-    }
+    if(link.getAttribute('href') === '#' + currentSec) link.classList.add('active');
   });
 });
 
-// Smooth Scroll fallback
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     const target = document.querySelector(link.getAttribute('href'));
@@ -1233,24 +1696,21 @@ navLinks.forEach(link => {
   });
 });
 
-// Simple Contact form fallback
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button');
-  const org = btn.textContent;
-  btn.textContent = 'TRANSMISSION COMPLETE ✓';
-  btn.style.background = '#bc6c25';
-  setTimeout(() => {
-    btn.textContent = org;
-    btn.style.background = '';
-    this.reset();
-  }, 2500);
-});
+// ============================================================
+// FADE-UP ANIMATION ON SCROLL
+// ============================================================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-// Counter triggers
-document.querySelectorAll('.blueprint-card').forEach(card => {
-  observer.observe(card);
-});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
+
